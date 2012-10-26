@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:NEXTKING"
+      name = "NEXTKING">
+      <Group
+         location = "group:DataStore"
+         name = "DataStore">
+         <FileRef
+            location = "group:NKAccountManager.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKAccountManager.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKDataStore.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKDataStore.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Model"
+         name = "Model">
+         <FileRef
+            location = "group:NKMAccount.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMAccount.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKMActionResult.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMActionResult.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKMAttachment.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMAttachment.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKMFeed.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMFeed.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKModel.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKModel.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKModelDefine.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMRecord.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMRecord.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKMUser.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKMUser.m">
+         </FileRef>
+         <FileRef
+            location = "group:NSURL+StringURLEncode.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSURL+StringURLEncode.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:NetWork"
+         name = "NetWork">
+         <Group
+            location = "group:ASIHttpRequest"
+            name = "ASIHttpRequest">
+            <FileRef
+               location = "group:ASIAuthenticationDialog.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIAuthenticationDialog.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASICacheDelegate.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDataCompressor.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDataCompressor.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDataDecompressor.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDataDecompressor.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDownloadCache.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIDownloadCache.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIFormDataRequest.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIFormDataRequest.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIHTTPRequest.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIHTTPRequest.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIHTTPRequestConfig.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIHTTPRequestDelegate.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIInputStream.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASIInputStream.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASINetworkQueue.h">
+            </FileRef>
+            <FileRef
+               location = "group:ASINetworkQueue.m">
+            </FileRef>
+            <FileRef
+               location = "group:ASIProgressDelegate.h">
+            </FileRef>
+            <Group
+               location = "group:Reachability"
+               name = "Reachability">
+               <FileRef
+                  location = "group:Reachability.h">
+               </FileRef>
+               <FileRef
+                  location = "group:Reachability.m">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:JSONKit"
+            name = "JSONKit">
+            <FileRef
+               location = "group:JSONKit.h">
+            </FileRef>
+            <FileRef
+               location = "group:JSONKit.m">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:NKRequest.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKRequest.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKRequestDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKRequestDelegate.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKSDK.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKSDK.m">
+         </FileRef>
+         <Group
+            location = "group:Service"
+            name = "Service">
+            <FileRef
+               location = "group:NKAccountService.h">
+            </FileRef>
+            <FileRef
+               location = "group:NKAccountService.m">
+            </FileRef>
+            <FileRef
+               location = "group:NKServiceBase.h">
+            </FileRef>
+            <FileRef
+               location = "group:NKServiceBase.m">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:UI"
+         name = "UI">
+         <FileRef
+            location = "group:NKNavigator.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKNavigator.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKTableViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKTableViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKUI.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKUI.m">
+         </FileRef>
+         <FileRef
+            location = "group:NKViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:NKViewController.m">
+         </FileRef>
+         <Group
+            location = "group:UIUtility"
+            name = "UIUtility">
+            <Group
+               location = "group:EGO"
+               name = "EGO">
+               <FileRef
+                  location = "group:EGORefreshTableHeaderView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:EGORefreshTableHeaderView.m">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:NKKit"
+               name = "NKKit">
+               <FileRef
+                  location = "group:NKCellDataOBJ.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKCellDataOBJ.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKDateUtil.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKDateUtil.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKKit.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKKVOImageView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKKVOImageView.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKKVOLabel.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKKVOLabel.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKLoadingMoreView.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKLoadingMoreView.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKPictureViewer.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKPictureViewer.m">
+               </FileRef>
+               <Group
+                  location = "group:NKPopupView"
+                  name = "NKPopupView">
+                  <Group
+                     location = "group:Images"
+                     name = "Images">
+                     <FileRef
+                        location = "group:puarrow@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:puarrow_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pubackarrow_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pubackarrow_normal@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucellback_ highlight@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucellback_normal@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucurrentlocation@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucurrentlocation_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucurrentpick@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pucurrentpick_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pudonebutton_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pudonebutton_normal@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pugreenbutton_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pugreenbutton_normal@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:puinputback@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:puinputbutton_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:puinputbutton_normal@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumaskfatboth@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumaskfatheader@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumasknavigate@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumasksmall@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumaskthin@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumultiselect_se@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumultiselect_se_click@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumultiselect_un@2x.png">
+                     </FileRef>
+                     <FileRef
+                        location = "group:pumultiselect_un_click@2x.png">
+                     </FileRef>
+                  </Group>
+                  <FileRef
+                     location = "group:NKPopupView.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:NKPopupView.m">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:NKSegmentControl.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKSegmentControl.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKSwitch.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKSwitch.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKTableViewCell.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKTableViewCell.m">
+               </FileRef>
+               <FileRef
+                  location = "group:NKTextField.h">
+               </FileRef>
+               <FileRef
+                  location = "group:NKTextField.m">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:UIColor+HexString.h">
+            </FileRef>
+            <FileRef
+               location = "group:UIColor+HexString.m">
+            </FileRef>
+            <Group
+               location = "group:UIImage"
+               name = "UIImage">
+               <FileRef
+                  location = "group:UIImage+Alpha.h">
+               </FileRef>
+               <FileRef
+                  location = "group:UIImage+Alpha.m">
+               </FileRef>
+               <FileRef
+                  location = "group:UIImage+Resize.h">
+               </FileRef>
+               <FileRef
+                  location = "group:UIImage+Resize.m">
+               </FileRef>
+               <FileRef
+                  location = "group:UIImage+RoundedCorner.h">
+               </FileRef>
+               <FileRef
+                  location = "group:UIImage+RoundedCorner.m">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+   </Group>
+   <FileRef
+      location = "group:WEIMI/WEIMI.xcodeproj">
+   </FileRef>
+</Workspace>
