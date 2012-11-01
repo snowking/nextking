@@ -97,6 +97,15 @@
             
         }
             break;
+        case NKPopupViewStyleUp:{
+            maskView.image = [[UIImage imageNamed:@"pumaskthin.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
+            maskView.frame = CGRectMake(0, 0, 266, 153+30);
+            maskView.center = CGPointMake(self.center.x, 155);
+            showTableView.frame = CGRectMake(0, 0, 236, 153);
+            showTableView.center = CGPointMake(self.center.x, maskView.center.y-1);
+            
+        }
+            break;
         case NKPopupViewStyleFatBoth:{
             
             maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];

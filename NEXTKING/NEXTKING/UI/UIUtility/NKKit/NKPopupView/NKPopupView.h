@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
+
 typedef enum {
     NKPopupViewStyleThin = 0,
     NKPopupViewStyleFatBoth,
     NKPopupViewStyleFatHeader,
-    NKPopupViewStyleFatFooter
+    NKPopupViewStyleFatFooter,
+    NKPopupViewStyleUp
 } NKPopupViewStyle;
 
 
