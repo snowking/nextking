@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NKKVOImageView.h"
 
 @interface NKTableViewCell : UITableViewCell{
     
