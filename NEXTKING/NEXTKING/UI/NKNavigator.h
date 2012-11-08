@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "NKSegmentControl.h"
+#import "NKConfig.h"
 
-#define NKNavigatorHeight 49
+#define NKNavigatorHeight [[NKConfig sharedConfig] navigatorHeight]
 
 @interface NKNavigator : UIView <NKSegmentControlDelegate>{
     

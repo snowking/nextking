@@ -13,7 +13,7 @@
 #import "NKNavigator.h"
 
 #define NKMainHeight [[UIScreen mainScreen] bounds].size.height-20
-#define NKContentHeight NKMainHeight-49
+#define NKContentHeight NKMainHeight-NKNavigatorHeight
 
 #define NKLineTableViewWidth 299
 

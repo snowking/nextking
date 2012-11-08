@@ -51,13 +51,15 @@ static NKNavigator *_navigator = nil;
 
 -(void)addTabs:(NSArray*)tab{
     
+    
+    
     self.tabSource = tab;
     
     self.tabs = [NKSegmentControl segmentControlViewWithSegments:[tab objectAtIndex:0]
                                                      andDelegate:self];
     [self addSubview:tabs];
     tabs.frame = CGRectMake(0, 0, 320, NKNavigatorHeight);
-    tabs.shouldAnimate = YES;
+    tabs.shouldAnimate = [[NKConfig sharedConfig] navigatorChangeAnimate];
     
 }
 

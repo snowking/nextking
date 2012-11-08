@@ -89,7 +89,7 @@ static NKUI * _NKUI = nil;
 
 -(void)showNaviTab{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:[[NKConfig sharedConfig] navigatorShowAnimate]?0.3:0 animations:^{
         self.navigator.frame = CGRectMake(0, NKMainHeight-NKNavigatorHeight, 320, NKNavigatorHeight);
     }];
 }
