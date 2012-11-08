@@ -9,18 +9,18 @@
 #import "NKNavigator.h"
 #import "NKUI.h"
 
-#import "WMHomeViewController.h"
-#import "WMWelcomeViewController.h"
-#import "WMMenWikiViewController.h"
+
 
 @implementation NKNavigator
 
 
 @synthesize tabs;
+@synthesize tabSource;
 
 -(void)dealloc{
     
     [tabs release];
+    [tabSource release];
     [super dealloc];
 }
 
@@ -44,20 +44,21 @@ static NKNavigator *_navigator = nil;
         self.backgroundColor = [UIColor clearColor];
         
         
-        self.tabs = [NKSegmentControl segmentControlViewWithSegments:[NSArray arrayWithObjects:
-                                                                      [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"homepage_normal.png"] selectedBack:[UIImage imageNamed:@"homepage_click.png"]],
-                                                                      [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"line_normal.png"] selectedBack:[UIImage imageNamed:@"line_click.png"]],
-                                                                      
-                                                                      nil]
-                     
-                                                         andDelegate:self];
-        [self addSubview:tabs];
-        tabs.frame = CGRectMake(0, 0, 320, NKNavigatorHeight);
-        tabs.shouldAnimate = YES;
-        
         
     }
     return self;
+}
+
+-(void)addTabs:(NSArray*)tab{
+    
+    self.tabSource = tab;
+    
+    self.tabs = [NKSegmentControl segmentControlViewWithSegments:[tab objectAtIndex:0]
+                                                     andDelegate:self];
+    [self addSubview:tabs];
+    tabs.frame = CGRectMake(0, 0, 320, NKNavigatorHeight);
+    tabs.shouldAnimate = YES;
+    
 }
 
 
@@ -67,26 +68,16 @@ static NKNavigator *_navigator = nil;
     
     [self.tabs selectSegment:0 shouldTellDelegate:NO];
     
-    [[NKUI sharedNKUI] showViewControllerWithClass:[UIViewController class]];
+    [[NKUI sharedNKUI] showViewControllerWithClass:[[tabSource objectAtIndex:1] objectAtIndex:0]];
     [[NKUI sharedNKUI] showNaviTab];
 }
 
 
 -(void)segmentControl:(NKSegmentControl*)control didChangeIndex:(NSInteger)index{
     
-    switch (index) {
-        case 0:{
-            [[NKUI sharedNKUI] showViewControllerWithClass:[WMHomeViewController class]];
-        }
-            break;
-        case 1:{
-            [[NKUI sharedNKUI] showViewControllerWithClass:[WMMenWikiViewController class]];
-        }
-            break;
-            
-        default:
-            break;
-    }
+    
+    [[NKUI sharedNKUI] showViewControllerWithClass:[[tabSource objectAtIndex:1] objectAtIndex:index]];
+    
     
 }
 

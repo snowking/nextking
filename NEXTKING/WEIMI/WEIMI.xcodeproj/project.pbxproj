@@ -477,10 +477,10 @@
 			children = (
 				A39A51521637D21200A45E74 /* NKNavigator.h */,
 				A39A51531637D21200A45E74 /* NKNavigator.m */,
-				A39A51541637D21200A45E74 /* NKTableViewController.h */,
-				A39A51551637D21200A45E74 /* NKTableViewController.m */,
 				A39A51561637D21200A45E74 /* NKUI.h */,
 				A39A51571637D21200A45E74 /* NKUI.m */,
+				A39A51541637D21200A45E74 /* NKTableViewController.h */,
+				A39A51551637D21200A45E74 /* NKTableViewController.m */,
 				A39A51581637D21200A45E74 /* NKViewController.h */,
 				A39A51591637D21200A45E74 /* NKViewController.m */,
 				A39A515A1637D21200A45E74 /* UIUtility */,
@@ -928,6 +928,7 @@
 				A39A4FFE1637D08800A45E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,16 +7,18 @@
 //
 
 #import "NKUI.h"
-#import "NKNavigator.h"
 #import "NKAccountManager.h"
-#import "WMWelcomeViewController.h"
-#import "WMHomeViewController.h"
+
 
 @interface NKUI ()
 
 @end
 
 @implementation NKUI
+
+@synthesize welcomeCalss;
+@synthesize homeClass;
+@synthesize needLogin;
 
 @synthesize navigator;
 @synthesize nkBackgroundView;
@@ -99,37 +101,49 @@ static NKUI * _NKUI = nil;
     }];
 }
 
+-(void)addTabs:(NSArray*)tab{
+    [self view];
+    [self.navigator addTabs:tab];
+}
+
 
 #pragma mark Show
 
 -(void)showWelcome{
-    [self showViewControllerWithClass:[WMWelcomeViewController class]];
+    [self showViewControllerWithClass:welcomeCalss];
     [self hideNaviTab];
 }
 -(void)showDefaultViewController{
     
-    if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
-        [self showViewControllerWithClass:[WMHomeViewController class]];
-        [self showNaviTab];
-    }
-    else {
-        [self showWelcome];
-
-    }
-    
-    
-    if ([NKMUser me]) {
-        
-    }
-    else {
-        if (![[NKAccountManager sharedAccountsManager] canAutoLogin]) {
-            //[self showLoginView];
+    // Wit Account System
+    if (needLogin) {
+        if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
+            [self showViewControllerWithClass:homeClass];
+            [self showNaviTab];
         }
         else {
-            [[NKAccountManager sharedAccountsManager] autoLogin];
+            [self showWelcome];
+            
+        }
+        
+        
+        if ([NKMUser me]) {
+            
+        }
+        else {
+            if (![[NKAccountManager sharedAccountsManager] canAutoLogin]) {
+                //[self showLoginView];
+            }
+            else {
+                [[NKAccountManager sharedAccountsManager] autoLogin];
+            }
         }
     }
     
+    else{
+        [self showViewControllerWithClass:homeClass];
+        [self showNaviTab];
+    }
     
 }
 

@@ -11,7 +11,7 @@
 #import <commoncrypto/CommonDigest.h>
 
 //NSString * const kAPIBaseUrl = @"http://api.NK.tj/v1";
-NSString * const kAPIBaseUrl = @"http://127.0.0.1:8888/king/index.php";
+NSString * const kAPIBaseUrl = @"http://127.0.0.1:8888/nextking_server/index.php";
 
 @implementation NKServiceBase
 

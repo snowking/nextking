@@ -8,6 +8,9 @@
 
 #import "WMAppDelegate.h"
 #import "NKUI.h"
+#import "WMHomeViewController.h"
+#import "WMWelcomeViewController.h"
+#import "WMMenWikiViewController.h"
 
 @implementation WMAppDelegate
 
@@ -21,10 +24,23 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:[NKUI sharedNKUI]] autorelease];
+    NKUI *ui = [NKUI sharedNKUI];
+    ui.needLogin = YES;
+    
+    ui.homeClass = [WMHomeViewController class];
+    ui.welcomeCalss = [WMWelcomeViewController class];
+    
+    [ui addTabs:[NSArray arrayWithObjects:[NSArray arrayWithObjects:
+                                           [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"homepage_normal.png"] selectedBack:[UIImage imageNamed:@"homepage_click.png"]],
+                                           [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"line_normal.png"] selectedBack:[UIImage imageNamed:@"line_click.png"]],
+                                           nil],
+                 [NSArray arrayWithObjects:[WMHomeViewController class], [WMMenWikiViewController class], nil],
+                 nil]];
+    
+    UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:ui] autorelease];
+    
     navi.view.backgroundColor = [UIColor clearColor];
     //navi.supportedInterfaceOrientations =
-    
     UIImageView *back = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, NKMainHeight)];
     back.image = [[UIImage imageNamed:@"appBackground.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
     [navi.view insertSubview:back atIndex:0];

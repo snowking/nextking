@@ -15,13 +15,18 @@
     
     
     NKSegmentControl *tabs;
+    
+    NSArray *tabSource;
 }
 
 @property (nonatomic, retain) NKSegmentControl *tabs;
+@property (nonatomic, retain) NSArray *tabSource;
 
 +(id)sharedNavigator;
 
 -(void)showLoginOKView;
+
+-(void)addTabs:(NSArray*)tab;
 
 @end
 

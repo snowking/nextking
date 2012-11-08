@@ -10,7 +10,7 @@
 #import "NKKit.h"
 #import "NKSDK.h"
 #import "UIColor+HexString.h"
-
+#import "NKNavigator.h"
 
 #define NKMainHeight [[UIScreen mainScreen] bounds].size.height-20
 #define NKContentHeight NKMainHeight-49
@@ -20,7 +20,7 @@
 #define NKNavigationController [[NKUI sharedNKUI] navigationController]
 #define NKNC NKNavigationController
 
-@class NKNavigator;
+
 
 @interface NKUI : UIViewController{
     
@@ -31,8 +31,16 @@
     
     UIViewController *currentController;
     
+    Class welcomeCalss;
+    Class homeClass;
+    
+    BOOL needLogin;
+    
 }
 
+@property (nonatomic, assign) Class welcomeCalss;
+@property (nonatomic, assign) Class homeClass;
+@property (nonatomic, assign) BOOL  needLogin;
 
 @property (nonatomic, assign) UIImageView *nkBackgroundView;
 @property (nonatomic, assign) NKNavigator *navigator;
@@ -43,6 +51,8 @@
 +(id)sharedNKUI;
 
 -(void)showNaviTab;
+
+-(void)addTabs:(NSArray*)tab;
 
 -(UIViewController*)showViewControllerWithClass:(Class)ControllerToShow;
 
