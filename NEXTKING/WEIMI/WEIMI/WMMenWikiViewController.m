@@ -31,7 +31,7 @@
     
     
     
-    [self addRecord];
+    //[self addRecord];
     
     
 }

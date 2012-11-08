@@ -24,9 +24,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    
+    
     NKUI *ui = [NKUI sharedNKUI];
     ui.needLogin = YES;
-    
     ui.homeClass = [WMHomeViewController class];
     ui.welcomeCalss = [WMWelcomeViewController class];
     

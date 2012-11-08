@@ -9,14 +9,16 @@
 #import "NKConfig.h"
 
 @implementation NKConfig
+
 @synthesize navigatorHeight;
 @synthesize navigatorChangeAnimate;
 @synthesize navigatorShowAnimate;
 
+@synthesize domainURL;
+
 -(void)dealloc{
     
-    
-    
+    [domainURL release];
     
     [super dealloc];
 }
@@ -41,6 +43,8 @@ static NKConfig *_config = nil;
         self.navigatorHeight = 49;
         self.navigatorChangeAnimate = YES;
         self.navigatorShowAnimate = YES;
+        
+        self.domainURL = @"http://127.0.0.1:8888/nextking_server/index.php";
         
     }
     

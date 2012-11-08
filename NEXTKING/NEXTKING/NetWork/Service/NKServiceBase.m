@@ -9,9 +9,7 @@
 #import "NKServiceBase.h"
 #import "NKSDK.h"
 #import <commoncrypto/CommonDigest.h>
-
-//NSString * const kAPIBaseUrl = @"http://api.NK.tj/v1";
-NSString * const kAPIBaseUrl = @"http://127.0.0.1:8888/nextking_server/index.php";
+#import "NKConfig.h"
 
 @implementation NKServiceBase
 
@@ -55,9 +53,9 @@ NSString * const kAPIBaseUrl = @"http://127.0.0.1:8888/nextking_server/index.php
 
 -(NSString *)serviceBaseURL{
     if (self.serviceName) {
-        return [kAPIBaseUrl stringByAppendingFormat:@"/%@",self.serviceName];
+        return [[[NKConfig sharedConfig] domainURL] stringByAppendingFormat:@"/%@",self.serviceName];
     }
-    return kAPIBaseUrl;
+    return [[NKConfig sharedConfig] domainURL];
     
 }
 @end

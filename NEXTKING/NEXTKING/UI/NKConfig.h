@@ -15,11 +15,15 @@
     BOOL    navigatorChangeAnimate;
     BOOL    navigatorShowAnimate;
     
+    NSString *domainURL;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
 @property (nonatomic, assign) BOOL    navigatorChangeAnimate;
 @property (nonatomic, assign) BOOL    navigatorShowAnimate;
+
+@property (nonatomic, retain) NSString *domainURL;
 
 +(id)sharedConfig;
 
