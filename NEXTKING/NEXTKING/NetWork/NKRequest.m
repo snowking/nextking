@@ -8,6 +8,7 @@
 
 #import "NKRequest.h"
 #import "NKModel.h"
+#import "NKConfig.h"
 
 @interface NKRequest (Private)
 
@@ -103,8 +104,8 @@
         parsedResult = [[incomingrequest responseData] objectFromJSONDataWithParseOptions:JKParseOptionStrict error:&tlocalError];
     }
     
-        NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
-    NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
+    //    NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
+   // NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
     
     if (tlocalError) {
         self.errorCode = @900002;
@@ -113,12 +114,12 @@
     else {
         // Success
         
-        NSNumber *tServerError = [parsedResult objectOrNilForKey:@"status"];
+        NSNumber *tServerError = [[NKConfig sharedConfig] parseDataKey] ? [parsedResult objectOrNilForKey:@"status"] : [NSNumber numberWithInt:1];
         
         if ((incomingrequest.responseStatusCode == 200 || incomingrequest.responseStatusCode == 304) && [tServerError intValue]==1) {
             
             
-            id realSomething = [parsedResult objectOrNilForKey:@"data"];
+            id realSomething =  [[NKConfig sharedConfig] parseDataKey] ? [parsedResult objectOrNilForKey:[[NKConfig sharedConfig] parseDataKey]] : parsedResult;
             
             NSMutableArray *resultsArray = nil;
             

@@ -17,6 +17,8 @@
     
     NSString *domainURL;
     
+    NSString *parseDataKey;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -24,6 +26,7 @@
 @property (nonatomic, assign) BOOL    navigatorShowAnimate;
 
 @property (nonatomic, retain) NSString *domainURL;
+@property (nonatomic, retain) NSString *parseDataKey;
 
 +(id)sharedConfig;
 

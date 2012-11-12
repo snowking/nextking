@@ -16,9 +16,12 @@
 
 @synthesize domainURL;
 
+@synthesize parseDataKey;
+
 -(void)dealloc{
     
     [domainURL release];
+    [parseDataKey release];
     
     [super dealloc];
 }
@@ -45,6 +48,8 @@ static NKConfig *_config = nil;
         self.navigatorShowAnimate = YES;
         
         self.domainURL = @"http://127.0.0.1:8888/nextking_server/index.php";
+        
+        self.parseDataKey = @"data";
         
     }
     
