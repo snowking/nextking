@@ -31,7 +31,7 @@
     
     
     
-    //[self addRecord];
+    [self addRecord];
     
     
 }
@@ -50,7 +50,7 @@
 
 -(void)addRecordFailed:(NKRequest*)request{
     
-    
+    NSLog(@"%@", request.errorCode);
 }
 
 - (void)didReceiveMemoryWarning

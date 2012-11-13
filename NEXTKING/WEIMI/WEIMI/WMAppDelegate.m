@@ -26,6 +26,8 @@
     // Override point for customization after application launch.
     
     
+    [[NKConfig sharedConfig] setDomainURL:@"http://zhenghua.sinaapp.com/index.php"];
+    
     NKUI *ui = [NKUI sharedNKUI];
     ui.needLogin = YES;
     ui.homeClass = [WMHomeViewController class];
