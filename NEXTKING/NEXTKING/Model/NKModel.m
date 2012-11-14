@@ -114,7 +114,7 @@ static NKMemoryCache *_sharedMemoryCache = nil;
     return _sharedMemoryCache;
 }
 
--(void)lwLogout:(NSNotification*)noti{
+-(void)logout:(NSNotification*)noti{
     [self.cachedUsers removeAllObjects];
     [NKMUser meFromUser:nil];
     [NKMFeed resetCachedFeed];

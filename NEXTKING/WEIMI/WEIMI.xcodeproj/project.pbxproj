@@ -112,6 +112,8 @@
 		A39A52DA1637DAD700A45E74 /* line_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D61637DAD700A45E74 /* line_normal@2x.png */; };
 		A39A52DB1637DAD700A45E74 /* homepage_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D71637DAD700A45E74 /* homepage_click@2x.png */; };
 		A39A52DC1637DAD700A45E74 /* homepage_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D81637DAD700A45E74 /* homepage_normal@2x.png */; };
+		A3AA563316537EA200163F05 /* WMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA563116537EA200163F05 /* WMSettingViewController.m */; };
+		A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AA563216537EA200163F05 /* WMSettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -281,6 +283,9 @@
 		A39A52D61637DAD700A45E74 /* line_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_normal@2x.png"; sourceTree = "<group>"; };
 		A39A52D71637DAD700A45E74 /* homepage_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage_click@2x.png"; sourceTree = "<group>"; };
 		A39A52D81637DAD700A45E74 /* homepage_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage_normal@2x.png"; sourceTree = "<group>"; };
+		A3AA563016537EA200163F05 /* WMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingViewController.h; sourceTree = "<group>"; };
+		A3AA563116537EA200163F05 /* WMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingViewController.m; sourceTree = "<group>"; };
+		A3AA563216537EA200163F05 /* WMSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMSettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,6 +619,7 @@
 		A39A52B21637D28300A45E74 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A3AA562E16537E8700163F05 /* Setting */,
 				A39A52C51637D57F00A45E74 /* LoginRegister */,
 				A39A52BF1637D2CA00A45E74 /* MenWiki */,
 				A39A52B91637D2B300A45E74 /* Welcome */,
@@ -681,6 +687,16 @@
 				A39A52D11637D90200A45E74 /* l_inputBack@2x.png */,
 			);
 			name = LoginRegister;
+			sourceTree = "<group>";
+		};
+		A3AA562E16537E8700163F05 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A3AA563016537EA200163F05 /* WMSettingViewController.h */,
+				A3AA563116537EA200163F05 /* WMSettingViewController.m */,
+				A3AA563216537EA200163F05 /* WMSettingViewController.xib */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -779,6 +795,7 @@
 				3CC70209164BADC700B139D3 /* pumultiselect_un_click@2x.png in Resources */,
 				3CC7020A164BADC700B139D3 /* puright_click@2x.png in Resources */,
 				3CC7020B164BADC700B139D3 /* puright_normal@2x.png in Resources */,
+				A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +859,7 @@
 				3CC70212164BADC700B139D3 /* UIImage+Alpha.m in Sources */,
 				3CC70213164BADC700B139D3 /* UIImage+Resize.m in Sources */,
 				3CC70214164BADC700B139D3 /* UIImage+RoundedCorner.m in Sources */,
+				A3AA563316537EA200163F05 /* WMSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

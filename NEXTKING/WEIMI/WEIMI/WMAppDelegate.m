@@ -11,6 +11,7 @@
 #import "WMHomeViewController.h"
 #import "WMWelcomeViewController.h"
 #import "WMMenWikiViewController.h"
+#import "WMSettingViewController.h"
 
 @implementation WMAppDelegate
 
@@ -36,8 +37,9 @@
     [ui addTabs:[NSArray arrayWithObjects:[NSArray arrayWithObjects:
                                            [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"homepage_normal.png"] selectedBack:[UIImage imageNamed:@"homepage_click.png"]],
                                            [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"line_normal.png"] selectedBack:[UIImage imageNamed:@"line_click.png"]],
+                                           [NKSegment segmentWithNormalBack:[UIImage imageNamed:@"line_normal.png"] selectedBack:[UIImage imageNamed:@"line_click.png"]],
                                            nil],
-                 [NSArray arrayWithObjects:[WMHomeViewController class], [WMMenWikiViewController class], nil],
+                 [NSArray arrayWithObjects:[WMHomeViewController class], [WMMenWikiViewController class], [WMSettingViewController class], nil],
                  nil]];
     
     UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:ui] autorelease];
