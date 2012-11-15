@@ -117,14 +117,6 @@ static NKUI * _NKUI = nil;
     
     // Wit Account System
     if (needLogin) {
-        if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
-            [self showViewControllerWithClass:homeClass];
-            [self showNaviTab];
-        }
-        else {
-            [self showWelcome];
-            
-        }
         
         
         if ([NKMUser me]) {
@@ -138,6 +130,20 @@ static NKUI * _NKUI = nil;
                 [[NKAccountManager sharedAccountsManager] autoLogin];
             }
         }
+        
+        
+        
+        if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
+            [self showViewControllerWithClass:homeClass];
+            [self showNaviTab];
+        }
+        else {
+            [self showWelcome];
+            
+        }
+        
+        
+        
     }
     
     else{

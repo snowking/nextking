@@ -108,7 +108,7 @@ static NKMUser *_me = nil;
 
 -(NSString*)description{
     
-    return [NSString stringWithFormat:@" <%@> name:%@, id:%@, city:%@, location:%@, sign:%@", NSStringFromClass([self class]), name, mid, city, location, sign];
+    return [NSString stringWithFormat:@" <%@> name:%@, id:%@, city:%@, avatar:%@, sign:%@", NSStringFromClass([self class]), name, mid, city, avatarPath, sign];
 }
 
 -(NSDictionary*)cacheDic{
