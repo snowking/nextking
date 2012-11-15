@@ -49,4 +49,29 @@ static NSString *const NKAPIAddRecord = @"/add";
     
 }
 
+static NSString *const NKAPIListRecordWithUID = @"/user_list";
+-(NKRequest*)listRecordWithUID:(NSString*)uid offset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd{
+    
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIListRecordWithUID];
+    
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeResultSets andResultKey:@""];
+    
+    if (uid) {
+        [newRequest addPostValue:uid forKey:@"id"];
+    }
+    if (offset) {
+        [newRequest addPostValue:[NSNumber numberWithInt:offset] forKey:@"offset"];
+    }
+    if (size) {
+        [newRequest addPostValue:[NSNumber numberWithInt:size] forKey:@"size"];
+    }
+    
+    [self addRequest:newRequest];
+    return newRequest;
+
+}
+
+
+
 @end

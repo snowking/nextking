@@ -13,10 +13,15 @@
 #import "WMMenWikiViewController.h"
 #import "WMSettingViewController.h"
 
+#import "SinaWeibo.h"
+
 @implementation WMAppDelegate
+@synthesize sinaweibo;
+
 
 - (void)dealloc
 {
+    [sinaweibo release];
     [_window release];
     [super dealloc];
 }

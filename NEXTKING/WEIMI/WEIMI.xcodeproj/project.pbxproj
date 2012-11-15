@@ -114,6 +114,11 @@
 		A39A52DC1637DAD700A45E74 /* homepage_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D81637DAD700A45E74 /* homepage_normal@2x.png */; };
 		A3AA563316537EA200163F05 /* WMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA563116537EA200163F05 /* WMSettingViewController.m */; };
 		A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AA563216537EA200163F05 /* WMSettingViewController.xib */; };
+		A3AA56371653804600163F05 /* NKUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA56361653804600163F05 /* NKUserService.m */; };
+		A3AA56451653910200163F05 /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3AA563D1653910200163F05 /* SinaWeibo.bundle */; };
+		A3AA56461653910200163F05 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA563F1653910200163F05 /* SinaWeibo.m */; };
+		A3AA56471653910200163F05 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA56411653910200163F05 /* SinaWeiboAuthorizeView.m */; };
+		A3AA56481653910200163F05 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA56441653910200163F05 /* SinaWeiboRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -286,6 +291,16 @@
 		A3AA563016537EA200163F05 /* WMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingViewController.h; sourceTree = "<group>"; };
 		A3AA563116537EA200163F05 /* WMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingViewController.m; sourceTree = "<group>"; };
 		A3AA563216537EA200163F05 /* WMSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMSettingViewController.xib; sourceTree = "<group>"; };
+		A3AA56351653804600163F05 /* NKUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUserService.h; sourceTree = "<group>"; };
+		A3AA56361653804600163F05 /* NKUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUserService.m; sourceTree = "<group>"; };
+		A3AA563D1653910200163F05 /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinaWeibo.bundle; sourceTree = "<group>"; };
+		A3AA563E1653910200163F05 /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		A3AA563F1653910200163F05 /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		A3AA56401653910200163F05 /* SinaWeiboAuthorizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthorizeView.h; sourceTree = "<group>"; };
+		A3AA56411653910200163F05 /* SinaWeiboAuthorizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthorizeView.m; sourceTree = "<group>"; };
+		A3AA56421653910200163F05 /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		A3AA56431653910200163F05 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		A3AA56441653910200163F05 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +436,8 @@
 			children = (
 				3CC70172164BADC700B139D3 /* NKAccountService.h */,
 				3CC70173164BADC700B139D3 /* NKAccountService.m */,
+				A3AA56351653804600163F05 /* NKUserService.h */,
+				A3AA56361653804600163F05 /* NKUserService.m */,
 				3CC70174164BADC700B139D3 /* NKRecordService.h */,
 				3CC70175164BADC700B139D3 /* NKRecordService.m */,
 				3CC70176164BADC700B139D3 /* NKServiceBase.h */,
@@ -592,6 +609,7 @@
 		A39A4FE81637D08800A45E74 /* WEIMI */ = {
 			isa = PBXGroup;
 			children = (
+				A3AA563C1653910200163F05 /* SinaWeibo */,
 				3CC70137164BADC700B139D3 /* NEXTKING */,
 				A39A52B21637D28300A45E74 /* UI */,
 				A39A4FF11637D08800A45E74 /* WMAppDelegate.h */,
@@ -699,6 +717,22 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		A3AA563C1653910200163F05 /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				A3AA563D1653910200163F05 /* SinaWeibo.bundle */,
+				A3AA563E1653910200163F05 /* SinaWeibo.h */,
+				A3AA563F1653910200163F05 /* SinaWeibo.m */,
+				A3AA56401653910200163F05 /* SinaWeiboAuthorizeView.h */,
+				A3AA56411653910200163F05 /* SinaWeiboAuthorizeView.m */,
+				A3AA56421653910200163F05 /* SinaWeiboConstants.h */,
+				A3AA56431653910200163F05 /* SinaWeiboRequest.h */,
+				A3AA56441653910200163F05 /* SinaWeiboRequest.m */,
+			);
+			name = SinaWeibo;
+			path = "../../../../weibo_ios_sdk_sso-oauth-master/src/SinaWeibo";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -796,6 +830,7 @@
 				3CC7020A164BADC700B139D3 /* puright_click@2x.png in Resources */,
 				3CC7020B164BADC700B139D3 /* puright_normal@2x.png in Resources */,
 				A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */,
+				A3AA56451653910200163F05 /* SinaWeibo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +895,10 @@
 				3CC70213164BADC700B139D3 /* UIImage+Resize.m in Sources */,
 				3CC70214164BADC700B139D3 /* UIImage+RoundedCorner.m in Sources */,
 				A3AA563316537EA200163F05 /* WMSettingViewController.m in Sources */,
+				A3AA56371653804600163F05 /* NKUserService.m in Sources */,
+				A3AA56461653910200163F05 /* SinaWeibo.m in Sources */,
+				A3AA56471653910200163F05 /* SinaWeiboAuthorizeView.m in Sources */,
+				A3AA56481653910200163F05 /* SinaWeiboRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
