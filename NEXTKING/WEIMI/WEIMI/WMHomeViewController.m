@@ -14,6 +14,14 @@
 
 @implementation WMHomeViewController
 
+@synthesize avatar;
+
+-(void)dealloc{
+    
+    
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,7 +36,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.titleLabel.text = @"我的密友";
+    self.titleLabel.text = @"蜜们";
+    
+    
+    self.avatar = [[[NKKVOImageView alloc] initWithFrame:CGRectMake(0, 44, 90, 90)] autorelease];
+    [self.contentView addSubview:avatar];
+    
+    [avatar bindValueOfModel:[NKMUser me] forKeyPath:@"avatar"];
 }
 
 - (void)didReceiveMemoryWarning

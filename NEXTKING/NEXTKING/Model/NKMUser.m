@@ -388,7 +388,7 @@ static NKMUser *_me = nil;
     }
     self.downloadingAvatar = YES;
     
-    NSString *finalString = [NSString stringWithFormat:@"http:%@",self.avatarPath];
+    NSString *finalString = self.avatarPath;
     
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URNKithUnEncodeString:self.avatarPath]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URLWithString:finalString]];

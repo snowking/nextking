@@ -18,3 +18,4 @@
 #import "NKSwitch.h"
 #import "NKTableViewCell.h"
 #import "NKTextField.h"
+#import "UIColor+HexString.h"

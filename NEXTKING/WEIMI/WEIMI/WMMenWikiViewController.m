@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.titleLabel.text = @"男人百科";
+    self.titleLabel.text = @"八卦百科";
     
     
     

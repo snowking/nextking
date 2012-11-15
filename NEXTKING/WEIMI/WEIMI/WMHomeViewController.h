@@ -8,6 +8,12 @@
 
 #import "NKTableViewController.h"
 
-@interface WMHomeViewController : NKTableViewController
+@interface WMHomeViewController : NKTableViewController{
+    
+    NKKVOImageView *avatar;
+    
+}
+
+@property (nonatomic, assign) NKKVOImageView *avatar;
 
 @end

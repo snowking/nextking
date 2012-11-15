@@ -58,6 +58,17 @@
     [navi setNavigationBarHidden:YES];
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
+    
+    
+    sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:nil];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
+    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+    {
+        sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
+        sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
+        sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+    }
 
     return YES;
 }
@@ -82,11 +93,22 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     [self.sinaweibo applicationDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [self.sinaweibo handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [self.sinaweibo handleOpenURL:url];
 }
 
 @end

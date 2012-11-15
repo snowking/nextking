@@ -19,4 +19,6 @@ dshared(NKAccountService);
 
 -(NKRequest*)logoutWithRequestDelegate:(NKRequestDelegate*)rd;
 
+-(NKRequest*)registerWithUsername:(NSString*)username password:(NSString*)password name:(NSString*)name avatar:(NSString*)avatar andRequestDelegate:(NKRequestDelegate*)rd;
+
 @end

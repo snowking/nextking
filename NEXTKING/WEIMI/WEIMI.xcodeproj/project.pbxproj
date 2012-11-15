@@ -84,6 +84,8 @@
 		3CC70212164BADC700B139D3 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C3164BADC700B139D3 /* UIImage+Alpha.m */; };
 		3CC70213164BADC700B139D3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C5164BADC700B139D3 /* UIImage+Resize.m */; };
 		3CC70214164BADC700B139D3 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C7164BADC700B139D3 /* UIImage+RoundedCorner.m */; };
+		A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */; };
+		A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */; };
 		A39A4FE31637D08800A45E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE21637D08800A45E74 /* UIKit.framework */; };
 		A39A4FE51637D08800A45E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE41637D08800A45E74 /* Foundation.framework */; };
 		A39A4FE71637D08800A45E74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE61637D08800A45E74 /* CoreGraphics.framework */; };
@@ -252,6 +254,9 @@
 		3CC701C5164BADC700B139D3 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		3CC701C6164BADC700B139D3 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		3CC701C7164BADC700B139D3 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWeiboRegisterViewController.h; sourceTree = "<group>"; };
+		A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWeiboRegisterViewController.m; sourceTree = "<group>"; };
+		A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWeiboRegisterViewController.xib; sourceTree = "<group>"; };
 		A39A4FDE1637D08800A45E74 /* WEIMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEIMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39A4FE21637D08800A45E74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A39A4FE41637D08800A45E74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -682,6 +687,9 @@
 				A39A52C61637D5A000A45E74 /* WMLoginViewController.h */,
 				A39A52C71637D5A000A45E74 /* WMLoginViewController.m */,
 				A39A52C81637D5A000A45E74 /* WMLoginViewController.xib */,
+				A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */,
+				A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */,
+				A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */,
 			);
 			name = LoginRegister;
 			sourceTree = "<group>";
@@ -831,6 +839,7 @@
 				3CC7020B164BADC700B139D3 /* puright_normal@2x.png in Resources */,
 				A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */,
 				A3AA56451653910200163F05 /* SinaWeibo.bundle in Resources */,
+				A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,6 +908,7 @@
 				A3AA56461653910200163F05 /* SinaWeibo.m in Sources */,
 				A3AA56471653910200163F05 /* SinaWeiboAuthorizeView.m in Sources */,
 				A3AA56481653910200163F05 /* SinaWeiboRequest.m in Sources */,
+				A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
