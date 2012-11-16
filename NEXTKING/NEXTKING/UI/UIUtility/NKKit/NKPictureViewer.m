@@ -72,16 +72,20 @@
     
     UIImageView *imageView = (UIImageView*)view;
     CGSize imageSize = [[imageView image] size];
-    if (imageSize.width>=imageSize.height) {
-        frameInWindow.size.width = frameInWindow.size.width*imageSize.width/imageSize.height;
+    
+    if (imageSize.width/imageSize.height >= imageView.bounds.size.width/imageView.bounds.size.height) {
+        
+        frameInWindow.size.height = imageView.bounds.size.height;
+        frameInWindow.size.width = imageSize.width/imageSize.height*imageView.bounds.size.height;
         frameInWindow.origin.x -= (frameInWindow.size.width-view.bounds.size.width)/2;
+        
     }
     else {
-        frameInWindow.size.height = imageSize.height*frameInWindow.size.width/imageSize.width;
+        frameInWindow.size.width = imageView.bounds.size.width;
+        frameInWindow.size.height = imageSize.height/imageSize.width*imageView.bounds.size.width;
         frameInWindow.origin.y -= (frameInWindow.size.height-view.bounds.size.height)/2;
     }
-    
-    
+
     NKPictureViewer *viewer = [NKPictureViewer pictureViewerWithFrame:frameInWindow];
     [topWindow addSubview:viewer];
     
@@ -122,7 +126,7 @@
             
             CGRect imageViewFrame = imageView.frame;
             CGSize imageSize = [[imageView image] size];
-            if (imageSize.width/imageSize.height > self.bounds.size.width/self.bounds.size.height) {
+            if (imageSize.width/imageSize.height >= self.bounds.size.width/self.bounds.size.height) {
                 imageViewFrame.size.width = self.bounds.size.width;
                 imageViewFrame.size.height = imageSize.height/imageSize.width*self.bounds.size.width;
             }
