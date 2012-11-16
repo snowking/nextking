@@ -50,7 +50,7 @@
         timeString = [NSString stringWithFormat:@"%@分钟前", timeString];
     }
     else {
-        NSDate *publishDate = [[NSDate alloc] initWithTimeInterval:-spacingTime sinceDate:nowDate];
+        NSDate *publishDate = [NSDate dateWithTimeInterval:-spacingTime sinceDate:nowDate];
         NSDateFormatter *formatter =[[[NSDateFormatter alloc] init] autorelease];
         [formatter setDateFormat:@"yyyy-MM-dd hh:mm"];
         NSString *publishDateString = [formatter stringFromDate:publishDate];
@@ -62,10 +62,9 @@
             timeString = [NSString stringWithFormat:@"今天 %@", [publishDateString substringFromIndex:11]];
         }
         if ([nowYearString isEqualToString:publishYearString]) {
-            publishDateString = [publishDateString substringFromIndex:11];
+            timeString = [publishDateString substringFromIndex:11];
         }
         //timeString = [NSString stringWithFormat:@"%@", publishDateString];
-        [publishDate release];
     }
     
     return timeString;

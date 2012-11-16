@@ -31,6 +31,7 @@
 -(void)bindValueOfModel:(id)mo forKeyPath:(NSString*)key{
     self.image = nil;
     [modelObject removeObserver:self forKeyPath:theKeyPath];
+    //[modelObject setValue:nil forKeyPath:key];
     
     self.modelObject = mo;
     self.theKeyPath = key;

@@ -163,7 +163,7 @@
     [headback release];
     headback.center = CGPointMake(maskView.bounds.size.width/2, 34);
     
-    self.input = [[UITextField alloc] initWithFrame:CGRectMake(maskView.frame.origin.x +25, maskView.frame.origin.y + headback.center.y-10, 150, 20)];
+    self.input = [[[UITextField alloc] initWithFrame:CGRectMake(maskView.frame.origin.x +25, maskView.frame.origin.y + headback.center.y-10, 150, 20)] autorelease];
     [self.contentView addSubview:input];
     [input release];
     input.placeholder = placeHolder;
