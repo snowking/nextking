@@ -39,7 +39,7 @@
 }
 
 
-+(id)newSwitchWithMasker:(UIImage*)maskerImage handler:(id)handlers valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg{
++(id)switchWithMasker:(UIImage*)maskerImage handler:(id)handlers valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg{
     
     UIImageView *maskView = [[UIImageView alloc] initWithImage:maskerImage];
     
@@ -109,10 +109,10 @@
     return [newSwitch autorelease];
 }
 
-+(id)newSwitchWithMasker:(UIImage*)maskerImage valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg{
++(id)switchWithMasker:(UIImage*)maskerImage valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg{
     
     
-    return [self newSwitchWithMasker:maskerImage handler:nil valuer:valuerImage leftBlink:blinkL rightBlink:blinkR leftPoint:pointL rightPoint:pointR andDelegate:deleg];
+    return [self switchWithMasker:maskerImage handler:nil valuer:valuerImage leftBlink:blinkL rightBlink:blinkR leftPoint:pointL rightPoint:pointR andDelegate:deleg];
 }
 
 

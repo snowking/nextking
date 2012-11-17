@@ -41,8 +41,8 @@
 @property (nonatomic, assign) CGPoint  rightPoint;
 
 
-+(id)newSwitchWithMasker:(UIImage*)maskerImage valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg;
-+(id)newSwitchWithMasker:(UIImage*)maskerImage handler:(id)handlers valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg;
++(id)switchWithMasker:(UIImage*)maskerImage valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg;
++(id)switchWithMasker:(UIImage*)maskerImage handler:(id)handlers valuer:(UIImage*)valuerImage leftBlink:(id)blinkL rightBlink:(id)blinkR leftPoint:(CGPoint)pointL rightPoint:(CGPoint)pointR andDelegate:(id<NKSwitchDelegate>)deleg;
 
 
 -(void)switchOn:(BOOL)son animated:(BOOL)animated;
