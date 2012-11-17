@@ -34,40 +34,41 @@
 
 + (NSString *)newIntervalSinceNowWithLongLong:(long long)milliseconds
 {
-    NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:0];
-    NSTimeInterval nowTime = [nowDate timeIntervalSince1970] * 1;
-    NSTimeInterval publishTime = milliseconds/1000.0;
-    NSTimeInterval spacingTime = nowTime - publishTime;
-    
-    NSString *timeString = @"";
-    
-    if (spacingTime < 60) {
-        timeString = [NSString stringWithFormat:@"刚刚"];
-    }
-    else if (spacingTime >= 60 && spacingTime < 3600) {
-        timeString = [NSString stringWithFormat:@"%f", spacingTime/60];
-        timeString = [timeString substringToIndex:timeString.length-7];
-        timeString = [NSString stringWithFormat:@"%@分钟前", timeString];
-    }
-    else {
-        NSDate *publishDate = [NSDate dateWithTimeInterval:-spacingTime sinceDate:nowDate];
-        NSDateFormatter *formatter =[[[NSDateFormatter alloc] init] autorelease];
-        [formatter setDateFormat:@"yyyy-MM-dd hh:mm"];
-        NSString *publishDateString = [formatter stringFromDate:publishDate];
-        NSString *publishYearString = [publishDateString substringToIndex:4];
-        NSString *nowYearString = [[formatter stringFromDate:nowDate] substringToIndex:4];
-        NSString *nowDayString = [[formatter stringFromDate:nowDate] substringWithRange:NSMakeRange(8,2)];
-        NSString *publishDayString = [publishDateString substringWithRange:NSMakeRange(8,2)];
-        if ([publishDayString isEqualToString:nowDayString]) {
-            timeString = [NSString stringWithFormat:@"今天 %@", [publishDateString substringFromIndex:11]];
-        }
-        if ([nowYearString isEqualToString:publishYearString]) {
-            timeString = [publishDateString substringFromIndex:11];
-        }
-        //timeString = [NSString stringWithFormat:@"%@", publishDateString];
-    }
-    
-    return timeString;
+//    NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:0];
+//    NSTimeInterval nowTime = [nowDate timeIntervalSince1970] * 1;
+//    NSTimeInterval publishTime = milliseconds/1000.0;
+//    NSTimeInterval spacingTime = nowTime - publishTime;
+//    
+//    NSString *timeString = @"";
+//    
+//    if (spacingTime < 60) {
+//        timeString = [NSString stringWithFormat:@"刚刚"];
+//    }
+//    else if (spacingTime >= 60 && spacingTime < 3600) {
+//        timeString = [NSString stringWithFormat:@"%f", spacingTime/60];
+//        timeString = [timeString substringToIndex:timeString.length-7];
+//        timeString = [NSString stringWithFormat:@"%@分钟前", timeString];
+//    }
+//    else {
+//        NSDate *publishDate = [NSDate dateWithTimeInterval:-spacingTime sinceDate:nowDate];
+//        NSDateFormatter *formatter =[[[NSDateFormatter alloc] init] autorelease];
+//        [formatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+//        NSString *publishDateString = [formatter stringFromDate:publishDate];
+//        NSString *publishYearString = [publishDateString substringToIndex:4];
+//        NSString *nowYearString = [[formatter stringFromDate:nowDate] substringToIndex:4];
+//        NSString *nowDayString = [[formatter stringFromDate:nowDate] substringWithRange:NSMakeRange(8,2)];
+//        NSString *publishDayString = [publishDateString substringWithRange:NSMakeRange(8,2)];
+//        if ([publishDayString isEqualToString:nowDayString]) {
+//            timeString = [NSString stringWithFormat:@"今天 %@", [publishDateString substringFromIndex:11]];
+//        }
+//        if ([nowYearString isEqualToString:publishYearString]) {
+//            timeString = [publishDateString substringFromIndex:11];
+//        }
+//        //timeString = [NSString stringWithFormat:@"%@", publishDateString];
+//    }
+//    
+//    return timeString;
+    return nil;
 	
 }
 
