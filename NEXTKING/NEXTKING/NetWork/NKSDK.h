@@ -11,6 +11,7 @@
 #import "ASINetworkQueue.h"
 #import "NKAccountService.h"
 #import "NKRecordService.h"
+#import "NKUserService.h"
 
 @interface NKSDK : NSObject{
     

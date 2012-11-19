@@ -22,6 +22,7 @@ dshared(NKUserService);
 
 
 -(NKRequest*)listFriendsWithUID:(NSString*)uid andRequestDelegate:(NKRequestDelegate*)rd;
+-(NKRequest*)inviteUserWithEmail:(NSString*)email andRequestDelegate:(NKRequestDelegate*)rd;
 
 -(NKRequest*)setAvatarWithAvatar:(NSData*)avatar avatarPath:(NSString*)avatarPath andRequestDelegate:(NKRequestDelegate*)rd;
 

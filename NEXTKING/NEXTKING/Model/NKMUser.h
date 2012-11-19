@@ -14,6 +14,10 @@ typedef enum{
 }NKMUserCreateType;
 
 
+extern NSString *const NKRelationFriend;
+extern NSString *const NKRelationFollow;
+extern NSString *const NKRelationFollower;
+
 extern NSString *const NKGenderKeyMale;
 extern NSString *const NKGenderKeyFemale;
 extern NSString *const NKGenderKeyUnknown;
@@ -51,6 +55,9 @@ extern NSString *const NKGenderKeyUnknown;
 #endif
     
     
+    NSString *relation;
+    
+    
     
 }
 
@@ -79,6 +86,8 @@ extern NSString *const NKGenderKeyUnknown;
 #else
 @property (nonatomic, retain) NSImage  *avatar;
 #endif
+
+@property (nonatomic, retain) NSString *relation;
 
 +(id)userFromDic:(NSDictionary*)dic;
 

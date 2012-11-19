@@ -84,6 +84,11 @@
 		3CC70212164BADC700B139D3 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C3164BADC700B139D3 /* UIImage+Alpha.m */; };
 		3CC70213164BADC700B139D3 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C5164BADC700B139D3 /* UIImage+Resize.m */; };
 		3CC70214164BADC700B139D3 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC701C7164BADC700B139D3 /* UIImage+RoundedCorner.m */; };
+		A312FA421659D9490098A02D /* WMMiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A312FA401659D9490098A02D /* WMMiViewController.m */; };
+		A312FA431659D9490098A02D /* WMMiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A312FA411659D9490098A02D /* WMMiViewController.xib */; };
+		A312FA481659D9E80098A02D /* WMInviteMiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A312FA461659D9E80098A02D /* WMInviteMiViewController.m */; };
+		A312FA491659D9E80098A02D /* WMInviteMiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A312FA471659D9E80098A02D /* WMInviteMiViewController.xib */; };
+		A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */; };
 		A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */; };
 		A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */; };
 		A39A4FE31637D08800A45E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE21637D08800A45E74 /* UIKit.framework */; };
@@ -254,6 +259,13 @@
 		3CC701C5164BADC700B139D3 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		3CC701C6164BADC700B139D3 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		3CC701C7164BADC700B139D3 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		A312FA3F1659D9490098A02D /* WMMiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMiViewController.h; sourceTree = "<group>"; };
+		A312FA401659D9490098A02D /* WMMiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMiViewController.m; sourceTree = "<group>"; };
+		A312FA411659D9490098A02D /* WMMiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMMiViewController.xib; sourceTree = "<group>"; };
+		A312FA451659D9E80098A02D /* WMInviteMiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMInviteMiViewController.h; sourceTree = "<group>"; };
+		A312FA461659D9E80098A02D /* WMInviteMiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMInviteMiViewController.m; sourceTree = "<group>"; };
+		A312FA471659D9E80098A02D /* WMInviteMiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMInviteMiViewController.xib; sourceTree = "<group>"; };
+		A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@2x.png"; sourceTree = "<group>"; };
 		A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWeiboRegisterViewController.h; sourceTree = "<group>"; };
 		A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWeiboRegisterViewController.m; sourceTree = "<group>"; };
 		A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWeiboRegisterViewController.xib; sourceTree = "<group>"; };
@@ -657,6 +669,12 @@
 				A39A52B41637D2A600A45E74 /* WMHomeViewController.h */,
 				A39A52B51637D2A600A45E74 /* WMHomeViewController.m */,
 				A39A52B61637D2A600A45E74 /* WMHomeViewController.xib */,
+				A312FA451659D9E80098A02D /* WMInviteMiViewController.h */,
+				A312FA461659D9E80098A02D /* WMInviteMiViewController.m */,
+				A312FA471659D9E80098A02D /* WMInviteMiViewController.xib */,
+				A312FA3F1659D9490098A02D /* WMMiViewController.h */,
+				A312FA401659D9490098A02D /* WMMiViewController.m */,
+				A312FA411659D9490098A02D /* WMMiViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -697,6 +715,7 @@
 		A39A52CF1637D8E000A45E74 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */,
 				A39A52D51637DAD700A45E74 /* line_click@2x.png */,
 				A39A52D61637DAD700A45E74 /* line_normal@2x.png */,
 				A39A52D71637DAD700A45E74 /* homepage_click@2x.png */,
@@ -840,6 +859,9 @@
 				A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */,
 				A3AA56451653910200163F05 /* SinaWeibo.bundle in Resources */,
 				A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */,
+				A312FA431659D9490098A02D /* WMMiViewController.xib in Resources */,
+				A312FA491659D9E80098A02D /* WMInviteMiViewController.xib in Resources */,
+				A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +931,8 @@
 				A3AA56471653910200163F05 /* SinaWeiboAuthorizeView.m in Sources */,
 				A3AA56481653910200163F05 /* SinaWeiboRequest.m in Sources */,
 				A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */,
+				A312FA421659D9490098A02D /* WMMiViewController.m in Sources */,
+				A312FA481659D9E80098A02D /* WMInviteMiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,11 @@
 
 #import "NKMUser.h"
 
+
+NSString *const NKRelationFriend = @"friend";
+NSString *const NKRelationFollow = @"follow";
+NSString *const NKRelationFollower = @"follower";
+
 NSString *const NKGenderKeyMale = @"male";
 NSString *const NKGenderKeyFemale = @"female";
 NSString *const NKGenderKeyUnknown = @"unknown";
@@ -34,6 +39,8 @@ NSString *const NKGenderKeyUnknown = @"unknown";
 @synthesize avatarPath;
 @synthesize avatar;
 
+@synthesize relation;
+
 
 -(void)dealloc{
     
@@ -57,6 +64,7 @@ NSString *const NKGenderKeyUnknown = @"unknown";
     [avatarPath release];
     [avatar release];
     
+    [relation release];
     
     [super dealloc];
 }
@@ -187,6 +195,9 @@ static NKMUser *_me = nil;
     NKBindValueWithKeyForParameterFromDic(@"sign", self.sign, dic);
     NKBindValueWithKeyForParameterFromDic(@"birthday", self.birthday, dic);
     NKBindValueWithKeyForParameterFromDic(@"city", self.city, dic);
+    
+    
+    NKBindValueWithKeyForParameterFromDic(@"relation", self.relation, dic);
     
     /*
      // Friend info

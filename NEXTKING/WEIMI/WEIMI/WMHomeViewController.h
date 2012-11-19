@@ -7,13 +7,24 @@
 //
 
 #import "NKTableViewController.h"
+#import "WMInviteMiViewController.h"
+#import "WMMiViewController.h"
 
-@interface WMHomeViewController : NKTableViewController{
+@interface WMHomeViewController : NKTableViewController <WMInviteDelegate>{
+
+    UIView *avatarContainer;
+    UIView *contentContainer;
     
-    NKKVOImageView *avatar;
+    
+    WMInviteMiViewController *inviteViewController;
+    WMMiViewController *miViewController;
     
 }
 
-@property (nonatomic, assign) NKKVOImageView *avatar;
+@property (nonatomic, assign) UIView *avatarContainer;
+@property (nonatomic, assign) UIView *contentContainer;
+
+@property (nonatomic, retain) WMInviteMiViewController *inviteViewController;
+@property (nonatomic, retain) WMMiViewController *miViewController;
 
 @end

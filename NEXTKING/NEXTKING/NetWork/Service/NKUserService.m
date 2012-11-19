@@ -84,6 +84,23 @@ static NSString *const NKAPIUNFollowUser = @"/unfollow";
     
 }
 
+static NSString *const NKAPIInvite = @"/invite";
+-(NKRequest*)inviteUserWithEmail:(NSString*)email andRequestDelegate:(NKRequestDelegate*)rd{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIInvite];
+    
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMUser class] resultType:NKResultTypeSingleObject andResultKey:@""];
+    
+    if (email) {
+        [newRequest addPostValue:email forKey:@"email"];
+    }
+    
+    [self addRequest:newRequest];
+    return newRequest;
+    
+    
+}
+
 static NSString *const NKAPIListFriends = @"/friend_list";
 -(NKRequest*)listFriendsWithUID:(NSString*)uid andRequestDelegate:(NKRequestDelegate*)rd{
     
