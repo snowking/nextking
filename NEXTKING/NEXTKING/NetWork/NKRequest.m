@@ -105,7 +105,7 @@
     }
     
     //    NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
-   // NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
+    NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
     
     if (tlocalError) {
         self.errorCode = @900002;

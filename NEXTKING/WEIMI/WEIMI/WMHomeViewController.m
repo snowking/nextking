@@ -85,7 +85,9 @@
     self.inviteViewController = nil;
     self.miViewController = [[[WMMiViewController alloc] init] autorelease];
     miViewController.user = user;
+    miViewController.delegate = self;
     miViewController.view.frame = self.view.bounds;
+    miViewController.showTableView.frame = CGRectMake(0, 60, 320, NKContentHeight-60);
     [contentContainer addSubview:miViewController.view];
     
 }
@@ -154,6 +156,19 @@
 
     }
     [self showContentWithUser:user];
+    
+}
+
+-(void)controller:(WMMiViewController*)controller didUnfollowUser:(NKMUser*)user{
+    
+    if ([self.dataSource containsObject:user]) {
+        [self.dataSource removeObject:user];
+    }
+    else{
+        
+    }
+    [self showFriends];
+    [self showContentWithUser:[NKMUser me]];
     
 }
 

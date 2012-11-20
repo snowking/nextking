@@ -10,7 +10,7 @@
 #import "WMInviteMiViewController.h"
 #import "WMMiViewController.h"
 
-@interface WMHomeViewController : NKTableViewController <WMInviteDelegate>{
+@interface WMHomeViewController : NKTableViewController <WMInviteDelegate, WMMiViewControllerDelegate>{
 
     UIView *avatarContainer;
     UIView *contentContainer;

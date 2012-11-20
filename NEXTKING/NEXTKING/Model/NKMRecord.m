@@ -38,7 +38,7 @@
     
     NKMRecord *newRecord = [super modelFromDic:dic];
     
-    newRecord.sender = [NKMUser userFromDic:[dic objectOrNilForKey:@"sender"]];
+    newRecord.sender = [NKMUser userFromDic:[dic objectOrNilForKey:@"user"]];
     
     NKBindValueWithKeyForParameterFromDic(@"title", newRecord.title, dic);
     NKBindValueWithKeyForParameterFromDic(@"content", newRecord.content, dic);

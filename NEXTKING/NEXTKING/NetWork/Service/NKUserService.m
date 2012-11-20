@@ -56,7 +56,7 @@ static NSString *const NKAPIFollowUser = @"/follow";
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIFollowUser];
     
-    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMActionResult class] resultType:NKResultTypeSingleObject andResultKey:@""];
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMUser class] resultType:NKResultTypeSingleObject andResultKey:@""];
     
     if (uid) {
         [newRequest addPostValue:uid forKey:@"id"];
@@ -73,7 +73,7 @@ static NSString *const NKAPIUNFollowUser = @"/unfollow";
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIUNFollowUser];
     
-    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMActionResult class] resultType:NKResultTypeSingleObject andResultKey:@""];
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMUser class] resultType:NKResultTypeSingleObject andResultKey:@""];
     
     if (uid) {
         [newRequest addPostValue:uid forKey:@"id"];

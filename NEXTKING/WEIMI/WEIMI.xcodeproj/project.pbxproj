@@ -91,6 +91,10 @@
 		A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */; };
 		A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */; };
 		A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */; };
+		A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C31165B37D900B06DD3 /* WMFeedCell.m */; };
+		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
+		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
+		A38F8C40165B4CAF00B06DD3 /* NKImagePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C3F165B4CAF00B06DD3 /* NKImagePickerView.m */; };
 		A39A4FE31637D08800A45E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE21637D08800A45E74 /* UIKit.framework */; };
 		A39A4FE51637D08800A45E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE41637D08800A45E74 /* Foundation.framework */; };
 		A39A4FE71637D08800A45E74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE61637D08800A45E74 /* CoreGraphics.framework */; };
@@ -269,6 +273,13 @@
 		A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWeiboRegisterViewController.h; sourceTree = "<group>"; };
 		A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWeiboRegisterViewController.m; sourceTree = "<group>"; };
 		A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWeiboRegisterViewController.xib; sourceTree = "<group>"; };
+		A38F8C30165B37D900B06DD3 /* WMFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedCell.h; sourceTree = "<group>"; };
+		A38F8C31165B37D900B06DD3 /* WMFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedCell.m; sourceTree = "<group>"; };
+		A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPostViewController.h; sourceTree = "<group>"; };
+		A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPostViewController.m; sourceTree = "<group>"; };
+		A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMPostViewController.xib; sourceTree = "<group>"; };
+		A38F8C3E165B4CAF00B06DD3 /* NKImagePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKImagePickerView.h; sourceTree = "<group>"; };
+		A38F8C3F165B4CAF00B06DD3 /* NKImagePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKImagePickerView.m; sourceTree = "<group>"; };
 		A39A4FDE1637D08800A45E74 /* WEIMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEIMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39A4FE21637D08800A45E74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A39A4FE41637D08800A45E74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -591,6 +602,18 @@
 			path = UIImage;
 			sourceTree = "<group>";
 		};
+		A38F8C34165B3B3E00B06DD3 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */,
+				A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */,
+				A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */,
+				A38F8C3E165B4CAF00B06DD3 /* NKImagePickerView.h */,
+				A38F8C3F165B4CAF00B06DD3 /* NKImagePickerView.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
 		A39A4FD31637D08800A45E74 = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +677,7 @@
 		A39A52B21637D28300A45E74 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A38F8C34165B3B3E00B06DD3 /* Post */,
 				A3AA562E16537E8700163F05 /* Setting */,
 				A39A52C51637D57F00A45E74 /* LoginRegister */,
 				A39A52BF1637D2CA00A45E74 /* MenWiki */,
@@ -675,6 +699,8 @@
 				A312FA3F1659D9490098A02D /* WMMiViewController.h */,
 				A312FA401659D9490098A02D /* WMMiViewController.m */,
 				A312FA411659D9490098A02D /* WMMiViewController.xib */,
+				A38F8C30165B37D900B06DD3 /* WMFeedCell.h */,
+				A38F8C31165B37D900B06DD3 /* WMFeedCell.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -862,6 +888,7 @@
 				A312FA431659D9490098A02D /* WMMiViewController.xib in Resources */,
 				A312FA491659D9E80098A02D /* WMInviteMiViewController.xib in Resources */,
 				A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */,
+				A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +960,9 @@
 				A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */,
 				A312FA421659D9490098A02D /* WMMiViewController.m in Sources */,
 				A312FA481659D9E80098A02D /* WMInviteMiViewController.m in Sources */,
+				A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */,
+				A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */,
+				A38F8C40165B4CAF00B06DD3 /* NKImagePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
