@@ -81,9 +81,9 @@
     account.delegate = self;
     password.delegate = self;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    [self.view addGestureRecognizer:tap];
-    [tap release];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+//    [self.contentView addGestureRecognizer:tap];
+//    [tap release];
     
     
     SinaWeibo *sinaweibo = [self sinaweibo];

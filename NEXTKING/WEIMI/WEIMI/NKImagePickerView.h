@@ -11,7 +11,7 @@
 #import "NKSDK.h"
 
 
-@interface NKImagePickerView : UIView
+@interface NKImagePickerView : UIView <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
 @property (nonatomic, assign) UIView            *buttonContainer;

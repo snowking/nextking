@@ -30,9 +30,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-    [self.view addGestureRecognizer:tap];
-    [tap release];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+//    [self.contentView addGestureRecognizer:tap];
+//    [tap release];
     
     
 }

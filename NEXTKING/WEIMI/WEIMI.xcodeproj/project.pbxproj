@@ -95,6 +95,7 @@
 		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
 		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
 		A38F8C40165B4CAF00B06DD3 /* NKImagePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C3F165B4CAF00B06DD3 /* NKImagePickerView.m */; };
+		A38F8C4B165B616100B06DD3 /* NKTextViewWithPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C4A165B616100B06DD3 /* NKTextViewWithPlaceholder.m */; };
 		A39A4FE31637D08800A45E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE21637D08800A45E74 /* UIKit.framework */; };
 		A39A4FE51637D08800A45E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE41637D08800A45E74 /* Foundation.framework */; };
 		A39A4FE71637D08800A45E74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39A4FE61637D08800A45E74 /* CoreGraphics.framework */; };
@@ -280,6 +281,8 @@
 		A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMPostViewController.xib; sourceTree = "<group>"; };
 		A38F8C3E165B4CAF00B06DD3 /* NKImagePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKImagePickerView.h; sourceTree = "<group>"; };
 		A38F8C3F165B4CAF00B06DD3 /* NKImagePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKImagePickerView.m; sourceTree = "<group>"; };
+		A38F8C49165B616000B06DD3 /* NKTextViewWithPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKTextViewWithPlaceholder.h; sourceTree = "<group>"; };
+		A38F8C4A165B616100B06DD3 /* NKTextViewWithPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKTextViewWithPlaceholder.m; sourceTree = "<group>"; };
 		A39A4FDE1637D08800A45E74 /* WEIMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEIMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39A4FE21637D08800A45E74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A39A4FE41637D08800A45E74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -538,6 +541,8 @@
 				3CC701BC164BADC700B139D3 /* NKTableViewCell.m */,
 				3CC701BD164BADC700B139D3 /* NKTextField.h */,
 				3CC701BE164BADC700B139D3 /* NKTextField.m */,
+				A38F8C49165B616000B06DD3 /* NKTextViewWithPlaceholder.h */,
+				A38F8C4A165B616100B06DD3 /* NKTextViewWithPlaceholder.m */,
 			);
 			path = NKKit;
 			sourceTree = "<group>";
@@ -963,6 +968,7 @@
 				A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */,
 				A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */,
 				A38F8C40165B4CAF00B06DD3 /* NKImagePickerView.m in Sources */,
+				A38F8C4B165B616100B06DD3 /* NKTextViewWithPlaceholder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,3 +19,4 @@
 #import "NKTableViewCell.h"
 #import "NKTextField.h"
 #import "UIColor+HexString.h"
+#import "NKTextViewWithPlaceholder.h"

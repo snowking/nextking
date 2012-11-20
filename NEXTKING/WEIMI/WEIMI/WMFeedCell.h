@@ -8,6 +8,12 @@
 
 #import "NKTableViewCell.h"
 
-@interface WMFeedCell : NKTableViewCell
+@interface WMFeedCell : NKTableViewCell{
+    
+    
+    NKKVOImageView *picture;
+}
+
+@property (nonatomic, assign) NKKVOImageView *picture;
 
 @end

@@ -8,17 +8,18 @@
 
 #import "NKViewController.h"
 
-@interface WMPostViewController : NKViewController{
+extern NSString *const NKAddFeedOKNotificationKey;
+
+
+@interface WMPostViewController : NKViewController<UITextViewDelegate>{
     
-    UITextView *content;
-    
-    
-    
+    NKTextViewWithPlaceholder *content;
+
     
 }
 
 
-
+@property (nonatomic, assign) NKTextViewWithPlaceholder *content;
 
 
 @end

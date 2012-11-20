@@ -20,6 +20,8 @@
 
 -(void)dealloc{
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NKAddFeedOKNotificationKey object:nil];
+    
     [user release];
     [super dealloc];
 }
@@ -29,8 +31,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addFeedOK:) name:NKAddFeedOKNotificationKey object:nil];
     }
     return self;
+}
+
+-(void)addFeedOK:(NSNotification*)noti{
+    
+    [self.dataSource insertObject:[noti object] atIndex:0];
+    
+    [showTableView reloadData];
 }
 
 - (void)viewDidLoad
