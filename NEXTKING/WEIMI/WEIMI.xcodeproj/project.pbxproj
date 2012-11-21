@@ -126,6 +126,8 @@
 		A38171A7165C7DE90013E64F /* NKEmojoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171A6165C7DE90013E64F /* NKEmojoView.m */; };
 		A38171AA165C7DFE0013E64F /* NKInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171A9165C7DFE0013E64F /* NKInputView.m */; };
 		A38171AC165C7F420013E64F /* emojo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A38171AB165C7F420013E64F /* emojo.plist */; };
+		A38171B2165C7FBC0013E64F /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171AF165C7FBC0013E64F /* HPGrowingTextView.m */; };
+		A38171B3165C7FBC0013E64F /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171B1165C7FBC0013E64F /* HPTextViewInternal.m */; };
 		A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C31165B37D900B06DD3 /* WMFeedCell.m */; };
 		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
 		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
@@ -348,6 +350,10 @@
 		A38171A8165C7DFE0013E64F /* NKInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKInputView.h; sourceTree = "<group>"; };
 		A38171A9165C7DFE0013E64F /* NKInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKInputView.m; sourceTree = "<group>"; };
 		A38171AB165C7F420013E64F /* emojo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojo.plist; sourceTree = "<group>"; };
+		A38171AE165C7FBC0013E64F /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
+		A38171AF165C7FBC0013E64F /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
+		A38171B0165C7FBC0013E64F /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
+		A38171B1165C7FBC0013E64F /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
 		A38F8C30165B37D900B06DD3 /* WMFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedCell.h; sourceTree = "<group>"; };
 		A38F8C31165B37D900B06DD3 /* WMFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedCell.m; sourceTree = "<group>"; };
 		A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPostViewController.h; sourceTree = "<group>"; };
@@ -576,6 +582,7 @@
 				3CC70187164BADC700B139D3 /* NKKit */,
 				3CC701BF164BADC700B139D3 /* UIColor+HexString.h */,
 				3CC701C0164BADC700B139D3 /* UIColor+HexString.m */,
+				A38171AD165C7FBC0013E64F /* HPGrowingTextView */,
 				3CC701C1164BADC700B139D3 /* UIImage */,
 			);
 			path = UIUtility;
@@ -737,6 +744,17 @@
 				A3817180165C7DB40013E64F /* emojoback@2x.png */,
 			);
 			path = Emojo;
+			sourceTree = "<group>";
+		};
+		A38171AD165C7FBC0013E64F /* HPGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				A38171AE165C7FBC0013E64F /* HPGrowingTextView.h */,
+				A38171AF165C7FBC0013E64F /* HPGrowingTextView.m */,
+				A38171B0165C7FBC0013E64F /* HPTextViewInternal.h */,
+				A38171B1165C7FBC0013E64F /* HPTextViewInternal.m */,
+			);
+			path = HPGrowingTextView;
 			sourceTree = "<group>";
 		};
 		A38F8C34165B3B3E00B06DD3 /* Post */ = {
@@ -1141,6 +1159,8 @@
 				A3817166165C7A2C0013E64F /* ZUOCommentCell.m in Sources */,
 				A38171A7165C7DE90013E64F /* NKEmojoView.m in Sources */,
 				A38171AA165C7DFE0013E64F /* NKInputView.m in Sources */,
+				A38171B2165C7FBC0013E64F /* HPGrowingTextView.m in Sources */,
+				A38171B3165C7FBC0013E64F /* HPTextViewInternal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
