@@ -19,12 +19,8 @@ $singleService(NKRecordService, @"record");
 
 #pragma mark Add
 static NSString *const NKAPIAddRecord = @"/add";
--(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture andRequestDelegate:(NKRequestDelegate*)rd{
-    
-    return [self addRecordWithTitle:title content:content picture:picture parentID:nil andRequestDelegate:rd];
-}
 
--(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID andRequestDelegate:(NKRequestDelegate*)rd{
+-(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd{
     
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIAddRecord];
@@ -32,6 +28,9 @@ static NSString *const NKAPIAddRecord = @"/add";
     NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeSingleObject andResultKey:@""];
     if (title) {
         [newRequest addPostValue:title forKey:@"title"];
+    }
+    if (type) {
+        [newRequest addPostValue:type forKey:@"type"];
     }
     if (content) {
         [newRequest addPostValue:content forKey:@"content"];
@@ -80,7 +79,7 @@ static NSString *const NKAPIListRecordWithPID = @"/children_list";
     NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeResultSets andResultKey:@""];
     
     if (pid) {
-        [newRequest addPostValue:pid forKey:@"parent_id"];
+        [newRequest addPostValue:pid forKey:@"id"];
     }
     if (offset) {
         [newRequest addPostValue:[NSNumber numberWithInt:offset] forKey:@"offset"];

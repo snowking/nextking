@@ -76,8 +76,9 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
     if ([cachedFeed.content length]<=0 && !image) {
         return;
     }
+    
     NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(postOK:) andFailedSelector:@selector(postFailed:)];
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:cachedFeed.content picture:picData parentID:nil andRequestDelegate:rd];
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:cachedFeed.content picture:picData parentID:nil type:NKRecordTypeFeed andRequestDelegate:rd];
     
 }
 

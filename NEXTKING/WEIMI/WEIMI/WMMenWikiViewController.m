@@ -38,7 +38,7 @@
 
 -(void)addRecord{
     
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:@"Image" content:@"图片啊" picture:UIImageJPEGRepresentation([UIImage imageNamed:@"appBackground.png"], 0.5) andRequestDelegate:[NKRequestDelegate requestDelegateWithTarget:self  finishSelector:@selector(addRecordOK:) andFailedSelector:@selector(addRecordFailed:)]];
+    
     
 }
 

@@ -15,6 +15,7 @@
 
 @implementation WMFeedDetailViewController
 @synthesize record;
+@synthesize commentView;
 
 -(void)dealloc{
     
@@ -45,14 +46,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:nil];
+    [self.view addGestureRecognizer:pan];
+    pan.delegate = self;
+    [pan release];
+    
+    
     // Do any additional setup after loading the view from its nib.
     [self addBackButton];
     
     self.titleLabel.text = @"详细内容";
     
     UIView *tableViewHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    self.showTableView.tableHeaderView = tableViewHeader;
-    [tableViewHeader release];
+    
     
     
     NKKVOImageView *avatar = [[NKKVOImageView alloc] initWithFrame:CGRectMake(6, 6, 48, 48)];
@@ -89,6 +97,18 @@
         
     }
     
+    self.showTableView.tableHeaderView = tableViewHeader;
+    [tableViewHeader release];
+
+    
+    self.commentView = [NKInputView inputViewWithTableView:self.showTableView dataSource:self.dataSource otherView:nil];
+    [self.contentView addSubview:commentView];
+    commentView.target = self;
+    commentView.action = @selector(addComment:);
+    
+    
+    
+    
     [self refreshData];
     
 }
@@ -116,6 +136,10 @@
     
 }
 
+-(void)setPullBackFrame{
+    
+    commentView.dataSource = self.dataSource;
+}
 
 #pragma mark TableView
 
@@ -150,6 +174,46 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
+}
+
+
+#pragma mark Add Comment
+
+-(void)addComment:(NSString*)content{
+    
+    NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(addCommentOK:) andFailedSelector:@selector(addCommentFailed:)];
+    
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:content picture:nil parentID:self.record.mid type:nil andRequestDelegate:rd];
+    
+}
+
+
+-(void)addCommentOK:(NKRequest*)request{
+    
+    [self.dataSource addObject:[request.results lastObject]];
+    
+    NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:[self.dataSource count]-1 inSection:0];
+    
+    [showTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:lastIndex] withRowAnimation:UITableViewRowAnimationFade];
+    [showTableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [self setPullBackFrame];
+    [commentView sendOK];
+}
+
+-(void)addCommentFailed:(NKRequest*)request{
+    
+    
+}
+
+#pragma mark Gesture
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    if ([[otherGestureRecognizer view] isKindOfClass:[UITableView class]]) {
+        [commentView hide];
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

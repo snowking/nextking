@@ -10,6 +10,11 @@
 #import "NKMUser.h"
 #import "NKMAttachment.h"
 
+
+extern NSString *const NKRecordTypeFeed;
+extern NSString *const NKRecordTypeGroup;
+
+
 @interface NKMRecord : NKModel{
     
     NKMUser  *sender;

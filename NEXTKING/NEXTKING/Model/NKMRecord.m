@@ -9,6 +9,9 @@
 #import "NKMRecord.h"
 
 
+NSString *const NKRecordTypeFeed = @"feed";
+NSString *const NKRecordTypeGroup = @"group";
+
 @implementation NKMRecord
 
 @synthesize sender;

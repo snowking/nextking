@@ -20,3 +20,4 @@
 #import "NKTextField.h"
 #import "UIColor+HexString.h"
 #import "NKTextViewWithPlaceholder.h"
+#import "NKInputView.h"

@@ -8,11 +8,15 @@
 
 #import "NKTableViewController.h"
 
-@interface WMFeedDetailViewController : NKTableViewController{
+@interface WMFeedDetailViewController : NKTableViewController <UIGestureRecognizerDelegate>{
     
     NKMRecord *record;
+    NKInputView *commentView;
+    
+    
 }
 @property (nonatomic, retain) NKMRecord *record;
+@property (nonatomic, assign) NKInputView *commentView;
 
 
 +(id)feedDetailWithRecord:(NKMRecord*)theRecord;

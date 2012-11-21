@@ -13,8 +13,7 @@
 dshared(NKRecordService);
 
 #pragma mark Add
--(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture andRequestDelegate:(NKRequestDelegate*)rd;
--(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID andRequestDelegate:(NKRequestDelegate*)rd;
+-(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd;
 
 
 
