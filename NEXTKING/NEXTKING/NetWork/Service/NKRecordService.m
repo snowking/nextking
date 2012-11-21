@@ -93,6 +93,24 @@ static NSString *const NKAPIListRecordWithPID = @"/children_list";
 
     
 }
+static NSString *const NKAPIListAllWiki = @"/wiki_list";
+-(NKRequest*)listAllWikiWithOffset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIListAllWiki];
+    
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeResultSets andResultKey:@""];
+    
+    if (offset) {
+        [newRequest addPostValue:[NSNumber numberWithInt:offset] forKey:@"offset"];
+    }
+    if (size) {
+        [newRequest addPostValue:[NSNumber numberWithInt:size] forKey:@"size"];
+    }
+    
+    [self addRequest:newRequest];
+    return newRequest;
+    
+}
 
 
 @end

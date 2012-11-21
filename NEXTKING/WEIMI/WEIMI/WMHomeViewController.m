@@ -42,8 +42,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [headBar removeFromSuperview];
-    headBar = nil;
+    headBar.hidden = YES;
     
     self.contentContainer = [[[UIView alloc] initWithFrame:self.contentView.bounds] autorelease];
     [self.contentView addSubview:contentContainer];

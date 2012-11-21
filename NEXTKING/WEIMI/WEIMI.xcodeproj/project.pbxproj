@@ -128,6 +128,11 @@
 		A38171AC165C7F420013E64F /* emojo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A38171AB165C7F420013E64F /* emojo.plist */; };
 		A38171B2165C7FBC0013E64F /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171AF165C7FBC0013E64F /* HPGrowingTextView.m */; };
 		A38171B3165C7FBC0013E64F /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171B1165C7FBC0013E64F /* HPTextViewInternal.m */; };
+		A38171B7165CA0DA0013E64F /* WMWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171B5165CA0DA0013E64F /* WMWikiViewController.m */; };
+		A38171B8165CA0DA0013E64F /* WMWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38171B6165CA0DA0013E64F /* WMWikiViewController.xib */; };
+		A38171BC165CAF090013E64F /* WMRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171BA165CAF090013E64F /* WMRateViewController.m */; };
+		A38171BD165CAF090013E64F /* WMRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38171BB165CAF090013E64F /* WMRateViewController.xib */; };
+		A38171C0165CB6EA0013E64F /* WMRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171BF165CB6EA0013E64F /* WMRateCell.m */; };
 		A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C31165B37D900B06DD3 /* WMFeedCell.m */; };
 		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
 		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
@@ -354,6 +359,14 @@
 		A38171AF165C7FBC0013E64F /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		A38171B0165C7FBC0013E64F /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
 		A38171B1165C7FBC0013E64F /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
+		A38171B4165CA0DA0013E64F /* WMWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWikiViewController.h; sourceTree = "<group>"; };
+		A38171B5165CA0DA0013E64F /* WMWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWikiViewController.m; sourceTree = "<group>"; };
+		A38171B6165CA0DA0013E64F /* WMWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWikiViewController.xib; sourceTree = "<group>"; };
+		A38171B9165CAF080013E64F /* WMRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMRateViewController.h; sourceTree = "<group>"; };
+		A38171BA165CAF090013E64F /* WMRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMRateViewController.m; sourceTree = "<group>"; };
+		A38171BB165CAF090013E64F /* WMRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMRateViewController.xib; sourceTree = "<group>"; };
+		A38171BE165CB6EA0013E64F /* WMRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMRateCell.h; sourceTree = "<group>"; };
+		A38171BF165CB6EA0013E64F /* WMRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMRateCell.m; sourceTree = "<group>"; };
 		A38F8C30165B37D900B06DD3 /* WMFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedCell.h; sourceTree = "<group>"; };
 		A38F8C31165B37D900B06DD3 /* WMFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedCell.m; sourceTree = "<group>"; };
 		A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPostViewController.h; sourceTree = "<group>"; };
@@ -881,6 +894,14 @@
 				A39A52C01637D31A00A45E74 /* WMMenWikiViewController.h */,
 				A39A52C11637D31A00A45E74 /* WMMenWikiViewController.m */,
 				A39A52C21637D31A00A45E74 /* WMMenWikiViewController.xib */,
+				A38171B4165CA0DA0013E64F /* WMWikiViewController.h */,
+				A38171B5165CA0DA0013E64F /* WMWikiViewController.m */,
+				A38171B6165CA0DA0013E64F /* WMWikiViewController.xib */,
+				A38171B9165CAF080013E64F /* WMRateViewController.h */,
+				A38171BA165CAF090013E64F /* WMRateViewController.m */,
+				A38171BB165CAF090013E64F /* WMRateViewController.xib */,
+				A38171BE165CB6EA0013E64F /* WMRateCell.h */,
+				A38171BF165CB6EA0013E64F /* WMRateCell.m */,
 			);
 			name = MenWiki;
 			sourceTree = "<group>";
@@ -1080,6 +1101,8 @@
 				A38171A3165C7DB40013E64F /* replysend_disable@2x.png in Resources */,
 				A38171A4165C7DB40013E64F /* replysend_normal@2x.png in Resources */,
 				A38171AC165C7F420013E64F /* emojo.plist in Resources */,
+				A38171B8165CA0DA0013E64F /* WMWikiViewController.xib in Resources */,
+				A38171BD165CAF090013E64F /* WMRateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,6 +1184,9 @@
 				A38171AA165C7DFE0013E64F /* NKInputView.m in Sources */,
 				A38171B2165C7FBC0013E64F /* HPGrowingTextView.m in Sources */,
 				A38171B3165C7FBC0013E64F /* HPTextViewInternal.m in Sources */,
+				A38171B7165CA0DA0013E64F /* WMWikiViewController.m in Sources */,
+				A38171BC165CAF090013E64F /* WMRateViewController.m in Sources */,
+				A38171C0165CB6EA0013E64F /* WMRateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

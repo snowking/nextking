@@ -102,7 +102,7 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">WMFeedDetailViewController</string>
+				<string key="-1.CustomClassName">WMRateViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -116,14 +116,6 @@
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">NKTableViewController</string>
-					<string key="superclassName">NKViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NKTableViewController.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NKViewController</string>
 					<string key="superclassName">UIViewController</string>
@@ -152,11 +144,11 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">WMFeedDetailViewController</string>
-					<string key="superclassName">NKTableViewController</string>
+					<string key="className">WMRateViewController</string>
+					<string key="superclassName">NKViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/WMFeedDetailViewController.h</string>
+						<string key="minorKey">./Classes/WMRateViewController.h</string>
 					</object>
 				</object>
 			</array>
