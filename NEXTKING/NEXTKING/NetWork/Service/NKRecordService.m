@@ -23,6 +23,12 @@ static NSString *const NKAPIAddRecord = @"/add";
 -(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd{
     
     
+    return [self addRecordWithTitle:title content:content description:nil attTitle:nil rate:nil picture:picture parentID:parentID type:type andRequestDelegate:rd];
+    
+}
+
+-(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content description:(NSString*)description attTitle:(NSString*)attTitle rate:(NSString*)rate picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd{
+    
     NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIAddRecord];
     
     NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeSingleObject andResultKey:@""];
@@ -35,6 +41,15 @@ static NSString *const NKAPIAddRecord = @"/add";
     if (content) {
         [newRequest addPostValue:content forKey:@"content"];
     }
+    if (description) {
+        [newRequest addPostValue:description forKey:@"description"];
+    }
+    if (attTitle) {
+        [newRequest addPostValue:attTitle forKey:@"att_title"];
+    }
+    if (rate) {
+        [newRequest addPostValue:rate forKey:@"rate"];
+    }
     if (parentID) {
         [newRequest addPostValue:parentID forKey:@"parent_id"];
     }
@@ -45,6 +60,7 @@ static NSString *const NKAPIAddRecord = @"/add";
     
     [self addRequest:newRequest];
     return newRequest;
+    
     
 }
 

@@ -8,7 +8,7 @@
 
 #import "WMMenWikiViewController.h"
 #import "WMWikiViewController.h"
-#import "ZUOCommentCell.h"
+#import "WMMenCell.h"
 
 
 @interface WMMenWikiViewController ()
@@ -69,7 +69,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    return [ZUOCommentCell cellHeightForObject:[self.dataSource objectAtIndex:indexPath.row]];
+    return [WMMenCell cellHeightForObject:[self.dataSource objectAtIndex:indexPath.row]];
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -81,10 +81,10 @@
     
     static NSString * CellIdentifier = @"WMFeedCellIdentifier";
     
-    ZUOCommentCell *cell = (ZUOCommentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    WMMenCell *cell = (WMMenCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[[ZUOCommentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[WMMenCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     NKMRecord *message = [self.dataSource objectAtIndex:indexPath.row];

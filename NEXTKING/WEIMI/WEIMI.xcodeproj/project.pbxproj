@@ -133,6 +133,7 @@
 		A38171BC165CAF090013E64F /* WMRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171BA165CAF090013E64F /* WMRateViewController.m */; };
 		A38171BD165CAF090013E64F /* WMRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38171BB165CAF090013E64F /* WMRateViewController.xib */; };
 		A38171C0165CB6EA0013E64F /* WMRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171BF165CB6EA0013E64F /* WMRateCell.m */; };
+		A38171C3165CEF180013E64F /* WMMenCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171C2165CEF170013E64F /* WMMenCell.m */; };
 		A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C31165B37D900B06DD3 /* WMFeedCell.m */; };
 		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
 		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
@@ -367,6 +368,8 @@
 		A38171BB165CAF090013E64F /* WMRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMRateViewController.xib; sourceTree = "<group>"; };
 		A38171BE165CB6EA0013E64F /* WMRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMRateCell.h; sourceTree = "<group>"; };
 		A38171BF165CB6EA0013E64F /* WMRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMRateCell.m; sourceTree = "<group>"; };
+		A38171C1165CEF160013E64F /* WMMenCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenCell.h; sourceTree = "<group>"; };
+		A38171C2165CEF170013E64F /* WMMenCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenCell.m; sourceTree = "<group>"; };
 		A38F8C30165B37D900B06DD3 /* WMFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedCell.h; sourceTree = "<group>"; };
 		A38F8C31165B37D900B06DD3 /* WMFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedCell.m; sourceTree = "<group>"; };
 		A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPostViewController.h; sourceTree = "<group>"; };
@@ -894,6 +897,8 @@
 				A39A52C01637D31A00A45E74 /* WMMenWikiViewController.h */,
 				A39A52C11637D31A00A45E74 /* WMMenWikiViewController.m */,
 				A39A52C21637D31A00A45E74 /* WMMenWikiViewController.xib */,
+				A38171C1165CEF160013E64F /* WMMenCell.h */,
+				A38171C2165CEF170013E64F /* WMMenCell.m */,
 				A38171B4165CA0DA0013E64F /* WMWikiViewController.h */,
 				A38171B5165CA0DA0013E64F /* WMWikiViewController.m */,
 				A38171B6165CA0DA0013E64F /* WMWikiViewController.xib */,
@@ -1187,6 +1192,7 @@
 				A38171B7165CA0DA0013E64F /* WMWikiViewController.m in Sources */,
 				A38171BC165CAF090013E64F /* WMRateViewController.m in Sources */,
 				A38171C0165CB6EA0013E64F /* WMRateCell.m in Sources */,
+				A38171C3165CEF180013E64F /* WMMenCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

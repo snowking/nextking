@@ -17,7 +17,7 @@
 @synthesize renderMethod;
 @synthesize singleTapped;
 
-
+@synthesize tap;
 
 -(void)dealloc{
     
@@ -72,6 +72,12 @@
     
     self.userInteractionEnabled = YES;
     
+    if (!self.tap) {
+        self.tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)] autorelease];
+        [self addGestureRecognizer:tap];
+
+    }
+    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -81,9 +87,7 @@
         // Initialization code
         //self.userInteractionEnabled = YES;
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-        [self addGestureRecognizer:tap];
-        [tap release];
+        
 
     }
     return self;

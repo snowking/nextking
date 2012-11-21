@@ -25,6 +25,8 @@
 @property (nonatomic, assign) SEL       renderMethod;
 @property (nonatomic, assign) SEL       singleTapped;
 
+@property (nonatomic, assign) UITapGestureRecognizer *tap;
+
 -(void)bindValueOfModel:(id)mo forKeyPath:(NSString*)key;
 
 @end

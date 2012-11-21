@@ -15,6 +15,7 @@ dshared(NKRecordService);
 #pragma mark Add
 -(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd;
 
+-(NKRequest*)addRecordWithTitle:(NSString*)title content:(NSString*)content description:(NSString*)description attTitle:(NSString*)attTitle rate:(NSString*)rate picture:(NSData*)picture parentID:(NSString*)parentID type:(NSString*)type andRequestDelegate:(NKRequestDelegate*)rd;
 
 
 -(NKRequest*)listRecordWithUID:(NSString*)uid offset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd;

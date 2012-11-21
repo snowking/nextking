@@ -7,6 +7,9 @@
 //
 
 #import "NKTableViewCell.h"
+#import "NKModelDefine.h"
+#import "NKDateUtil.h"
+#import "NKKit.h"
 
 @interface WMFeedCell : NKTableViewCell{
     

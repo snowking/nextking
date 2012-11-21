@@ -61,7 +61,29 @@
 }
 
 -(void)rightButtonClick:(id)sender{
+    
+    
+    NSString *rateString =  [self.dataSource JSONString];
+    
+    NSLog(@"%@", rateString);
+    
+    NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(addWikiOK:) andFailedSelector:@selector(addWikiFailed:)];
+    
+    
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:self.man.name content:self.man.showName description:man.birthday attTitle:man.sign rate:rateString picture:UIImageJPEGRepresentation(self.man.avatar, 0.6) parentID:nil type:NKRecordTypeGroup andRequestDelegate:rd];
+    
+    
+}
+
+
+-(void)addWikiOK:(NKRequest*)request{
+    
+    
     [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)addWikiFailed:(NKRequest*)request{
+    
     
 }
 

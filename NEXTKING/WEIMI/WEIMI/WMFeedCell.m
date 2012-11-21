@@ -7,9 +7,7 @@
 //
 
 #import "WMFeedCell.h"
-#import "NKModelDefine.h"
-#import "NKDateUtil.h"
-#import "NKKit.h"
+
 
 @implementation WMFeedCell
 
