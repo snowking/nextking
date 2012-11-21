@@ -125,6 +125,7 @@
 		A38171A4165C7DB40013E64F /* replysend_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3817187165C7DB40013E64F /* replysend_normal@2x.png */; };
 		A38171A7165C7DE90013E64F /* NKEmojoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171A6165C7DE90013E64F /* NKEmojoView.m */; };
 		A38171AA165C7DFE0013E64F /* NKInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A38171A9165C7DFE0013E64F /* NKInputView.m */; };
+		A38171AC165C7F420013E64F /* emojo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A38171AB165C7F420013E64F /* emojo.plist */; };
 		A38F8C32165B37D900B06DD3 /* WMFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C31165B37D900B06DD3 /* WMFeedCell.m */; };
 		A38F8C38165B3B5100B06DD3 /* WMPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38F8C36165B3B5100B06DD3 /* WMPostViewController.m */; };
 		A38F8C39165B3B5100B06DD3 /* WMPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38F8C37165B3B5100B06DD3 /* WMPostViewController.xib */; };
@@ -346,6 +347,7 @@
 		A38171A6165C7DE90013E64F /* NKEmojoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKEmojoView.m; sourceTree = "<group>"; };
 		A38171A8165C7DFE0013E64F /* NKInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKInputView.h; sourceTree = "<group>"; };
 		A38171A9165C7DFE0013E64F /* NKInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKInputView.m; sourceTree = "<group>"; };
+		A38171AB165C7F420013E64F /* emojo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojo.plist; sourceTree = "<group>"; };
 		A38F8C30165B37D900B06DD3 /* WMFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedCell.h; sourceTree = "<group>"; };
 		A38F8C31165B37D900B06DD3 /* WMFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedCell.m; sourceTree = "<group>"; };
 		A38F8C35165B3B5100B06DD3 /* WMPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPostViewController.h; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 		A3817168165C7DB30013E64F /* NKInputView */ = {
 			isa = PBXGroup;
 			children = (
+				A38171AB165C7F420013E64F /* emojo.plist */,
 				A3817169165C7DB40013E64F /* Images */,
 				A38171A5165C7DE90013E64F /* NKEmojoView.h */,
 				A38171A6165C7DE90013E64F /* NKEmojoView.m */,
@@ -1058,6 +1061,7 @@
 				A38171A2165C7DB40013E64F /* replysend_click@2x.png in Resources */,
 				A38171A3165C7DB40013E64F /* replysend_disable@2x.png in Resources */,
 				A38171A4165C7DB40013E64F /* replysend_normal@2x.png in Resources */,
+				A38171AC165C7F420013E64F /* emojo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
