@@ -9,6 +9,7 @@
 #import "WMMiViewController.h"
 #import "WMFeedCell.h"
 #import "WMPostViewController.h"
+#import "WMFeedDetailViewController.h"
 
 @interface WMMiViewController ()
 
@@ -95,6 +96,23 @@
         [postButton setTitle:@"发布" forState:UIControlStateNormal];
         [postButton addTarget:self action:@selector(addNewFeed:) forControlEvents:UIControlEventTouchUpInside];
     }
+    else{
+        
+        showTableView.tableHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)] autorelease];
+        
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+        nameLabel.text = self.user.name;
+        [showTableView.tableHeaderView addSubview:nameLabel];
+        [nameLabel release];
+        
+        UIButton *postButton = [[UIButton alloc] initWithFrame:showTableView.tableHeaderView.bounds];
+        [showTableView.tableHeaderView addSubview:postButton];
+        [postButton release];
+        [postButton setTitle:@"解除好友关系" forState:UIControlStateNormal];
+        [postButton addTarget:self action:@selector(unfollow:) forControlEvents:UIControlEventTouchUpInside];
+
+    }
+    
     
 }
 
@@ -238,7 +256,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    NKMRecord *record = [self.dataSource objectAtIndex:indexPath.row];
+    [WMFeedDetailViewController feedDetailWithRecord:record];
   
 }
 

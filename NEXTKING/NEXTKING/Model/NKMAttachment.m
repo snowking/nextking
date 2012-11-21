@@ -173,7 +173,7 @@
     }
     self.downloadingPicture = YES;
     
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", self.pictureURL]]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", self.pictureURL]]];
     self.pictureRequest = request;
     request.delegate = self;
     [request setDidFinishSelector:@selector(downLoadPictureFinish:)];
@@ -188,7 +188,7 @@
     }
     self.downloadingThumbnail = YES;
     
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", self.pictureURL]]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithImageURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", self.pictureURL]]];
     self.thumbnailRequest = request;
     request.delegate = self;
     [request setDidFinishSelector:@selector(downLoaThumbnailFinish:)];

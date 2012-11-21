@@ -9,34 +9,48 @@
 #import "WMFeedCell.h"
 #import "NKModelDefine.h"
 #import "NKDateUtil.h"
+#import "NKKit.h"
 
 @implementation WMFeedCell
 
 @synthesize picture;
+
++(CGFloat)cellHeightForObject:(id)object{
+    
+    return 100;
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        self.selectionStyle = UITableViewCellSelectionStyleBlue;
         
-        self.picture = [[[NKKVOImageView alloc] initWithFrame:CGRectMake(220, 0, 100, [WMFeedCell cellHeightForObject:nil])] autorelease];
+        self.picture = [[[NKKVOImageView alloc] initWithFrame:CGRectMake(220, 5, 100, [WMFeedCell cellHeightForObject:nil]-10)] autorelease];
         picture.contentMode = UIViewContentModeScaleAspectFill;
         picture.clipsToBounds = YES;
+        picture.target = self;
+        picture.singleTapped = @selector(pictureTapped:);
         [self.contentView addSubview:picture];
         
     }
     return self;
 }
 
-
+-(void)pictureTapped:(UITapGestureRecognizer*)gesture{
+    
+    NKPictureViewer *viewer = [NKPictureViewer pictureViewerForView:self.picture];
+    [viewer showPictureForObject:[[self.showedObject attachments] lastObject] andKeyPath:@"picture"];
+    
+}
 -(void)showForObject:(id)object{
     
     self.showedObject = object;
     
     NKMRecord *record = object;
-    self.textLabel.text = [NKDateUtil intervalSinceNowWithDate:record.createTime];
-    self.detailTextLabel.text = record.content;
+    self.detailTextLabel.text = [NKDateUtil intervalSinceNowWithDate:record.createTime];
+    self.textLabel.text = record.content;
     
     [picture bindValueOfModel:[record.attachments lastObject] forKeyPath:@"picture"];
 

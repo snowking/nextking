@@ -19,6 +19,6 @@ dshared(NKRecordService);
 
 
 -(NKRequest*)listRecordWithUID:(NSString*)uid offset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd;
-
+-(NKRequest*)listRecordWithPID:(NSString*)pid offset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd;
 
 @end

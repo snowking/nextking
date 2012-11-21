@@ -72,6 +72,28 @@ static NSString *const NKAPIListRecordWithUID = @"/user_list";
 
 }
 
+static NSString *const NKAPIListRecordWithPID = @"/children_list";
+-(NKRequest*)listRecordWithPID:(NSString*)pid offset:(int)offset size:(int)size andRequestDelegate:(NKRequestDelegate*)rd{
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",[self serviceBaseURL], NKAPIListRecordWithPID];
+    
+    NKRequest *newRequest = [NKRequest postRequestWithURL:[NSURL URLWithString:urlString] requestDelegate:rd resultClass:[NKMRecord class] resultType:NKResultTypeResultSets andResultKey:@""];
+    
+    if (pid) {
+        [newRequest addPostValue:pid forKey:@"parent_id"];
+    }
+    if (offset) {
+        [newRequest addPostValue:[NSNumber numberWithInt:offset] forKey:@"offset"];
+    }
+    if (size) {
+        [newRequest addPostValue:[NSNumber numberWithInt:size] forKey:@"size"];
+    }
+    
+    [self addRequest:newRequest];
+    return newRequest;
+
+    
+}
 
 
 @end
