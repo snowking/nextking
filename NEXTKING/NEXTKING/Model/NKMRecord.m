@@ -20,7 +20,11 @@ NSString *const NKRecordTypeGroup = @"group";
 @synthesize client;
 @synthesize createTime;
 
+@synthesize type;
+
 @synthesize attachments;
+
+@synthesize man;
 
 -(void)dealloc{
     
@@ -30,7 +34,11 @@ NSString *const NKRecordTypeGroup = @"group";
     [client release];
     [createTime release];
     
+    [type release];
+    
     [attachments release];
+    
+    [man release];
 
     [super dealloc];
 }
@@ -46,6 +54,10 @@ NSString *const NKRecordTypeGroup = @"group";
     NKBindValueWithKeyForParameterFromDic(@"title", newRecord.title, dic);
     NKBindValueWithKeyForParameterFromDic(@"content", newRecord.content, dic);
     NKBindValueWithKeyForParameterFromDic(@"client", newRecord.client, dic);
+    NKBindValueWithKeyForParameterFromDic(@"type", newRecord.type, dic);
+    
+    
+    
     
     newRecord.createTime = [NSDate dateWithTimeIntervalSince1970:[[dic objectOrNilForKey:@"create_time"] longLongValue]];
     
@@ -59,6 +71,22 @@ NSString *const NKRecordTypeGroup = @"group";
             [attacht addObject:[NKMAttachment modelFromDic:tatt]];
         }
         newRecord.attachments = attacht;
+    }
+    
+    
+    if ([newRecord.type isEqualToString:NKRecordTypeGroup]) {
+        NSDictionary *man = [[newRecord.content stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
+        if (man) {
+            newRecord.man = [NKMUser user];
+            newRecord.man.name = [man objectOrNilForKey:@"name"];
+            newRecord.man.showName = [man objectOrNilForKey:@"showName"];
+            newRecord.man.birthday = [man objectOrNilForKey:@"birthday"];
+            newRecord.man.sign = [man objectOrNilForKey:@"tags"];
+            newRecord.man.rate = [[[[newRecord.attachments lastObject] description] stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
+            newRecord.man.avatarPath = [[newRecord.attachments lastObject] pictureURL];
+        }
+        
+        
     }
     
     

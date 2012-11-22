@@ -91,6 +91,8 @@
 		A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */; };
 		A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */; };
 		A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */; };
+		A34A8305165DD883003AE577 /* WMManDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A34A8303165DD883003AE577 /* WMManDetailViewController.m */; };
+		A34A8306165DD883003AE577 /* WMManDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34A8304165DD883003AE577 /* WMManDetailViewController.xib */; };
 		A381715D165C682C0013E64F /* WMFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A381715B165C682C0013E64F /* WMFeedDetailViewController.m */; };
 		A381715E165C682C0013E64F /* WMFeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A381715C165C682C0013E64F /* WMFeedDetailViewController.xib */; };
 		A3817166165C7A2C0013E64F /* ZUOCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3817165165C7A2C0013E64F /* ZUOCommentCell.m */; };
@@ -317,6 +319,9 @@
 		A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWeiboRegisterViewController.h; sourceTree = "<group>"; };
 		A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWeiboRegisterViewController.m; sourceTree = "<group>"; };
 		A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWeiboRegisterViewController.xib; sourceTree = "<group>"; };
+		A34A8302165DD883003AE577 /* WMManDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMManDetailViewController.h; sourceTree = "<group>"; };
+		A34A8303165DD883003AE577 /* WMManDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMManDetailViewController.m; sourceTree = "<group>"; };
+		A34A8304165DD883003AE577 /* WMManDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMManDetailViewController.xib; sourceTree = "<group>"; };
 		A381715A165C682C0013E64F /* WMFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFeedDetailViewController.h; sourceTree = "<group>"; };
 		A381715B165C682C0013E64F /* WMFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFeedDetailViewController.m; sourceTree = "<group>"; };
 		A381715C165C682C0013E64F /* WMFeedDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMFeedDetailViewController.xib; sourceTree = "<group>"; };
@@ -899,6 +904,9 @@
 				A39A52C21637D31A00A45E74 /* WMMenWikiViewController.xib */,
 				A38171C1165CEF160013E64F /* WMMenCell.h */,
 				A38171C2165CEF170013E64F /* WMMenCell.m */,
+				A34A8302165DD883003AE577 /* WMManDetailViewController.h */,
+				A34A8303165DD883003AE577 /* WMManDetailViewController.m */,
+				A34A8304165DD883003AE577 /* WMManDetailViewController.xib */,
 				A38171B4165CA0DA0013E64F /* WMWikiViewController.h */,
 				A38171B5165CA0DA0013E64F /* WMWikiViewController.m */,
 				A38171B6165CA0DA0013E64F /* WMWikiViewController.xib */,
@@ -1108,6 +1116,7 @@
 				A38171AC165C7F420013E64F /* emojo.plist in Resources */,
 				A38171B8165CA0DA0013E64F /* WMWikiViewController.xib in Resources */,
 				A38171BD165CAF090013E64F /* WMRateViewController.xib in Resources */,
+				A34A8306165DD883003AE577 /* WMManDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,6 +1202,7 @@
 				A38171BC165CAF090013E64F /* WMRateViewController.m in Sources */,
 				A38171C0165CB6EA0013E64F /* WMRateCell.m in Sources */,
 				A38171C3165CEF180013E64F /* WMMenCell.m in Sources */,
+				A34A8305165DD883003AE577 /* WMManDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

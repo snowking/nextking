@@ -9,6 +9,7 @@
 #import "WMMenWikiViewController.h"
 #import "WMWikiViewController.h"
 #import "WMMenCell.h"
+#import "WMManDetailViewController.h"
 
 
 @interface WMMenWikiViewController ()
@@ -17,11 +18,19 @@
 
 @implementation WMMenWikiViewController
 
+-(void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"manOK" object:nil];
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(manOK:) name:@"manOK" object:nil];
+        
     }
     return self;
 }
@@ -51,6 +60,14 @@
 }
 
 #pragma mark Data
+
+-(void)manOK:(NSNotification*)anoti{
+    
+    NKMRecord *record = [anoti object];
+    [self.dataSource insertObject:record atIndex:0];
+    [showTableView reloadData];
+    
+}
 
 -(void)refreshData{
     
@@ -96,6 +113,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NKMRecord *recod = [self.dataSource objectAtIndex:indexPath.row];
+    
+    [WMManDetailViewController manDetailWithRecord:recod];
     
 }
 

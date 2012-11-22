@@ -41,6 +41,8 @@ NSString *const NKGenderKeyUnknown = @"unknown";
 
 @synthesize relation;
 
+@synthesize rate;
+
 
 -(void)dealloc{
     
@@ -65,6 +67,8 @@ NSString *const NKGenderKeyUnknown = @"unknown";
     [avatar release];
     
     [relation release];
+    
+    [rate release];
     
     [super dealloc];
 }

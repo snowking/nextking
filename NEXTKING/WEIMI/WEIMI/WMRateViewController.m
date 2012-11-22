@@ -67,10 +67,12 @@
     
     NSLog(@"%@", rateString);
     
+    NSDictionary *manDic = [NSDictionary dictionaryWithObjectsAndKeys:man.name, @"name", man.showName, @"showName", man.birthday, @"birthday", man.sign, @"tags", nil];
+    NSString *manString = [manDic JSONString];
+    
     NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(addWikiOK:) andFailedSelector:@selector(addWikiFailed:)];
-    
-    
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:self.man.name content:self.man.showName description:man.birthday attTitle:man.sign rate:rateString picture:UIImageJPEGRepresentation(self.man.avatar, 0.6) parentID:nil type:NKRecordTypeGroup andRequestDelegate:rd];
+
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:manString description:rateString attTitle:nil rate:nil picture:UIImageJPEGRepresentation(self.man.avatar, 0.6) parentID:nil type:NKRecordTypeGroup andRequestDelegate:rd];
     
     
 }
@@ -80,6 +82,10 @@
     
     
     [self dismissModalViewControllerAnimated:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"manOK" object:[request.results lastObject]];
+    
+    
 }
 
 -(void)addWikiFailed:(NKRequest*)request{

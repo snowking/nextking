@@ -22,8 +22,12 @@ extern NSString *const NKRecordTypeGroup;
     NSString *content;
     NSString *client;
     NSDate   *createTime;
+    NSString *type;
     
     NSArray  *attachments;
+    
+    // for Weimi
+    NKMUser *man;
     
 }
 
@@ -32,7 +36,10 @@ extern NSString *const NKRecordTypeGroup;
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, retain) NSString *client;
 @property (nonatomic, retain) NSDate   *createTime;
+@property (nonatomic, retain) NSString *type;
 
 @property (nonatomic, retain) NSArray  *attachments;
+
+@property (nonatomic, retain) NKMUser *man;
 
 @end

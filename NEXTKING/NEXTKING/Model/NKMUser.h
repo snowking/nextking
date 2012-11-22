@@ -57,7 +57,7 @@ extern NSString *const NKGenderKeyUnknown;
     
     NSString *relation;
     
-    
+    NSArray  *rate;
     
 }
 
@@ -88,6 +88,9 @@ extern NSString *const NKGenderKeyUnknown;
 #endif
 
 @property (nonatomic, retain) NSString *relation;
+
+
+@property (nonatomic, retain) NSArray  *rate;
 
 +(id)userFromDic:(NSDictionary*)dic;
 
