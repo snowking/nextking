@@ -18,12 +18,23 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
 @implementation WMPostViewController
 
 @synthesize content;
+@synthesize parent;
+
+@synthesize type;
+
+-(void)dealloc{
+    
+    [type release];
+    [parent release];
+    [super dealloc];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+    
     }
     return self;
 }
@@ -49,10 +60,14 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
     content.font = [UIFont systemFontOfSize:14];
     content.placeholderLabel.text = @"添加内容";
     
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-//    [self.view addGestureRecognizer:tap];
-//    [tap release];
-    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipe];
+    [swipe release];
+}
+
+-(void)swipe:(UIGestureRecognizer*)gesture{
+    [content resignFirstResponder];
 }
 
 #pragma mark TextView
@@ -63,8 +78,6 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
 
 -(void)rightButtonClick:(id)sender{
 
-    
-    
     NKMFeed *cachedFeed = [NKMFeed cachedFeed];
     // Pic
     NSData *picData = nil;
@@ -78,7 +91,7 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
     }
     
     NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(postOK:) andFailedSelector:@selector(postFailed:)];
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:cachedFeed.content picture:picData parentID:nil type:NKRecordTypeFeed andRequestDelegate:rd];
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:cachedFeed.content picture:picData parentID:parent.mid type:NKRecordTypeFeed andRequestDelegate:rd];
     
 }
 
@@ -105,12 +118,6 @@ NSString *const NKAddFeedOKNotificationKey = @"addfeedoknotificationkey";
     
 }
 
--(void)tapped:(UIGestureRecognizer*)gesture{
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        [content resignFirstResponder];
-    }
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) NKMUser *man;
 
+-(void)setupUI;
+
 @end

@@ -8,7 +8,13 @@
 
 #import "NKMRecord.h"
 
-@interface NKMFeed : NKMRecord
+@interface NKMFeed : NKMRecord{
+    
+    NSString *parentID;
+    
+}
+
+@property (nonatomic, retain) NSString *parentID;
 
 
 +(id)cachedFeed;

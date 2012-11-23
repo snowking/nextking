@@ -11,6 +11,7 @@
 
 NSString *const NKRecordTypeFeed = @"feed";
 NSString *const NKRecordTypeGroup = @"group";
+NSString *const NKRecordTypeComment = @"comment";
 
 @implementation NKMRecord
 
@@ -73,18 +74,17 @@ NSString *const NKRecordTypeGroup = @"group";
         newRecord.attachments = attacht;
     }
     
-    
-    if ([newRecord.type isEqualToString:NKRecordTypeGroup]) {
-        NSDictionary *man = [[newRecord.content stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
-        if (man) {
+    NKMAttachment *att = [newRecord.attachments lastObject];
+    if ([att.type isEqualToString:NKAttachmentTypeMan]) {
+        NSDictionary *man = [[att.title stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
             newRecord.man = [NKMUser user];
             newRecord.man.name = [man objectOrNilForKey:@"name"];
             newRecord.man.showName = [man objectOrNilForKey:@"showName"];
             newRecord.man.birthday = [man objectOrNilForKey:@"birthday"];
             newRecord.man.sign = [man objectOrNilForKey:@"tags"];
-            newRecord.man.rate = [[[[newRecord.attachments lastObject] description] stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
+            newRecord.man.rate = [[[att description] stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""] objectFromJSONString];
+            newRecord.man.createType = NKMUserCreateTypeFromWeb;
             newRecord.man.avatarPath = [[newRecord.attachments lastObject] pictureURL];
-        }
         
         
     }

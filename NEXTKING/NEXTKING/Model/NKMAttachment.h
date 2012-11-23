@@ -8,6 +8,11 @@
 
 #import "NKModel.h"
 
+
+extern NSString *const NKAttachmentTypeMan;
+extern NSString *const NKAttachmentTypePicture;
+
+
 @interface NKMAttachment : NKModel{
     
     NSString *type;

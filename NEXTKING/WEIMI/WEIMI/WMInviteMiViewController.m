@@ -30,20 +30,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-//    [self.contentView addGestureRecognizer:tap];
-//    [tap release];
-    
-    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipe];
+    [swipe release];
 }
 
--(void)tapped:(UIGestureRecognizer*)gesture{
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
+-(void)swipe:(UIGestureRecognizer*)gesture{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         [email resignFirstResponder];
     }
-    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

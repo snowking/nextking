@@ -48,7 +48,7 @@
     
     NKMRecord *record = object;
     self.detailTextLabel.text = [NKDateUtil intervalSinceNowWithDate:record.createTime];
-    self.textLabel.text = record.content;
+    self.textLabel.text =  record.man ? [[[record.man.rate objectAtIndex:0] allKeys] lastObject] : record.content;
     
     [picture bindValueOfModel:[record.attachments lastObject] forKeyPath:@"picture"];
 

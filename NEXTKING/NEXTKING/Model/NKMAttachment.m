@@ -8,6 +8,9 @@
 
 #import "NKMAttachment.h"
 
+NSString *const NKAttachmentTypeMan = @"man";
+NSString *const NKAttachmentTypePicture = @"picture";
+
 @implementation NKMAttachment
 
 @synthesize type;

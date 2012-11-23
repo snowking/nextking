@@ -81,13 +81,22 @@
     account.delegate = self;
     password.delegate = self;
     
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-//    [self.contentView addGestureRecognizer:tap];
-//    [tap release];
-    
-    
     SinaWeibo *sinaweibo = [self sinaweibo];
     sinaweibo.delegate = self;
+    
+    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipe];
+    [swipe release];
+}
+
+-(void)swipe:(UIGestureRecognizer*)gesture{
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [account resignFirstResponder];
+        [password resignFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,14 +105,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)tap:(UITapGestureRecognizer*)gesture{
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        [account resignFirstResponder];
-        [password resignFirstResponder];
-    }
-    
-}
+
 
 -(IBAction)loginWithWeibo:(id)sender{
     

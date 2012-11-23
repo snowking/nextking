@@ -13,7 +13,7 @@
 
 extern NSString *const NKRecordTypeFeed;
 extern NSString *const NKRecordTypeGroup;
-
+extern NSString *const NKRecordTypeComment;
 
 @interface NKMRecord : NKModel{
     

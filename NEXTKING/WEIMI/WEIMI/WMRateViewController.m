@@ -38,13 +38,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
+    
     [self addRightButtonWithTitle:@"完成"];
-    [self addBackButton];
-    
-    self.titleLabel.text = @"给他初始打分";
-    
     [self setShouldAutoRefreshData:NO];
+    self.showTableView.frame = CGRectMake(0, 44, 320, NKMainHeight-44);
     
+    [self setupUI];
+        
+}
+
+-(void)setupUI{
+    
+    [self addBackButton];
+    self.titleLabel.text = @"给他初始打分";
     self.dataSource = [NSMutableArray arrayWithObjects:
                        
                        [NSMutableDictionary dictionaryWithObject:@"?" forKey:@"外貌"],
@@ -55,8 +62,7 @@
                        [NSMutableDictionary dictionaryWithObject:@"?" forKey:@"吻技"],
                        [NSMutableDictionary dictionaryWithObject:@"?" forKey:@"XXOO"],
                        nil];
-    
-    self.showTableView.frame = CGRectMake(0, 44, 320, NKMainHeight-44);
+
     
 }
 
@@ -72,7 +78,7 @@
     
     NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(addWikiOK:) andFailedSelector:@selector(addWikiFailed:)];
 
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:manString description:rateString attTitle:nil rate:nil picture:UIImageJPEGRepresentation(self.man.avatar, 0.6) parentID:nil type:NKRecordTypeGroup andRequestDelegate:rd];
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:nil description:rateString attTitle:manString attType:NKAttachmentTypeMan picture:UIImageJPEGRepresentation(self.man.avatar, 0.6) parentID:nil type:NKRecordTypeGroup andRequestDelegate:rd];
     
     
 }

@@ -14,16 +14,11 @@
     
     self.showedObject = object;
     
-    
     NKMRecord *record = object;
-    
-    
     self.textLabel.text = record.man.showName;
     self.detailTextLabel.text = [[[record.man.rate objectAtIndex:0] allKeys] lastObject];
     
     [picture bindValueOfModel:[record.attachments lastObject] forKeyPath:@"picture"];
-    
-    
     
 }
 

@@ -61,8 +61,6 @@
     
     UIView *tableViewHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
-    
-    
     NKKVOImageView *avatar = [[NKKVOImageView alloc] initWithFrame:CGRectMake(6, 6, 48, 48)];
     [tableViewHeader addSubview:avatar];
     [avatar release];
@@ -183,7 +181,7 @@
     
     NKRequestDelegate *rd = [NKRequestDelegate requestDelegateWithTarget:self finishSelector:@selector(addCommentOK:) andFailedSelector:@selector(addCommentFailed:)];
     
-    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:content picture:nil parentID:self.record.mid type:nil andRequestDelegate:rd];
+    [[NKRecordService sharedNKRecordService] addRecordWithTitle:nil content:content picture:nil parentID:self.record.mid type:NKRecordTypeComment andRequestDelegate:rd];
     
 }
 

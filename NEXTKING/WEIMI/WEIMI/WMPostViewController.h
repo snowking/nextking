@@ -14,12 +14,16 @@ extern NSString *const NKAddFeedOKNotificationKey;
 @interface WMPostViewController : NKViewController<UITextViewDelegate>{
     
     NKTextViewWithPlaceholder *content;
-
+    NKMRecord *parent;
     
+    NSString *type;
 }
 
 
 @property (nonatomic, assign) NKTextViewWithPlaceholder *content;
+
+@property (nonatomic, retain) NKMRecord *parent;
+@property (nonatomic, retain) NSString *type;
 
 
 @end

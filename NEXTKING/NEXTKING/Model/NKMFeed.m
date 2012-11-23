@@ -10,7 +10,13 @@
 
 @implementation NKMFeed
 
+@synthesize parentID;
 
+-(void)dealloc{
+    
+    [parentID release];
+    [super dealloc];
+}
 
 
 static NKMFeed *_cachedFeed = nil;
@@ -33,6 +39,7 @@ static NKMFeed *_cachedFeed = nil;
     
     [[_cachedFeed.attachments lastObject] setPicture:nil];
     _cachedFeed.content = @"";
+    _cachedFeed.parentID = nil;
     
 }
 
