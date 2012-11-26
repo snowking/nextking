@@ -25,6 +25,10 @@ typedef enum {
     
     id title;
     
+    
+    CGSize segmentSize;
+    UIColor *segmentColor;
+    
 }
 
 @property (nonatomic, retain) UIImage *normalBackground;
@@ -32,9 +36,12 @@ typedef enum {
 
 @property (nonatomic, retain) id title;
 
+@property (nonatomic, assign) CGSize segmentSize;
+@property (nonatomic, retain) UIColor *segmentColor;
+
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected;
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected andTitle:(id)atitle;
-
++(id)segmentWithSize:(CGSize)size color:(UIColor*)color andTitle:(id)atitle;
 
 @end
 

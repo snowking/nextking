@@ -17,11 +17,16 @@
 @synthesize selectedBackground;
 @synthesize title;
 
+@synthesize segmentSize;
+@synthesize segmentColor;
+
 -(void)dealloc{
     
     [normalBackground release];
     [selectedBackground release];
     [title release];
+    
+    [segmentColor release];
     
     [super dealloc];
 }
@@ -33,7 +38,7 @@
 
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected andTitle:(id)atitle{
     
-    NKSegment *newSegment = [[NKSegment alloc] init];
+    NKSegment *newSegment = [[self alloc] init];
     
     newSegment.normalBackground = normal;
     newSegment.selectedBackground = selected;
@@ -43,6 +48,16 @@
     
 }
 
+
++(id)segmentWithSize:(CGSize)size color:(UIColor*)color andTitle:(id)atitle{
+    
+    NKSegment *newSegment = [[self alloc] init];
+    newSegment.segmentSize = size;
+    newSegment.segmentColor = color;
+    newSegment.title = atitle;
+    return [newSegment autorelease];
+    
+}
 
 @end
 
@@ -124,20 +139,20 @@
         
         switch (direction) {
             case NKSegmentControlDirectionLandscape:{
-                newSegment.frame = CGRectMake(totalWidth, 0, normalImage.size.width, normalImage.size.height);
+                newSegment.frame = CGRectMake(totalWidth, 0, normalImage?normalImage.size.width:segment.segmentSize.width, normalImage?normalImage.size.height:segment.segmentSize.height);
                 currentIndex++;
-                totalWidth+=normalImage.size.width;
-                if (normalImage.size.height>totalHeight) {
-                    totalHeight = normalImage.size.height;
+                totalWidth+=newSegment.frame.size.width;
+                if (newSegment.frame.size.height>totalHeight) {
+                    totalHeight = newSegment.frame.size.height;
                 }
             }
                 break;
             case NKSegmentControlDirectionPortrait:{
-                newSegment.frame = CGRectMake(0, totalHeight, normalImage.size.width, normalImage.size.height);
+                newSegment.frame = CGRectMake(0, totalHeight, normalImage?normalImage.size.width:segment.segmentSize.width, normalImage?normalImage.size.height:segment.segmentSize.height);
                 currentIndex++;
-                totalHeight+=normalImage.size.height;
-                if (normalImage.size.width>totalWidth) {
-                    totalWidth = normalImage.size.width;
+                totalHeight+=newSegment.frame.size.height;
+                if (newSegment.frame.size.width>totalWidth) {
+                    totalWidth = newSegment.frame.size.width;
                 }
             }
                 break;
@@ -145,6 +160,10 @@
                 break;
         }
         
+        if (!segment.selectedBackground && !segment.normalBackground) {
+            newSegment.backgroundColor = segment.segmentColor;
+        }
+
     }
     
     
