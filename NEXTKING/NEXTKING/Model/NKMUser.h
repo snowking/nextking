@@ -92,6 +92,8 @@ extern NSString *const NKGenderKeyUnknown;
 
 @property (nonatomic, retain) NSArray  *rate;
 
+-(NSString*)showRate;
+
 +(id)userFromDic:(NSDictionary*)dic;
 
 +(id)user;

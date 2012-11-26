@@ -95,6 +95,7 @@
     
     self.showTableView.tableHeaderView = tableViewHeader;
     [tableViewHeader release];
+    showTableView.frame = CGRectMake(0, 44, 320, NKMainHeight-44);
     
     [self refreshData];
 }

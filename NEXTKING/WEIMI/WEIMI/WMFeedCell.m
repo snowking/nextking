@@ -38,8 +38,13 @@
 
 -(void)pictureTapped:(UITapGestureRecognizer*)gesture{
     
-    NKPictureViewer *viewer = [NKPictureViewer pictureViewerForView:self.picture];
-    [viewer showPictureForObject:[[self.showedObject attachments] lastObject] andKeyPath:@"picture"];
+    
+    if ([[[self.showedObject attachments] lastObject] picture]) {
+        NKPictureViewer *viewer = [NKPictureViewer pictureViewerForView:self.picture];
+        [viewer showPictureForObject:[[self.showedObject attachments] lastObject] andKeyPath:@"picture"];
+    }
+    
+    
     
 }
 -(void)showForObject:(id)object{
@@ -48,7 +53,7 @@
     
     NKMRecord *record = object;
     self.detailTextLabel.text = [NKDateUtil intervalSinceNowWithDate:record.createTime];
-    self.textLabel.text =  record.man ? [[[record.man.rate objectAtIndex:0] allKeys] lastObject] : record.content;
+    self.textLabel.text =  record.man ? [record.man showRate] : record.content;
     
     [picture bindValueOfModel:[record.attachments lastObject] forKeyPath:@"picture"];
 

@@ -123,6 +123,16 @@ static NKMUser *_me = nil;
     return [NSString stringWithFormat:@" <%@> name:%@, id:%@, city:%@, avatar:%@, sign:%@", NSStringFromClass([self class]), name, mid, city, avatarPath, sign];
 }
 
+-(NSString*)showRate{
+    
+    NSString *rateString = @"";
+    for (NSDictionary *dic in self.rate) {
+        rateString = [rateString stringByAppendingFormat:@"%@:%@;", [[dic allKeys] lastObject], [[dic allValues] lastObject]];
+    }
+    
+    return rateString;
+}
+
 -(NSDictionary*)cacheDic{
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
