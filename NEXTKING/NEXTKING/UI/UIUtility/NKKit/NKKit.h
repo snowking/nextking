@@ -21,3 +21,4 @@
 #import "UIColor+HexString.h"
 #import "NKTextViewWithPlaceholder.h"
 #import "NKInputView.h"
+#import "NKNumberPad.h"
