@@ -89,6 +89,8 @@
 		A312FA481659D9E80098A02D /* WMInviteMiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A312FA461659D9E80098A02D /* WMInviteMiViewController.m */; };
 		A312FA491659D9E80098A02D /* WMInviteMiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A312FA471659D9E80098A02D /* WMInviteMiViewController.xib */; };
 		A312FA4B165A2BDA0098A02D /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */; };
+		A316E8ED166763F20051EDA7 /* appBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A316E8EC166763F20051EDA7 /* appBackground@2x.png */; };
+		A316E8EF166764D50051EDA7 /* redbook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A316E8EE166764D50051EDA7 /* redbook@2x.png */; };
 		A31BE41D1654F05700AEA961 /* WMWeiboRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */; };
 		A31BE41E1654F05700AEA961 /* WMWeiboRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */; };
 		A34A8305165DD883003AE577 /* WMManDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A34A8303165DD883003AE577 /* WMManDetailViewController.m */; };
@@ -166,7 +168,6 @@
 		A39A52C91637D5A000A45E74 /* WMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39A52C71637D5A000A45E74 /* WMLoginViewController.m */; };
 		A39A52CA1637D5A000A45E74 /* WMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39A52C81637D5A000A45E74 /* WMLoginViewController.xib */; };
 		A39A52D21637D90200A45E74 /* l_inputBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D11637D90200A45E74 /* l_inputBack@2x.png */; };
-		A39A52D41637DA9600A45E74 /* appBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D31637DA9500A45E74 /* appBackground@2x.png */; };
 		A39A52D91637DAD700A45E74 /* line_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D51637DAD700A45E74 /* line_click@2x.png */; };
 		A39A52DA1637DAD700A45E74 /* line_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D61637DAD700A45E74 /* line_normal@2x.png */; };
 		A39A52DB1637DAD700A45E74 /* homepage_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A39A52D71637DAD700A45E74 /* homepage_click@2x.png */; };
@@ -318,6 +319,8 @@
 		A312FA461659D9E80098A02D /* WMInviteMiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMInviteMiViewController.m; sourceTree = "<group>"; };
 		A312FA471659D9E80098A02D /* WMInviteMiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMInviteMiViewController.xib; sourceTree = "<group>"; };
 		A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@2x.png"; sourceTree = "<group>"; };
+		A316E8EC166763F20051EDA7 /* appBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appBackground@2x.png"; path = "../../../../../192.168.11.50/薇蜜/切图/全局/appBackground@2x.png"; sourceTree = "<group>"; };
+		A316E8EE166764D50051EDA7 /* redbook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "redbook@2x.png"; path = "../../../../../192.168.11.50/薇蜜/切图/全局/redbook@2x.png"; sourceTree = "<group>"; };
 		A31BE41A1654F05700AEA961 /* WMWeiboRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWeiboRegisterViewController.h; sourceTree = "<group>"; };
 		A31BE41B1654F05700AEA961 /* WMWeiboRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWeiboRegisterViewController.m; sourceTree = "<group>"; };
 		A31BE41C1654F05700AEA961 /* WMWeiboRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWeiboRegisterViewController.xib; sourceTree = "<group>"; };
@@ -420,7 +423,6 @@
 		A39A52C71637D5A000A45E74 /* WMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLoginViewController.m; sourceTree = "<group>"; };
 		A39A52C81637D5A000A45E74 /* WMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMLoginViewController.xib; sourceTree = "<group>"; };
 		A39A52D11637D90200A45E74 /* l_inputBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "l_inputBack@2x.png"; sourceTree = "<group>"; };
-		A39A52D31637DA9500A45E74 /* appBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appBackground@2x.png"; sourceTree = "<group>"; };
 		A39A52D51637DAD700A45E74 /* line_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_click@2x.png"; sourceTree = "<group>"; };
 		A39A52D61637DAD700A45E74 /* line_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_normal@2x.png"; sourceTree = "<group>"; };
 		A39A52D71637DAD700A45E74 /* homepage_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage_click@2x.png"; sourceTree = "<group>"; };
@@ -943,12 +945,13 @@
 		A39A52CF1637D8E000A45E74 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A316E8EC166763F20051EDA7 /* appBackground@2x.png */,
+				A316E8EE166764D50051EDA7 /* redbook@2x.png */,
 				A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */,
 				A39A52D51637DAD700A45E74 /* line_click@2x.png */,
 				A39A52D61637DAD700A45E74 /* line_normal@2x.png */,
 				A39A52D71637DAD700A45E74 /* homepage_click@2x.png */,
 				A39A52D81637DAD700A45E74 /* homepage_normal@2x.png */,
-				A39A52D31637DA9500A45E74 /* appBackground@2x.png */,
 				A39A52D01637D8EC00A45E74 /* LoginRegister */,
 			);
 			name = Image;
@@ -1049,7 +1052,6 @@
 				A39A52C41637D31A00A45E74 /* WMMenWikiViewController.xib in Resources */,
 				A39A52CA1637D5A000A45E74 /* WMLoginViewController.xib in Resources */,
 				A39A52D21637D90200A45E74 /* l_inputBack@2x.png in Resources */,
-				A39A52D41637DA9600A45E74 /* appBackground@2x.png in Resources */,
 				A39A52D91637DAD700A45E74 /* line_click@2x.png in Resources */,
 				A39A52DA1637DAD700A45E74 /* line_normal@2x.png in Resources */,
 				A39A52DB1637DAD700A45E74 /* homepage_click@2x.png in Resources */,
@@ -1126,6 +1128,8 @@
 				A38171BD165CAF090013E64F /* WMRateViewController.xib in Resources */,
 				A34A8306165DD883003AE577 /* WMManDetailViewController.xib in Resources */,
 				A38BB594165F456F009BECC8 /* WMAddRateViewController.xib in Resources */,
+				A316E8ED166763F20051EDA7 /* appBackground@2x.png in Resources */,
+				A316E8EF166764D50051EDA7 /* redbook@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

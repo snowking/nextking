@@ -37,9 +37,9 @@
 }
 
 -(void)swipe:(UIGestureRecognizer*)gesture{
-    if (gesture.state == UIGestureRecognizerStateBegan) {
+
         [email resignFirstResponder];
-    }
+    
 }
 
 

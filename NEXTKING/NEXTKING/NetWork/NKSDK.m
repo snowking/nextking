@@ -31,7 +31,7 @@ static NKSDK *_sharedSDK = nil;
     @synchronized(self) {
         
         if (!_sharedSDK) {
-            _sharedSDK = [[NKSDK alloc] init];
+            _sharedSDK = [[self alloc] init];
         }
     }
     
@@ -57,6 +57,8 @@ static NKSDK *_sharedSDK = nil;
 
 
 -(void)addRequest:(NKRequest*)request{
+    
+    [ASIHTTPRequest setDefaultUserAgentString:@"kingiphone"];
     
     [self.requestQueue addOperation:request];
     [self.requestQueue go];

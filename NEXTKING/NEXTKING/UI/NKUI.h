@@ -20,6 +20,8 @@
 #define NKNavigationController [[NKUI sharedNKUI] navigationController]
 #define NKNC NKNavigationController
 
+#define NKActionSheetStyle UIActionSheetStyleBlackTranslucent
+
 
 
 @interface NKUI : UIViewController{

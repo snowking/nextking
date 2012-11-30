@@ -23,7 +23,7 @@
 
 // Login and Logout
 -(BOOL)canAutoLogin;
--(void)loginWithAccount:(NKMAccount*)account andRequestDelegate:(NKRequestDelegate*)rd;
+-(void)loginWithAccount:(id)account andRequestDelegate:(NKRequestDelegate*)rd;
 -(BOOL)autoLogin;
 -(void)logOut;
 

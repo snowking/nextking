@@ -80,7 +80,7 @@ typedef enum {
 
 -(void)setPullBackFrame;
 -(void)addUIForStyle:(NKTableViewStyle)style;
-
+-(void)addWhiteBackground;
 
 @end
 

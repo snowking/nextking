@@ -19,6 +19,8 @@
     
     NSString *parseDataKey;
     
+    int successReturnValue;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -27,6 +29,8 @@
 
 @property (nonatomic, retain) NSString *domainURL;
 @property (nonatomic, retain) NSString *parseDataKey;
+@property (nonatomic, retain) NSString *parseStatusKey;
+@property (nonatomic, assign) int successReturnValue;
 
 +(id)sharedConfig;
 

@@ -20,6 +20,8 @@
 @synthesize inviteViewController;
 @synthesize miViewController;
 
+@synthesize bookScrollView;
+
 
 -(void)dealloc{
     
@@ -44,11 +46,28 @@
     
     headBar.hidden = YES;
     
+    self.bookScrollView = [[[UIScrollView alloc] initWithFrame:self.contentView.bounds] autorelease];
+    [self.contentView addSubview:bookScrollView];
+    self.bookScrollView.pagingEnabled = YES;
+    
+    UIImageView *book = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redbook.png"]];
+    [bookScrollView addSubview:book];
+    CGRect bookFrame = book.frame;
+    bookFrame.origin.y = 54;
+    book.frame = bookFrame;
+    
+    [book release];
+    
+    bookScrollView.contentSize = CGSizeMake(bookFrame.size.width, bookScrollView.frame.size.height);
+    bookScrollView.showsVerticalScrollIndicator = NO;
+    bookScrollView.showsHorizontalScrollIndicator = NO;
+
+    
     self.contentContainer = [[[UIView alloc] initWithFrame:self.contentView.bounds] autorelease];
-    [self.contentView addSubview:contentContainer];
+    [self.bookScrollView addSubview:contentContainer];
     
     self.dataSource = [NSMutableArray arrayWithObjects:[NKMUser me], nil];
-    self.avatarContainer = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)] autorelease];
+    self.avatarContainer = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 54)] autorelease];
     [self.contentView addSubview:avatarContainer];
     [self showFriends];
     [self listFriends];

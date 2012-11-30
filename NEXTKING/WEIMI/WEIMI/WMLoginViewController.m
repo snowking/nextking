@@ -92,11 +92,10 @@
 }
 
 -(void)swipe:(UIGestureRecognizer*)gesture{
+
+    [account resignFirstResponder];
+    [password resignFirstResponder];
     
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        [account resignFirstResponder];
-        [password resignFirstResponder];
-    }
 }
 
 - (void)didReceiveMemoryWarning

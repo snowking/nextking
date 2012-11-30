@@ -114,9 +114,9 @@
     else {
         // Success
         
-        NSNumber *tServerError = [[NKConfig sharedConfig] parseDataKey] ? [parsedResult objectOrNilForKey:@"status"] : [NSNumber numberWithInt:1];
+        NSNumber *tServerError = [[NKConfig sharedConfig] parseDataKey] ? [parsedResult objectOrNilForKey:[[NKConfig sharedConfig] parseStatusKey]] : [NSNumber numberWithInt:1];
         
-        if ((incomingrequest.responseStatusCode == 200 || incomingrequest.responseStatusCode == 304) && [tServerError intValue]==1) {
+        if ((incomingrequest.responseStatusCode == 200 || incomingrequest.responseStatusCode == 304) && [tServerError intValue]==[[NKConfig sharedConfig] successReturnValue]) {
             
             
             id realSomething =  [[NKConfig sharedConfig] parseDataKey] ? [parsedResult objectOrNilForKey:[[NKConfig sharedConfig] parseDataKey]] : parsedResult;

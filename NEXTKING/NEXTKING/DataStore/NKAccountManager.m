@@ -27,7 +27,7 @@ static NKAccountManager *_sharedAccountsManager = nil;
 +(id)sharedAccountsManager{
     
     if (!_sharedAccountsManager) {
-        _sharedAccountsManager = [[NKAccountManager alloc] init];
+        _sharedAccountsManager = [[self alloc] init];
     }
     
     return _sharedAccountsManager;
@@ -118,7 +118,7 @@ static NKAccountManager *_sharedAccountsManager = nil;
     
 }
 
--(void)loginWithAccount:(NKMAccount*)account andRequestDelegate:(NKRequestDelegate*)rd{
+-(void)loginWithAccount:(id)account andRequestDelegate:(NKRequestDelegate*)rd{
     
     self.currentAccount = account;
     
@@ -127,7 +127,7 @@ static NKAccountManager *_sharedAccountsManager = nil;
     
     [NKMUser meFromUser:[[NKDataStore sharedDataStore] cachedObjectOf:NKCachePathProfile andClass:[NKMUser class]]];
     
-    [[NKAccountService sharedNKAccountService] loginWithUsername:account.account password:account.password andRequestDelegate:rd];
+    [[NKAccountService sharedNKAccountService] loginWithUsername:self.currentAccount.account password:self.currentAccount.password andRequestDelegate:rd];
     
 }
 

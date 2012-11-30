@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NKSDK.h"
+#import "NKDataStore.h"
 #import "NKUI.h"
 
 #define NKPlaceHolderViewTag 60008

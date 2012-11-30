@@ -15,9 +15,10 @@
     UIView *avatarContainer;
     UIView *contentContainer;
     
-    
     WMInviteMiViewController *inviteViewController;
     WMMiViewController *miViewController;
+    
+    UIScrollView *bookScrollView;
     
 }
 
@@ -26,5 +27,7 @@
 
 @property (nonatomic, retain) WMInviteMiViewController *inviteViewController;
 @property (nonatomic, retain) WMMiViewController *miViewController;
+
+@property (nonatomic, assign) UIScrollView *bookScrollView;
 
 @end
