@@ -10,6 +10,9 @@
 #import "NKModel.h"
 #import "NKConfig.h"
 
+
+NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
+
 @interface NKRequest (Private)
 
 -(id)mapDic:(NSDictionary*)dic toClass:(Class)tc;
@@ -84,10 +87,18 @@
     
 }
 
+-(void)reportErrorWithObject:(id)someError{
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NKRequestErrorNotification object:someError];
+    
+    [requestDelegate delegateFailedWithRequest:self];
+}
+
 -(void)requestFailed:(ASIHTTPRequest*)incomingrequest{
     
     self.errorCode = @900000;
-    [requestDelegate delegateFailedWithRequest:self];
+    [self reportErrorWithObject:self.errorCode];
 }
 
 -(void)requestFinish:(ASIHTTPRequest*)incomingrequest{
@@ -109,7 +120,7 @@
     
     if (tlocalError) {
         self.errorCode = @900002;
-        [requestDelegate delegateFailedWithRequest:self];
+        [self reportErrorWithObject:self.errorCode];
     }
     else {
         // Success
@@ -189,7 +200,7 @@
         else {
             
             self.errorCode = tServerError;
-            [requestDelegate delegateFailedWithRequest:self];
+            [self reportErrorWithObject:self.errorCode];
             
         }
         

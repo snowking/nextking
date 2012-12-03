@@ -20,6 +20,7 @@ typedef enum{
     NKResultTypeOrigin
 }NKResultType;
 
+extern NSString *const NKRequestErrorNotification;
 
 
 @interface NKRequest : ASIFormDataRequest{
