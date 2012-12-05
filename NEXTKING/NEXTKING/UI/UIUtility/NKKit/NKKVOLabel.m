@@ -15,8 +15,9 @@
 
 @synthesize target;
 @synthesize renderMethod;
+@synthesize singleTapped;
 
-
+@synthesize tap;
 
 -(void)dealloc{
     
@@ -76,5 +77,29 @@
     // Drawing code
 }
 */
+
+-(void)setSingleTapped:(SEL)tsingleTapped{
+    
+    singleTapped = tsingleTapped;
+    
+    self.userInteractionEnabled = YES;
+    
+    if (!self.tap) {
+        self.tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)] autorelease];
+        [self addGestureRecognizer:tap];
+        
+    }
+    
+}
+
+-(void)tapped:(UITapGestureRecognizer*)gesture{
+    
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        if ([target respondsToSelector:singleTapped]) {
+            [target performSelector:singleTapped withObject:gesture];
+        }
+    }
+    
+}
 
 @end

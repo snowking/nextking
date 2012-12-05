@@ -26,6 +26,7 @@ The Render Method should be like
     
     id        target;
     SEL       renderMethod;
+    SEL       singleTapped;
 }
 
 @property (nonatomic, retain) id        modelObject;
@@ -33,6 +34,9 @@ The Render Method should be like
 
 @property (nonatomic, assign) id        target;
 @property (nonatomic, assign) SEL       renderMethod;
+@property (nonatomic, assign) SEL       singleTapped;
+
+@property (nonatomic, assign) UITapGestureRecognizer *tap;
 
 -(void)bindValueOfModel:(id)mo forKeyPath:(NSString*)key;
 

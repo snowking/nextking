@@ -74,17 +74,25 @@ static NKDataStore *_sharedDataStore = nil;
         for (id object in array) {
             
             if ([object isKindOfClass:[NSArray class]]) {
-                [cachedArray addObject:[self cachedArray:object withClass:cc]];
+                NSMutableArray *newArray = [self cachedArray:object withClass:cc];
+                if (newArray) {
+                    [cachedArray addObject:newArray];
+                }
+            
             }
             else{
-                [cachedArray addObject:[cc modelFromCache:object]];
+                id newModel = [cc modelFromCache:object];
+                if (newModel) {
+                    [cachedArray addObject:newModel];
+                }
+                
             }
             
         }
         return cachedArray;
     }
     
-    return nil;
+    return [NSMutableArray array];
     
 }
 
