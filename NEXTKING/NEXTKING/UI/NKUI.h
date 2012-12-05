@@ -17,8 +17,7 @@
 
 #define NKLineTableViewWidth 299
 
-#define NKNavigationController [[NKUI sharedNKUI] navigationController]
-#define NKNC NKNavigationController
+#define NKNC [[NKUI sharedNKUI] navigationController]
 
 #define NKActionSheetStyle UIActionSheetStyleBlackTranslucent
 
