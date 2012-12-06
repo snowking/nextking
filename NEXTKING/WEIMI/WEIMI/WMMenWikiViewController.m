@@ -43,6 +43,13 @@
     
     [self addRightButtonWithTitle:@"添加男人"];
     
+    UIImageView *book = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bluebook.png"]];
+    [self.contentView insertSubview:book atIndex:0];
+    CGRect bookFrame = book.frame;
+    bookFrame.origin.y = 44;
+    book.frame = bookFrame;
+    [book release];
+    
     [self refreshData];
     
 }

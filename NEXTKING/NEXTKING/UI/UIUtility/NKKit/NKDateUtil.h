@@ -25,5 +25,9 @@
 + (NSString *)eventCreateWithDate:(NSDate *)date;
 + (NSDate *)NSStringDateToNSDate:(NSString *)string;
 
++ (NSString *)howOldNowWithBirthday:(NSDate *)date;
+
+
+
 
 @end

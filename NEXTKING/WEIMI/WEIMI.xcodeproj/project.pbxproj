@@ -180,6 +180,7 @@
 		A39AAB88166C676F005503C6 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = A39AAB16166C676F005503C6 /* UIImage+RoundedCorner.m */; };
 		A3AA563316537EA200163F05 /* WMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AA563116537EA200163F05 /* WMSettingViewController.m */; };
 		A3AA563416537EA200163F05 /* WMSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AA563216537EA200163F05 /* WMSettingViewController.xib */; };
+		A3F5F560166F3E1F00D82103 /* bluebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3F5F55F166F3E1E00D82103 /* bluebook@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -443,6 +444,7 @@
 		A3AA563016537EA200163F05 /* WMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingViewController.h; sourceTree = "<group>"; };
 		A3AA563116537EA200163F05 /* WMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingViewController.m; sourceTree = "<group>"; };
 		A3AA563216537EA200163F05 /* WMSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMSettingViewController.xib; sourceTree = "<group>"; };
+		A3F5F55F166F3E1E00D82103 /* bluebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bluebook@2x.png"; path = "../../../../../192.168.11.50/薇蜜/切图/全局/bluebook@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -626,6 +628,7 @@
 			children = (
 				A316E8EC166763F20051EDA7 /* appBackground@2x.png */,
 				A316E8EE166764D50051EDA7 /* redbook@2x.png */,
+				A3F5F55F166F3E1E00D82103 /* bluebook@2x.png */,
 				A312FA4A165A2BDA0098A02D /* default_portrait@2x.png */,
 				A39A52D51637DAD700A45E74 /* line_click@2x.png */,
 				A39A52D61637DAD700A45E74 /* line_normal@2x.png */,
@@ -1135,6 +1138,7 @@
 				A39AAB7C166C676F005503C6 /* pumultiselect_un_click@2x.png in Resources */,
 				A39AAB7D166C676F005503C6 /* puright_click@2x.png in Resources */,
 				A39AAB7E166C676F005503C6 /* puright_normal@2x.png in Resources */,
+				A3F5F560166F3E1F00D82103 /* bluebook@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,8 @@ typedef enum {
     NKTableViewStyleSliderWithSearchBar,    //Line
     NKTableViewStyleSliderLinePick,    //Pick Line
     NKTableViewStyleLineSearch,    //LineSearch
-    NKTableViewStyleRegisterLinePick    //LineSearch
+    NKTableViewStyleRegisterLinePick,    //LineSearch
+    NKTableViewStyleAlbum
 } NKTableViewStyle;
 
 @interface NKTableViewController : NKViewController<UITableViewDataSource, UITableViewDelegate, EGORefreshTableHeaderDelegate>{

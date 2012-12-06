@@ -174,6 +174,17 @@
         }
             break;
             
+        case NKTableViewStyleAlbum:{
+            showTableView.frame = CGRectMake(0, 44, 320, NKMainHeight-44);
+            
+            [bottomBack removeFromSuperview];
+            bottomBack = nil;
+            [bottomShadow removeFromSuperview];
+            bottomShadow = nil;
+            
+        }
+            break;
+            
         case NKTableViewStyleSliderWithSearchBar:{
             showTableView.frame = CGRectMake(0, 78, NKLineTableViewWidth, NKContentHeight-78);
             showTableView.showsVerticalScrollIndicator = NO;

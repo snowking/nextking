@@ -325,5 +325,25 @@
 }
 
 
++ (NSString *)howOldNowWithBirthday:(NSDate *)date{
+    
+    
+    if (!date) {
+        return @"未知";
+    }
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger nFlags= NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSDateComponents *components = [calendar components:nFlags fromDate:date];
+    NSInteger year = [components year];
+    
+    NSDateComponents *cucomponents = [calendar components:nFlags fromDate:[NSDate date]];
+    NSInteger cuyear = [cucomponents year];
+    
+    return [NSString stringWithFormat:@"%d", cuyear - year];
+    
+    
+}
+
 
 @end
