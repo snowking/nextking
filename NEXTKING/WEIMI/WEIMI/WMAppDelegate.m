@@ -33,9 +33,9 @@
     
     
     [[NKConfig sharedConfig] setDomainURL:@"http://zhenghua.sinaapp.com/index.php"];
-    
+    //[[NKConfig sharedConfig] setDomainURL:@"http://roy.mobile.dev.xq.lab/ios/v1"];
     NKUI *ui = [NKUI sharedNKUI];
-    ui.needLogin = YES;
+    ui.needLogin = NO;
     ui.homeClass = [WMHomeViewController class];
     ui.welcomeCalss = [WMWelcomeViewController class];
     
