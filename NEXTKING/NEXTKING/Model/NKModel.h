@@ -13,8 +13,8 @@
 
 #import "JSONKit.h"
 #import "NSURL+StringURLEncode.h"
-#import "ASIHTTPRequest.h"
 #import "ASIDownloadCache.h"
+#import "NKImageLoader.h"
 
 #define NKBindValueForParameter(value, param) \
 if(value!=nil) {\
@@ -40,11 +40,7 @@ if(param != nil) {\
 
 
 
-@interface ASIHTTPRequest (ImageDownload)
 
-+(id)requestWithImageURL:(NSURL *)newURL;
-
-@end
 
 
 @interface NKModel : NSObject{

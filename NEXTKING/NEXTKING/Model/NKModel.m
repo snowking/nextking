@@ -11,22 +11,7 @@
 #import "NKMFeed.h"
 
 
-@implementation  ASIHTTPRequest (ImageDownload)
 
-+(id)requestWithImageURL:(NSURL *)newURL{
-    
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:newURL usingCache:[ASIDownloadCache sharedCache] andCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
-    
-    [request setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
-    [request setDownloadDestinationPath:
-     [[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-    NSLog(@"DownLoad Image:%@", [request url]);
-    
-    return request;
-    
-}
-
-@end
 
 @implementation NKModel
 
