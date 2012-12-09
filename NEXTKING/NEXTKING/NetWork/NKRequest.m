@@ -117,9 +117,9 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     
     //    NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
     
-    NSLog(@"%@", incomingrequest.responseString);
+    //NSLog(@"%@", incomingrequest.responseString);
     
-    NSLog(@"%@", [incomingrequest responseCookies]);
+    //NSLog(@"%@", [incomingrequest responseCookies]);
     NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
     
     if (tlocalError) {

@@ -11,6 +11,7 @@
 #import "NKSDK.h"
 #import "UIColor+HexString.h"
 #import "NKNavigator.h"
+#import "NKNavigationController.h"
 
 #define NKMainHeight [[UIScreen mainScreen] bounds].size.height-20
 #define NKContentHeight NKMainHeight-NKNavigatorHeight
