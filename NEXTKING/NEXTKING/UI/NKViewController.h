@@ -20,6 +20,8 @@
     UILabel *titleLabel;
     
     UIView  *contentView;
+    
+    NKProgressView *progressView;
 }
 
 @property (nonatomic, assign) UIView  *placeHolderView;

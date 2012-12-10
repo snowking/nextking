@@ -22,3 +22,4 @@
 #import "NKTextViewWithPlaceholder.h"
 #import "NKInputView.h"
 #import "NKNumberPad.h"
+#import "NKProgressView.h"
