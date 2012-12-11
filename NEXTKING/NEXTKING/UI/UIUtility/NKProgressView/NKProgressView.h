@@ -25,7 +25,7 @@ progressView.labelText = @"正在载入..."
 #define ProgressNetWorkError if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView netWorkError];progressView = nil;}
 
 
-#define ProgressErrorDefault if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView failedWithString:request.errorCode?[request.errorCode description]:@"网络未连接，请检查设置"];progressView = nil; }
+#define ProgressErrorDefault if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView failedWithString:request.errorCode?[NSString stringWithFormat:@"%@", request.errorCode]:@"网络未连接，请检查设置"];progressView = nil; }
 #define ProgressAlertView ProgressHide; UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:ticket.serverError?[ticket.serverError descriptionForUI]:@"网络未连接，请检查设置" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];[alert show];[alert release]
 
 @interface NKProgressView : MBProgressHUD

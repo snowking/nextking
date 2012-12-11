@@ -21,6 +21,9 @@
     
     int successReturnValue;
     
+    id errorTarget;
+    SEL errorMethod;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -31,6 +34,9 @@
 @property (nonatomic, retain) NSString *parseDataKey;
 @property (nonatomic, retain) NSString *parseStatusKey;
 @property (nonatomic, assign) int successReturnValue;
+
+@property (nonatomic, assign) id  errorTarget;
+@property (nonatomic, assign) SEL errorMethod;
 
 +(id)sharedConfig;
 

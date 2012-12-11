@@ -99,7 +99,9 @@ static NKDataStore *_sharedDataStore = nil;
 
 -(NSMutableArray *)cachedArrayOf:(NSString*)cacheKey andClass:(Class)cc{
     
-    NSMutableArray *cachedArray = [self cachedArray:[NSArray arrayWithContentsOfFile:[self cachedPathOf:cacheKey]] withClass:cc];
+    NSArray *array = [[NSData dataWithContentsOfFile:[self cachedPathOf:cacheKey]] objectFromJSONData];
+    
+    NSMutableArray *cachedArray = [self cachedArray:array withClass:cc];
     
     if ([cachedArray count]) {
         return cachedArray;
@@ -144,8 +146,12 @@ static NKDataStore *_sharedDataStore = nil;
     
     NSMutableArray *arrayToCache = [self arrayToCache:array];
     
-    return [arrayToCache writeToFile:[self cachedPathOf:cacheKey] atomically:YES];
+    NSError *error = nil;
+    BOOL suc = [[arrayToCache JSONData] writeToFile:[self cachedPathOf:cacheKey] options:NSDataWritingAtomic error:&error];
+    
+    return suc;
 }
+
 -(BOOL)cacheObject:(id)object forCacheKey:(NSString*)cacheKey{
     
     if ([object respondsToSelector:@selector(cacheDic)]) {

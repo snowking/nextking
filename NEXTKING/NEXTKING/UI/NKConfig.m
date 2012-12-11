@@ -20,6 +20,9 @@
 @synthesize parseStatusKey;
 @synthesize successReturnValue;
 
+@synthesize errorTarget;
+@synthesize errorMethod;
+
 -(void)dealloc{
     
     [domainURL release];

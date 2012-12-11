@@ -355,7 +355,7 @@
     [self setPullBackFrame];
     
     
-    //ProgressHide;
+    ProgressHide;
 }
 
 -(void)getMoreDataFailed:(NKRequest*)request{
@@ -366,6 +366,8 @@
     [self doneLoadingTableViewData];
     [self checkPlaceholder];
     
+    
+    ProgressErrorDefault;
     
     if (request.errorCode) {
         // Do some Error

@@ -30,6 +30,8 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
 @synthesize results;
 @synthesize originDic;
 
+@synthesize totalCount;
+
 -(void)dealloc{
     
     
@@ -39,6 +41,8 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     [errorCode release];
     [results release];
     [originDic release];
+    
+    [totalCount release];
     
     [super dealloc];
 }
@@ -171,6 +175,9 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
                 }
                     break;
                 case NKResultTypeResultSets:{
+                    
+                    self.totalCount = [realSomething objectOrNilForKey:@"total_count"];
+                    
                     NSArray *values = [realSomething objectOrNilForKey:@"values"];
                     
                     resultsArray = [NSMutableArray arrayWithCapacity:[values count]];
@@ -211,6 +218,17 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     }
 }
 
+-(NSNumber*)errorCode{
+    
+    NKConfig *config = [NKConfig sharedConfig];
+    
+    if ([config.errorTarget respondsToSelector:config.errorMethod]) {
+        return [config.errorTarget performSelector:config.errorMethod withObject:errorCode];
+    }
+    
+    return errorCode;
+    
+}
 
 // A new ticket to Redo the task
 -(id)copyWithZone:(NSZone *)zone{
