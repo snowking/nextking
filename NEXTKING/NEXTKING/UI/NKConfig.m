@@ -18,6 +18,7 @@
 
 @synthesize parseDataKey;
 @synthesize parseStatusKey;
+@synthesize parseValueKey;
 @synthesize successReturnValue;
 
 @synthesize errorTarget;
@@ -28,6 +29,7 @@
     [domainURL release];
     [parseDataKey release];
     [parseStatusKey release];
+    [parseValueKey release];
     
     [super dealloc];
 }
@@ -57,6 +59,7 @@ static NKConfig *_config = nil;
         
         self.parseDataKey = @"data";
         self.parseStatusKey = @"status";
+        self.parseValueKey = @"values";
         self.successReturnValue = 1;
         
     }

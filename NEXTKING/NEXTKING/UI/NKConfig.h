@@ -18,6 +18,7 @@
     NSString *domainURL;
     
     NSString *parseDataKey;
+    NSString *parseValueKey;
     
     int successReturnValue;
     
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) NSString *domainURL;
 @property (nonatomic, retain) NSString *parseDataKey;
 @property (nonatomic, retain) NSString *parseStatusKey;
+@property (nonatomic, retain) NSString *parseValueKey;
 @property (nonatomic, assign) int successReturnValue;
 
 @property (nonatomic, assign) id  errorTarget;

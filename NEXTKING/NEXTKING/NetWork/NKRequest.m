@@ -178,7 +178,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
                     
                     self.totalCount = [realSomething objectOrNilForKey:@"total_count"];
                     
-                    NSArray *values = [realSomething objectOrNilForKey:@"values"];
+                    NSArray *values = [realSomething objectOrNilForKey:[[NKConfig sharedConfig] parseValueKey]];
                     
                     resultsArray = [NSMutableArray arrayWithCapacity:[values count]];
                     for (NSDictionary *dic in values) {
