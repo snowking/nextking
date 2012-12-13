@@ -28,6 +28,12 @@ typedef enum {
     
     CGSize segmentSize;
     UIColor *segmentColor;
+    UIColor *highlightSegmentColor;
+    
+    UIColor *normalTextColor;
+    UIColor *highlightTextColor;
+    
+    
     
 }
 
@@ -38,10 +44,16 @@ typedef enum {
 
 @property (nonatomic, assign) CGSize segmentSize;
 @property (nonatomic, retain) UIColor *segmentColor;
+@property (nonatomic, retain) UIColor *highlightSegmentColor;
+
+@property (nonatomic, retain) UIColor *normalTextColor;
+@property (nonatomic, retain) UIColor *highlightTextColor;
 
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected;
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected andTitle:(id)atitle;
++(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected title:(id)atitle normalTextColor:(UIColor*)nColor andHighlightTextColor:(UIColor*)hColor;
 +(id)segmentWithSize:(CGSize)size color:(UIColor*)color andTitle:(id)atitle;
++(id)segmentWithSize:(CGSize)size normalColor:(UIColor*)ncolor highlightColor:(UIColor*)hColor andTitle:(id)atitle;
 
 @end
 

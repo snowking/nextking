@@ -19,6 +19,10 @@
 
 @synthesize segmentSize;
 @synthesize segmentColor;
+@synthesize highlightSegmentColor;
+
+@synthesize normalTextColor;
+@synthesize highlightTextColor;
 
 -(void)dealloc{
     
@@ -27,6 +31,10 @@
     [title release];
     
     [segmentColor release];
+    [highlightSegmentColor release];
+    
+    [normalTextColor release];
+    [highlightTextColor release];
     
     [super dealloc];
 }
@@ -38,11 +46,24 @@
 
 +(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected andTitle:(id)atitle{
     
+    return [self segmentWithNormalBack:normal selectedBack:selected title:atitle normalTextColor:nil andHighlightTextColor:nil];
+    
+}
+
++(id)segmentWithNormalBack:(UIImage*)normal selectedBack:(UIImage*)selected title:(id)atitle normalTextColor:(UIColor*)nColor andHighlightTextColor:(UIColor*)hColor{
+    
     NKSegment *newSegment = [[self alloc] init];
     
     newSegment.normalBackground = normal;
     newSegment.selectedBackground = selected;
     newSegment.title = atitle;
+    
+    if (nColor) {
+        newSegment.normalTextColor = nColor;
+    }
+    if (hColor) {
+        newSegment.highlightTextColor = hColor;
+    }
     
     return [newSegment autorelease];
     
@@ -51,12 +72,41 @@
 
 +(id)segmentWithSize:(CGSize)size color:(UIColor*)color andTitle:(id)atitle{
     
+    return [self segmentWithSize:size normalColor:color highlightColor:nil andTitle:atitle];
+}
+
++(id)segmentWithSize:(CGSize)size normalColor:(UIColor*)ncolor highlightColor:(UIColor*)hColor andTitle:(id)atitle{
+    
     NKSegment *newSegment = [[self alloc] init];
     newSegment.segmentSize = size;
-    newSegment.segmentColor = color;
     newSegment.title = atitle;
+    
+    if (ncolor) {
+        newSegment.segmentColor = ncolor;
+    }
+    if (hColor) {
+        newSegment.highlightSegmentColor = hColor;
+    }
+    
     return [newSegment autorelease];
     
+    
+}
+
+-(id)init{
+    
+    self = [super init];
+    if (self) {
+        
+        self.normalTextColor = NormalTextColor;
+        self.highlightTextColor = HighlightTextColor;
+        
+        self.segmentColor = [UIColor clearColor];
+        self.highlightSegmentColor = [UIColor clearColor];
+        
+    }
+    
+    return self;
 }
 
 @end
@@ -160,9 +210,7 @@
                 break;
         }
         
-        if (!segment.selectedBackground && !segment.normalBackground) {
-            newSegment.backgroundColor = segment.segmentColor;
-        }
+        
 
     }
     
@@ -185,7 +233,12 @@
         NKSegment *nkseg = [self.segmentImages objectAtIndex:segment.tag];
         
         [segment setBackgroundImage:nkseg.normalBackground forState:UIControlStateNormal];
-        [segment setTitleColor:NormalTextColor forState:UIControlStateNormal];
+        [segment setTitleColor:nkseg.normalTextColor forState:UIControlStateNormal];
+        
+        if (!nkseg.selectedBackground && !nkseg.normalBackground) {
+            segment.backgroundColor = nkseg.segmentColor;
+        }
+        
     }
     
 }
@@ -200,8 +253,15 @@
     }
     
     UIButton *nkseg = [self.segments objectAtIndex:selectedIndex];
-    [nkseg setBackgroundImage:[[self.segmentImages objectAtIndex:selectedIndex] selectedBackground] forState:UIControlStateNormal];
-    [nkseg setTitleColor:HighlightTextColor forState:UIControlStateNormal];
+    
+    NKSegment *theSeg = [self.segmentImages objectAtIndex:selectedIndex];
+
+    [nkseg setBackgroundImage:[theSeg selectedBackground] forState:UIControlStateNormal];
+    [nkseg setTitleColor:[theSeg highlightTextColor] forState:UIControlStateNormal];
+    
+    if (!theSeg.selectedBackground && !theSeg.normalBackground) {
+        nkseg.backgroundColor = theSeg.highlightSegmentColor;
+    }
     
     if (shouldAnimate) {
         nkseg.alpha = 0.3;
