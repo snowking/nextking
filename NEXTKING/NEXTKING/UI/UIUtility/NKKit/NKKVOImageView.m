@@ -19,17 +19,21 @@
 
 @synthesize tap;
 
+@synthesize placeHolderImage;
+
 -(void)dealloc{
     
     [modelObject removeObserver:self forKeyPath:theKeyPath];
     [modelObject release];
     [theKeyPath release];
     
+    [placeHolderImage release];
+    
     [super dealloc];
 }
 
 -(void)bindValueOfModel:(id)mo forKeyPath:(NSString*)key{
-    self.image = nil;
+    self.image = placeHolderImage;
     [modelObject removeObserver:self forKeyPath:theKeyPath];
     //[modelObject setValue:nil forKeyPath:key];
     
@@ -50,6 +54,11 @@
 -(void)render{
     
     UIImage *downLoadImage = [modelObject valueForKeyPath:theKeyPath];
+    
+    // Do nothing when there is no downLoadImage
+    if (!downLoadImage) {
+        return;
+    }
     
     if (target&&renderMethod&&[target respondsToSelector:renderMethod]) {
         self.image = [target performSelector:renderMethod withObject:downLoadImage];

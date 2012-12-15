@@ -24,10 +24,15 @@
     NSString *url;
     NSString *keyPath;
     
+    
+    UIImage *image;
+    
 }
 @property (nonatomic, retain) id        object;
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic, retain) NSString *keyPath;
+
+@property (nonatomic, retain) UIImage  *image;
 
 +(id)imageLoadObjectWithObject:(id)theObject url:(NSString*)imageURL andKeyPath:(NSString*)path;
 

@@ -32,11 +32,15 @@
 @synthesize url;
 @synthesize keyPath;
 
+@synthesize image;
+
 -(void)dealloc{
     
     [object release];
     [url release];
     [keyPath release];
+    
+    [image release];
     
     [super dealloc];
 }
@@ -54,7 +58,18 @@
 }
 
 
-
+-(UIImage*)image{
+    
+    if (!image) {
+        
+        NKImageLoadObject *loadObject = [NKImageLoadObject imageLoadObjectWithObject:self url:self.url andKeyPath:@"image"];
+        [[NKImageLoader imageLoader] addImageLoadObject:loadObject];
+    }
+    
+    
+    
+    return image;
+}
 
 
 @end
