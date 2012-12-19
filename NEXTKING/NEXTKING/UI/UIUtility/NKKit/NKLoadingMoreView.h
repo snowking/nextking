@@ -8,9 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NKLoadingMoreView : UIView
+
+typedef enum {
+    NKLoadingMoreViewStyleDefault = 0,
+    NKLoadingMoreViewStyleZUO,
+    NKLoadingMoreViewStyleOther
+} NKLoadingMoreViewStyle;
 
 
+@interface NKLoadingMoreView : UIView{
+    
+    UIActivityIndicatorView *indicator;
+    UILabel                 *infoLabel;
+    
+}
+
+@property (nonatomic, assign) UIActivityIndicatorView *indicator;
+@property (nonatomic, assign) UILabel                 *infoLabel;
+
+
++(id)loadingMoreViewWithStyle:(NKLoadingMoreViewStyle)style;
 
 -(void)showLoading:(BOOL)loading;
 

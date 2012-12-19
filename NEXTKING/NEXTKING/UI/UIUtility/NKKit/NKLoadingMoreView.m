@@ -10,22 +10,54 @@
 
 @implementation NKLoadingMoreView
 
+@synthesize indicator;
+@synthesize infoLabel;
+
+
++(id)loadingMoreViewWithStyle:(NKLoadingMoreViewStyle)style{
+    
+    NKLoadingMoreView *loadingMoreView = [[self alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
+    
+    [loadingMoreView changeStyle:style];
+    return [loadingMoreView autorelease];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+
+        self.indicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
+        [self addSubview:indicator];
+        indicator.hidesWhenStopped = YES;
+        indicator.center = CGPointMake(66, 26);
         
-//        UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tvCard.png"]];
-//        background.contentStretch = CGRectMake(0.5, 0.32, 0.1, 0.05);
-//        background.frame = self.bounds;
-//        [self addSubview:background];
-//        [background release];
+        self.infoLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 52)] autorelease];
+        [self addSubview:infoLabel];
+        infoLabel.backgroundColor = [UIColor clearColor];
+        infoLabel.textAlignment = UITextAlignmentCenter;
+        infoLabel.font = [UIFont systemFontOfSize:12];
         
         
         
     }
     return self;
+}
+
+-(void)changeStyle:(NKLoadingMoreViewStyle)style{
+    
+    switch (style) {
+        case NKLoadingMoreViewStyleDefault:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    
 }
 
 /*
@@ -39,7 +71,16 @@
 
 -(void)showLoading:(BOOL)loading{
     
-   
+   infoLabel.text = loading? @"载入中...":@"更多内容";
+    if (loading) {
+        [indicator startAnimating];
+    }
+    else{
+        [indicator stopAnimating];
+    }
+    
+    
+    
     
 }
 
