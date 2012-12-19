@@ -25,7 +25,7 @@
 //
 
 #import "EGORefreshTableHeaderView.h"
-
+#import "UIColor+HexString.h"
 
 //#define TEXT_COLOR              [UIColor colorWithRed:87.0 / 255.0 green:108.0 / 255.0 blue:137.0 / 255.0 alpha:1.0]
 
@@ -99,6 +99,40 @@
             _arrowImage.contents = (id)[UIImage imageNamed : @"blueArrow.png"].CGImage;
         }
             break;
+            
+        case EGORefreshTableHeaderStyleZUO:{
+            UIColor *textColor = [UIColor colorWithHexString:@"#889097"];
+            
+            _lastUpdatedLabel.hidden = YES;
+            _statusLabel.textColor = textColor;
+            _statusLabel.frame = CGRectMake(137, self.frame.size.height-34, 115, 16);
+            _statusLabel.font = [UIFont boldSystemFontOfSize:14];
+            _statusLabel.textAlignment = UITextAlignmentLeft;
+            _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+            _activityView.center = CGPointMake(120, self.frame.size.height-26);
+            self.backgroundColor = [UIColor clearColor];
+            _arrowImage.frame = CGRectMake(109.0f, self.frame.size.height - 34.0f, 18.0f, 15.0f);
+            _arrowImage.contents = (id)[UIImage imageNamed : @"ego_arrow.png"].CGImage;
+        }
+            break;
+            
+        case EGORefreshTableHeaderStyleZUOLeft:{
+            UIColor *textColor = [UIColor colorWithHexString:@"#889097"];
+            
+            CGFloat moveX = 15;
+            
+            _lastUpdatedLabel.hidden = YES;
+            _statusLabel.textColor = textColor;
+            _statusLabel.frame = CGRectMake(137 - moveX, self.frame.size.height-34, 115, 16);
+            _statusLabel.font = [UIFont boldSystemFontOfSize:14];
+            _statusLabel.textAlignment = UITextAlignmentLeft;
+            _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+            _activityView.center = CGPointMake(120 - moveX, self.frame.size.height-26);
+            self.backgroundColor = [UIColor clearColor];
+            _arrowImage.frame = CGRectMake(109.0f - moveX, self.frame.size.height - 34.0f, 18.0f, 15.0f);
+            _arrowImage.contents = (id)[UIImage imageNamed : @"ego_arrow.png"].CGImage;
+        }
+            break;
         default:{
             UIColor *textColor = [UIColor colorWithRed:87.0 / 255.0 green:108.0 / 255.0 blue:137.0 / 255.0 alpha:1.0];
             
@@ -108,6 +142,8 @@
             self.backgroundColor = [UIColor clearColor];
             _arrowImage.contents = (id)[UIImage imageNamed : @"blueArrow.png"].CGImage;
         }
+            
+            
             break;
     }
     

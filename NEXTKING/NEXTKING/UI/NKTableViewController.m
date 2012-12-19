@@ -124,6 +124,7 @@
     [bottomShadow release];
     
     
+    
     switch (style) {
         case NKTableViewStyleFullScreen:{
             showTableView.frame = CGRectMake(0, 44, 320, NKContentHeight-44);
@@ -227,6 +228,10 @@
         default:
             break;
     }
+    
+    
+    [self.refreshHeaderView changeStyle: showTableView.frame.size.width>=320?EGORefreshTableHeaderStyleZUO:EGORefreshTableHeaderStyleZUOLeft];
+    
     
     upBack.frame = CGRectMake(0, showTableView.frame.origin.y, showTableView.bounds.size.width, upBack.bounds.size.height);
     upShadow.frame = CGRectMake(0, showTableView.frame.origin.y, showTableView.bounds.size.width, upShadow.bounds.size.height);
