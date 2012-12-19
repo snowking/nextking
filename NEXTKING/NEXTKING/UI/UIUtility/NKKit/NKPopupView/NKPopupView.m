@@ -131,6 +131,31 @@
             
         }
             break;
+            
+        case NKPopupViewStyleLineEdit:{
+            
+            maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
+            maskView.frame = CGRectMake(0, 0, 266, 354);
+            maskView.center = self.center;
+            showTableView.frame = CGRectMake(0, 0, 236, 235);
+            showTableView.center = CGPointMake(self.center.x, self.center.y-3);
+            
+            [self addHeaderWithPlaceHolder:@"输入特征描述" andTitle:@"添加"];
+            
+            
+            UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(66, maskView.center.y+101, 238, 40)];
+            [doneButton addTarget:self action:@selector(doneButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [doneButton setBackgroundImage:[UIImage imageNamed:@"pudonebutton_normal.png"] forState:UIControlStateNormal];
+            [doneButton setBackgroundImage:[UIImage imageNamed:@"pudonebutton_click.png"] forState:UIControlStateHighlighted];
+            [doneButton setTitle:@"完成" forState:UIControlStateNormal];
+            [contentView addSubview:doneButton];
+            doneButton.center = CGPointMake(maskView.center.x, maskView.frame.origin.y+maskView.frame.size.height - 38);
+            doneButton.titleLabel.font = [UIFont boldSystemFontOfSize:FontSize];
+            [doneButton release];
+            
+        }
+            break;
+            
         case NKPopupViewStyleFatFooter:{
             
             
