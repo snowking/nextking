@@ -55,10 +55,10 @@
     
     UIImage *downLoadImage = [modelObject valueForKeyPath:theKeyPath];
     
-    // Do nothing when there is no downLoadImage
-    if (!downLoadImage) {
-        return;
-    }
+//    // Do nothing when there is no downLoadImage
+//    if (!downLoadImage) {
+//        return;
+//    }
     
     if (target&&renderMethod&&[target respondsToSelector:renderMethod]) {
         self.image = [target performSelector:renderMethod withObject:downLoadImage];
