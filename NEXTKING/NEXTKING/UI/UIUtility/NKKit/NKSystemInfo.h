@@ -8,9 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSString *const NKCurrentAppVersion;
+
+
 @interface NKSystemInfo : NSObject
 
 
 +(NSString*)deviceString;
++(NSString*)versionString;
++(NSString*)currentVersionString;
+
++(void)updateVersion;
+
 
 @end

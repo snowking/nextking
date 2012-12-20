@@ -10,6 +10,8 @@
 
 #import <sys/utsname.h>
 
+NSString *const NKCurrentAppVersion = @"NKCurrentAppVersion";
+
 @implementation NKSystemInfo
 
 
@@ -39,5 +41,30 @@
     //NSLog(@"NOTE: Unknown device type: %@", deviceString);
     return deviceString;
 }
+
+
++(NSString*)versionString{
+    
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:bundlePath];
+    NSString *bundleVersion = [dict objectForKey:@"CFBundleVersion"];
+    return bundleVersion;
+    
+}
+
++(NSString*)currentVersionString{
+    
+    return [[NSUserDefaults standardUserDefaults] stringForKey:NKCurrentAppVersion];
+}
+
++(void)updateVersion{
+    
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[self versionString] forKey:NKCurrentAppVersion];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+}
+
 
 @end
