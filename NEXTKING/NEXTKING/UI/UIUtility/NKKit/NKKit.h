@@ -23,3 +23,4 @@
 #import "NKInputView.h"
 #import "NKNumberPad.h"
 #import "NKProgressView.h"
+#import "NKSlidesView.h"
