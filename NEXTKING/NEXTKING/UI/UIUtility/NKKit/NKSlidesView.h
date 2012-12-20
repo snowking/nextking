@@ -18,5 +18,7 @@
 
 +(id)slidesViewWithImages:(NSArray*)images;
 
+//-(void)addButtonWith
+
 
 @end

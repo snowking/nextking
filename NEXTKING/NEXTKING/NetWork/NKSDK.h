@@ -12,6 +12,7 @@
 #import "NKAccountService.h"
 #import "NKRecordService.h"
 #import "NKUserService.h"
+#import "NKNotificationCenter.h"
 
 @interface NKSDK : NSObject{
     

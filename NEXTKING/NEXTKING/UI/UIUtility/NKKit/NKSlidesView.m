@@ -48,10 +48,17 @@
         imageView.image = image;
         x+=320;
     }
+    
+    
+    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(x-320, 0, 320, self.frame.size.height)];
+    [doneButton addTarget:self action:@selector(hide:) forControlEvents:UIControlEventTouchUpInside];
+    [slideScrollView addSubview:doneButton];
+    [doneButton release];
+    
 
 }
 
--(void)hide{
+-(void)hide:(id)sender{
     
     [UIView animateWithDuration:1.0 animations:^{
         self.alpha = 0.0;
