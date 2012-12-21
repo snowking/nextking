@@ -51,6 +51,21 @@
     return image;
 }
 
+
+-(void)setPlaceHolderImage:(UIImage *)thePlaceHolderImage{
+    
+    if (thePlaceHolderImage != placeHolderImage) {
+        
+        [placeHolderImage release];
+        placeHolderImage = [thePlaceHolderImage retain];
+        
+        self.image = placeHolderImage;
+
+    }
+    
+}
+
+
 -(void)render{
     
     UIImage *downLoadImage = [modelObject valueForKeyPath:theKeyPath];
