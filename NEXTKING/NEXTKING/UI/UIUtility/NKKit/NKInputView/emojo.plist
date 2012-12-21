@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
@@ -16,7 +16,7 @@
 	</dict>
 	<dict>
 		<key>key</key>
-		<string>(呲牙)</string>
+		<string>(嘻嘻)</string>
 		<key>picture</key>
 		<string>emojo_chiya.png</string>
 	</dict>
