@@ -46,7 +46,7 @@ typedef enum {
     UIImageView *bottomBack;
     UIImageView *bottomShadow;
     
-    
+    int   currentPage;
     
 }
 
