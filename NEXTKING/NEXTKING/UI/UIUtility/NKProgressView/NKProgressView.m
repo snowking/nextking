@@ -30,7 +30,7 @@
 +(id)loadingViewForView:(UIView*)view{
     
     NKProgressView *progress = [self progressViewForView:view];
-    progress.labelText = @"正在载入...";
+    progress.labelText = @"正在载入";
     return progress;
     
 }

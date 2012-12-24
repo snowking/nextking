@@ -74,6 +74,7 @@
 	// Do any additional setup after loading the view.
     
     self.shouldAutoGetMoreData = YES;
+    currentPage = 1;
     self.upsideDown = NO;
     
     self.showTableView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 44, 320, NKContentHeight-44) style:UITableViewStylePlain] autorelease];
@@ -273,7 +274,7 @@
 }
 
 -(void)setPullBackFrame{
-    pullBackView.frame = CGRectMake(0, showTableView.contentSize.height, 320, self.view.frame.size.height*2);
+    pullBackView.frame = CGRectMake(0, showTableView.contentSize.height-showTableView.tableFooterView.frame.size.height, 320, self.view.frame.size.height*2);
 }
 
 - (void)viewDidUnload
@@ -314,7 +315,7 @@
             self.placeHolderView = nil;
         }
         [self.showTableView insertSubview:self.placeHolderView atIndex:0];
-        self.showTableView.tableFooterView = nil;
+        //self.showTableView.tableFooterView = nil;
     }
     
 }
@@ -326,6 +327,8 @@
 -(void)getMoreDataOK:(NKRequest*)request{
     [self showFooter:NO];
     gettingMoreData = NO;
+    
+    currentPage ++;
     
     if ([request.results count]) {
         
@@ -347,6 +350,8 @@
 -(void)refreshDataOK:(NKRequest*)request{
     
     [self doneLoadingTableViewData];
+    
+    currentPage = 1;
     
     if ([request.results count]) {
         self.dataSource = [NSMutableArray arrayWithArray:request.results];

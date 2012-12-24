@@ -12,6 +12,7 @@
 typedef enum {
     NKLoadingMoreViewStyleDefault = 0,
     NKLoadingMoreViewStyleZUO,
+    NKLoadingMoreViewStyleZUOAlbum,
     NKLoadingMoreViewStyleOther
 } NKLoadingMoreViewStyle;
 
@@ -21,10 +22,27 @@ typedef enum {
     UIActivityIndicatorView *indicator;
     UILabel                 *infoLabel;
     
+    NKLoadingMoreViewStyle   loadingMoreViewStyle;
+    
+    
+    UIButton                *actionButton;
+    
+    
+    id                       target;
+    SEL                      action;
+    
+    
 }
 
 @property (nonatomic, assign) UIActivityIndicatorView *indicator;
 @property (nonatomic, assign) UILabel                 *infoLabel;
+
+@property (nonatomic, assign) NKLoadingMoreViewStyle   loadingMoreViewStyle;
+
+@property (nonatomic, assign) UIButton                *actionButton;
+
+@property (nonatomic, assign) id                       target;
+@property (nonatomic, assign) SEL                      action;
 
 
 +(id)loadingMoreViewWithStyle:(NKLoadingMoreViewStyle)style;

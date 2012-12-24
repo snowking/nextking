@@ -203,7 +203,7 @@
         self.frame = frame;
         upTableView.frame = upFrame;
         if ([dataSource count]) {
-            [upTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataSource count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            [upTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataSource count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }
         
     } completion:^(BOOL finished) {
@@ -382,7 +382,7 @@
         self.frame = frame;
         upTableView.frame = upFrame;
         if ([dataSource count]) {
-            [upTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataSource count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            [upTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[dataSource count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }
         
         

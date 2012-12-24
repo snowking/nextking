@@ -14,7 +14,7 @@
 #define Progress(word) progressView = [NKProgressView progressView];progressView.labelText = word;
 
 #define ProgressLoading progressView = [NKProgressView progressViewForView:self.contentView];\
-progressView.labelText = @"正在载入..."
+progressView.labelText = @"正在载入"
 
 #define ProgressHide if (progressView){ [progressView hide:YES afterDelay:0.3]; progressView = nil;}
 

@@ -13,6 +13,13 @@
 @synthesize indicator;
 @synthesize infoLabel;
 
+@synthesize loadingMoreViewStyle;
+
+@synthesize actionButton;
+
+@synthesize target;
+@synthesize action;
+
 
 +(id)loadingMoreViewWithStyle:(NKLoadingMoreViewStyle)style{
     
@@ -46,9 +53,34 @@
 
 -(void)changeStyle:(NKLoadingMoreViewStyle)style{
     
-    switch (style) {
+    
+    self.loadingMoreViewStyle = style;
+    
+    switch (loadingMoreViewStyle) {
         case NKLoadingMoreViewStyleDefault:
             
+            break;
+            
+        case NKLoadingMoreViewStyleZUO:{
+            
+            infoLabel.textColor = [UIColor grayColor];
+            
+            self.actionButton = [[[UIButton alloc] initWithFrame:self.bounds] autorelease];
+            [self addSubview:actionButton];
+            [actionButton addTarget:self action:@selector(actionButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }
+            break;
+        case NKLoadingMoreViewStyleZUOAlbum:{
+            
+            infoLabel.textColor = [UIColor grayColor];
+            indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+            
+            self.actionButton = [[[UIButton alloc] initWithFrame:self.bounds] autorelease];
+            [self addSubview:actionButton];
+            [actionButton addTarget:self action:@selector(actionButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }
             break;
             
         default:
@@ -57,6 +89,15 @@
     
     
     
+    
+}
+
+-(void)actionButtonClick:(id)sender{
+    
+    
+    if ([target respondsToSelector:action]) {
+        [target performSelector:action];
+    }
     
 }
 
@@ -71,14 +112,40 @@
 
 -(void)showLoading:(BOOL)loading{
     
-   infoLabel.text = loading? @"载入中...":@"更多内容";
-    if (loading) {
-        [indicator startAnimating];
-    }
-    else{
-        [indicator stopAnimating];
+    switch (loadingMoreViewStyle) {
+        case NKLoadingMoreViewStyleDefault:
+            
+            
+            infoLabel.text = loading? @"载入中...":@"更多内容";
+            if (loading) {
+                [indicator startAnimating];
+            }
+            else{
+                [indicator stopAnimating];
+            }
+            
+            break;
+        case NKLoadingMoreViewStyleZUOAlbum:
+        case NKLoadingMoreViewStyleZUO:
+            
+            
+            infoLabel.text = loading? @"载入中...":@"点击加载更多";
+            if (loading) {
+                [indicator startAnimating];
+            }
+            else{
+                [indicator stopAnimating];
+            }
+            actionButton.enabled = !loading;
+            
+            break;
+            
+        default:
+            break;
     }
     
+    
+   
     
     
     

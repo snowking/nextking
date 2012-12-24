@@ -111,7 +111,8 @@
         // Initialization code
         //self.userInteractionEnabled = YES;
         
-        
+        self.clipsToBounds = YES;
+        self.contentMode = UIViewContentModeScaleAspectFill;
 
     }
     return self;
