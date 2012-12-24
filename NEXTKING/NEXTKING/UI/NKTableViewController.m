@@ -25,6 +25,8 @@
 @synthesize shouldAutoRefreshData;
 @synthesize pullBackView;
 
+@synthesize currentPage;
+
 -(void)dealloc{
     
     [loadingMoreView release];

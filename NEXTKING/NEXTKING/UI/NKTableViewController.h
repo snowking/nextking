@@ -62,6 +62,7 @@ typedef enum {
 @property (nonatomic, assign) BOOL shouldAutoRefreshData;
 
 @property (nonatomic, retain) UIImageView *pullBackView;
+@property (nonatomic, assign) int   currentPage;
 
 
 -(void)getMoreData;
