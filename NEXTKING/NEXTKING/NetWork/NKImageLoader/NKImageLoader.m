@@ -106,13 +106,13 @@ static NKImageLoader *_imageLoader = nil;
     return self;
 }
 
--(void)addImageLoadObject:(NKImageLoadObject*)imageLoadObject{
+-(ASIHTTPRequest*)addImageLoadObject:(NKImageLoadObject*)imageLoadObject{
     
     
     NSArray *array = [self.imageLoadObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(url = %@) AND (keyPath = %@)", imageLoadObject.url, imageLoadObject.keyPath]];
     
     if ([array count]) {
-        return;
+        return nil;
     }
     
     
@@ -124,6 +124,8 @@ static NKImageLoader *_imageLoader = nil;
     [request setDidFinishSelector:@selector(downloadOK:)];
     [request setDidFailSelector:@selector(downloadFailed:)];
     [request startAsynchronous];
+    
+    return request;
 
 }
 

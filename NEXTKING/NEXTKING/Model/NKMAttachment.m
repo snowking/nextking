@@ -99,13 +99,17 @@ NSString *const NKAttachmentTypePicture = @"picture";
 }
 -(void)downLoadPictureFinish:(ASIHTTPRequest*)request{
     
-    UIImage *picImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-    if (picImage) {
-        self.picture = picImage;
-        self.downloadingPicture = YES;
-    }
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        UIImage *picImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
+        if (picImage) {
+            self.picture = picImage;
+            self.downloadingPicture = YES;
+        }
+        
+        self.pictureRequest = nil;
+    });
     
-    self.pictureRequest = nil;
+    
 }
 -(UIImage*)thumbnail{
     if (!thumbnail) {
@@ -118,14 +122,15 @@ NSString *const NKAttachmentTypePicture = @"picture";
     return thumbnail;
 }
 -(void)downLoaThumbnailFinish:(ASIHTTPRequest*)request{
-    
-    UIImage *thumbImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-    if (thumbImage) {
-        self.thumbnail = thumbImage;
-        self.downloadingThumbnail = YES;
-    }
-    
-    self.thumbnailRequest = nil;
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        UIImage *thumbImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
+        if (thumbImage) {
+            self.thumbnail = thumbImage;
+            self.downloadingThumbnail = YES;
+        }
+        
+        self.thumbnailRequest = nil;
+    });
 }
 #else
 
@@ -141,12 +146,17 @@ NSString *const NKAttachmentTypePicture = @"picture";
 }
 -(void)downLoadPictureFinish:(ASIHTTPRequest*)request{
     
-    NSImage *picImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
-    if (picImage) {
-        self.picture = picImage;
-        self.downloadingPicture = YES;
-    }
-    self.pictureRequest = nil;
+    
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSImage *picImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
+        if (picImage) {
+            self.picture = picImage;
+            self.downloadingPicture = YES;
+        }
+        self.pictureRequest = nil;
+    });
+    
+    
 }
 -(NSImage*)thumbnail{
     if (!thumbnail) {
@@ -160,12 +170,16 @@ NSString *const NKAttachmentTypePicture = @"picture";
 }
 -(void)downLoaThumbnailFinish:(ASIHTTPRequest*)request{
     
-    NSImage *thumbImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
-    if (thumbImage) {
-        self.thumbnail = thumbImage;
-        self.downloadingThumbnail = YES;
-    }
-    self.thumbnailRequest = nil;
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSImage *thumbImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
+        if (thumbImage) {
+            self.thumbnail = thumbImage;
+            self.downloadingThumbnail = YES;
+        }
+        self.thumbnailRequest = nil;
+    });
+    
+    
 }
 
 #endif

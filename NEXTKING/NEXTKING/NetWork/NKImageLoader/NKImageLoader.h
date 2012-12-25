@@ -50,6 +50,6 @@
 
 +(id)imageLoader;
 
--(void)addImageLoadObject:(NKImageLoadObject*)imageLoadObject;
+-(ASIHTTPRequest*)addImageLoadObject:(NKImageLoadObject*)imageLoadObject;
 
 @end

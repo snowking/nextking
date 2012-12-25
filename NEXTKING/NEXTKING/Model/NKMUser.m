@@ -358,14 +358,15 @@ static NKMUser *_me = nil;
     return avatar;
 }
 -(void)downLoadAvatarFinish:(ASIHTTPRequest*)request{
-    
-    UIImage *avatarImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-    if (avatarImage) {
-        self.avatar = avatarImage;
-        self.downloadingAvatar = NO;
-    }
-    
-    self.avatarRequest = nil;
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        UIImage *avatarImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
+        if (avatarImage) {
+            self.avatar = avatarImage;
+            self.downloadingAvatar = NO;
+        }
+        
+        self.avatarRequest = nil;
+    });
     
 }
 
@@ -386,13 +387,14 @@ static NKMUser *_me = nil;
     return avatar;
 }
 -(void)downLoadAvatarFinish:(ASIHTTPRequest*)request{
-    
-    NSImage *avatarImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
-    if (avatarImage) {
-        self.avatar = avatarImage;
-        self.downloadingAvatar = NO;
-    }
-    self.avatarRequest = nil;
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSImage *avatarImage = [[[NSImage alloc] initWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]] autorelease];
+        if (avatarImage) {
+            self.avatar = avatarImage;
+            self.downloadingAvatar = NO;
+        }
+        self.avatarRequest = nil;
+    });
 }
 #endif
 
