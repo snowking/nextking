@@ -21,6 +21,8 @@
 @synthesize parseValueKey;
 @synthesize successReturnValue;
 
+@synthesize storeURL;
+
 @synthesize errorTarget;
 @synthesize errorMethod;
 
@@ -30,6 +32,8 @@
     [parseDataKey release];
     [parseStatusKey release];
     [parseValueKey release];
+    
+    [storeURL release];
     
     [super dealloc];
 }

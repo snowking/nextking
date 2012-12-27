@@ -25,6 +25,8 @@
     id errorTarget;
     SEL errorMethod;
     
+    NSString *storeURL;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -36,6 +38,8 @@
 @property (nonatomic, retain) NSString *parseStatusKey;
 @property (nonatomic, retain) NSString *parseValueKey;
 @property (nonatomic, assign) int successReturnValue;
+
+@property (nonatomic, retain) NSString *storeURL;
 
 @property (nonatomic, assign) id  errorTarget;
 @property (nonatomic, assign) SEL errorMethod;
