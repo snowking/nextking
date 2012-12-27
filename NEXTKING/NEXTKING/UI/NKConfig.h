@@ -26,6 +26,7 @@
     SEL errorMethod;
     
     NSString *storeURL;
+    NSString *showVersion;
     
 }
 
@@ -40,6 +41,8 @@
 @property (nonatomic, assign) int successReturnValue;
 
 @property (nonatomic, retain) NSString *storeURL;
+@property (nonatomic, retain) NSString *showVersion;
+
 
 @property (nonatomic, assign) id  errorTarget;
 @property (nonatomic, assign) SEL errorMethod;

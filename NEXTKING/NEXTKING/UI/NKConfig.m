@@ -22,6 +22,7 @@
 @synthesize successReturnValue;
 
 @synthesize storeURL;
+@synthesize showVersion;
 
 @synthesize errorTarget;
 @synthesize errorMethod;
@@ -34,6 +35,7 @@
     [parseValueKey release];
     
     [storeURL release];
+    [showVersion release];
     
     [super dealloc];
 }
