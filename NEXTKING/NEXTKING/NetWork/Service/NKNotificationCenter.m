@@ -7,7 +7,7 @@
 //
 
 #import "NKNotificationCenter.h"
-#import "ZUOSystemService.h"
+#import "NKConfig.h"
 
 @implementation NKNotificationCenter
 
@@ -97,8 +97,12 @@ $singleService(NKNotificationCenter, @"notification");
     NSLog(@"%@", deviceTokenStr);
     
     //[[LWInternalService sharedLWInternalService] bindAPNWithKey:deviceTokenStr andTicketDelegate:nil];
+    id target = [[NKConfig sharedConfig] apnTarget];
+    SEL method = [[NKConfig sharedConfig] apnMethod];
     
-    [[ZUOSystemService sharedZUOSystemService] bindDeviceWithUDID:deviceTokenStr andRequestDelegate:nil];
+    if ([target respondsToSelector:method]) {
+        [target performSelector:method withObject:deviceToken withObject:nil];
+    }
     
 }
 

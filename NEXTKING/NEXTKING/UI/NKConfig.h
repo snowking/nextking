@@ -28,6 +28,10 @@
     NSString *storeURL;
     NSString *showVersion;
     
+    id apnTarget;
+    SEL apnMethod;
+    
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -46,6 +50,9 @@
 
 @property (nonatomic, assign) id  errorTarget;
 @property (nonatomic, assign) SEL errorMethod;
+
+@property (nonatomic, assign) id  apnTarget;
+@property (nonatomic, assign) SEL apnMethod;
 
 +(id)sharedConfig;
 

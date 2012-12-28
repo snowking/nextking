@@ -27,6 +27,9 @@
 @synthesize errorTarget;
 @synthesize errorMethod;
 
+@synthesize apnTarget;
+@synthesize apnMethod;
+
 -(void)dealloc{
     
     [domainURL release];
