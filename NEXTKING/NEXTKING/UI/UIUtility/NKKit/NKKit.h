@@ -25,3 +25,4 @@
 #import "NKProgressView.h"
 #import "NKSlidesView.h"
 #import "NKSystemInfo.h"
+#import "NKStatusBar.h"

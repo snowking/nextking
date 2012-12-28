@@ -58,7 +58,7 @@ static NKSDK *_sharedSDK = nil;
 
 -(void)addRequest:(NKRequest*)request{
     
-    [ASIHTTPRequest setDefaultUserAgentString:@"kingiphone"];
+    //[ASIHTTPRequest setDefaultUserAgentString:@"kingiphone"];
     
     [self.requestQueue addOperation:request];
     [self.requestQueue go];
