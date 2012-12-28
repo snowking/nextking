@@ -48,6 +48,7 @@ static NKSDK *_sharedSDK = nil;
         
         self.requestQueue = [[[ASINetworkQueue alloc] init] autorelease];
         self.requestQueue.maxConcurrentOperationCount = kDefaultMaxConcurrentOperationCount;
+        self.requestQueue.showAccurateProgress = YES;
         
         
         
