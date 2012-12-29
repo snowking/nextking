@@ -101,7 +101,7 @@ $singleService(NKNotificationCenter, @"notification");
     SEL method = [[NKConfig sharedConfig] apnMethod];
     
     if ([target respondsToSelector:method]) {
-        [target performSelector:method withObject:deviceToken withObject:nil];
+        [target performSelector:method withObject:deviceTokenStr withObject:nil];
     }
     
 }
