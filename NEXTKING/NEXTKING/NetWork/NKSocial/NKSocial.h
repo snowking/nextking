@@ -11,6 +11,7 @@
 
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
+#import "NKRequest.h"
 
 
 
@@ -21,9 +22,13 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
     
     SinaWeibo *sinaWeibo;
     
+    NKRequestDelegate *loginRD;
+    
 }
 
 @property (nonatomic, retain) SinaWeibo *sinaWeibo;
+
+@property (nonatomic, assign) NKRequestDelegate *loginRD;
 
 
 +(id)social;
@@ -32,7 +37,7 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
               appRedirectURI:(NSString *)appRedirectURI
                  andDelegate:(id<SinaWeiboDelegate>)delegate;
 
--(void)loginWithSinaWeibo;
+-(void)loginWithSinaWeiboWithRequestDelegate:(NKRequestDelegate*)rd;
 
 
 

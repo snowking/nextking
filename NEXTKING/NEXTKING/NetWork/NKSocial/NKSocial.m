@@ -14,10 +14,12 @@ NSString *const NKSocialServiceTypeSinaWeibo = @"SinaWeibo";
 @implementation NKSocial
 
 @synthesize sinaWeibo;
+@synthesize loginRD;
 
 -(void)dealloc{
     
     [sinaWeibo release];
+    
     [super dealloc];
 }
 
@@ -68,8 +70,9 @@ static NKSocial *_sharedSocial = nil;
 
 #pragma mark Aouth
 
--(void)loginWithSinaWeibo{
+-(void)loginWithSinaWeiboWithRequestDelegate:(NKRequestDelegate*)rd{
     
+    self.loginRD = rd;
     [self.sinaWeibo logIn];
     
 }
@@ -124,6 +127,9 @@ static NKSocial *_sharedSocial = nil;
 //    [self.navigationController pushViewController:weibo animated:YES];
 //    [weibo release];
     
+    [loginRD delegateFinishWithRequest:nil];
+    
+    
 }
 
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
@@ -136,11 +142,16 @@ static NKSocial *_sharedSocial = nil;
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {
     NSLog(@"sinaweiboLogInDidCancel");
+    [loginRD delegateFailedWithRequest:nil];
 }
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo logInDidFailWithError:(NSError *)error
 {
     NSLog(@"sinaweibo logInDidFailWithError %@", error);
+    
+    NKRequest *request = [[[NKRequest alloc] init] autorelease];
+    request.error = error;
+    [loginRD delegateFailedWithRequest:request];
 }
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error
