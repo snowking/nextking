@@ -133,23 +133,24 @@ static NKImageLoader *_imageLoader = nil;
     
     
     
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+    dispatch_queue_t concurrentQueue =
+    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(concurrentQueue, ^{
         
+        __block UIImage *picImage = nil;
         NKImageLoadObject *imageLoadObject = [request.userInfo objectForKey:@"object"];
-        
-        UIImage *picImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-        
-        if (picImage) {
-            [imageLoadObject.object setValue:picImage forKey:imageLoadObject.keyPath];
-        }
-        
-        [self.imageLoadObjects removeObject:imageLoadObject];
-        
+        dispatch_sync(concurrentQueue, ^{
+            picImage = [UIImage imageWithContentsOfFile:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
+            
+        });
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (picImage) {
+                [imageLoadObject.object setValue:picImage forKey:imageLoadObject.keyPath];
+            }
+            
+            [self.imageLoadObjects removeObject:imageLoadObject];
+        });
     });
-    
-    
-    
-    
     
 }
 

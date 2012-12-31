@@ -28,6 +28,11 @@
     [super dealloc];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+}
 
 -(IBAction)goBack:(id)sender{
     
@@ -127,7 +132,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor clearColor];
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, NKMainHeight);
+    self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, NKMainHeight);
     
     
     
@@ -175,6 +180,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+    return 0;
 }
 
 

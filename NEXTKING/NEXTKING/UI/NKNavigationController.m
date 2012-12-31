@@ -24,13 +24,30 @@
     return self;
 }
 
+//- (NSUInteger)supportedInterfaceOrientations{
+//    return 0;
+//}
+
+-(BOOL)shouldAutorotate{
+    
+    return NO;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor = [UIColor clearColor];
-    //navi.supportedInterfaceOrientations =
+    
+
     UIImageView *back = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, NKMainHeight)];
     back.image = [[UIImage imageNamed:@"appBackground.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
     [self.view insertSubview:back atIndex:0];
