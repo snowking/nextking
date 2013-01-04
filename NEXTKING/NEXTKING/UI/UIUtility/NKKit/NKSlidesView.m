@@ -85,10 +85,10 @@
             [imageView release];
             
             CGRect imageViewFrame = imageView.frame;
-            imageViewFrame.origin.x -= (imageViewFrame.size.width-self.frame.size.width)/2;
-            imageViewFrame.origin.y -= (imageViewFrame.size.height-self.frame.size.height)/3;
+            imageViewFrame.origin.x -= (imageViewFrame.size.width-self.frame.size.width)/3;
+            imageViewFrame.origin.y -= (imageViewFrame.size.height-self.frame.size.height)/4;
             
-            [UIView animateWithDuration:4.0 delay:0.5 options:UIViewAnimationCurveLinear animations:^{
+            [UIView animateWithDuration:2.0 delay:0.5 options:UIViewAnimationCurveLinear animations:^{
                 imageView.frame = imageViewFrame;
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.5 animations:^{

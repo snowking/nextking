@@ -78,7 +78,7 @@ static NKNavigator *_navigator = nil;
 -(void)segmentControl:(NKSegmentControl*)control didChangeIndex:(NSInteger)index{
     
     
-    [[NKUI sharedNKUI] showViewControllerWithClass:[[tabSource objectAtIndex:1] objectAtIndex:index]];
+    [[NKUI sharedNKUI] showViewControllerWithClass:[[tabSource objectAtIndex:1] objectAtIndex:index] andIndex:index];
     
     
 }

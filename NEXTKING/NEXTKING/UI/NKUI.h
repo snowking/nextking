@@ -39,6 +39,9 @@
     
     BOOL needLogin;
     
+    BOOL needStoreViewControllers;
+    NSMutableArray *allViewControllers;
+    
 }
 
 @property (nonatomic, assign) Class welcomeCalss;
@@ -50,6 +53,9 @@
 
 @property (nonatomic, retain) UIViewController *currentController;
 
+@property (nonatomic, assign) BOOL needStoreViewControllers;
+@property (nonatomic, retain) NSMutableArray *allViewControllers;
+
 
 +(id)sharedNKUI;
 
@@ -58,5 +64,6 @@
 -(void)addTabs:(NSArray*)tab;
 
 -(UIViewController*)showViewControllerWithClass:(Class)ControllerToShow;
+-(UIViewController*)showViewControllerWithClass:(Class)ControllerToShow andIndex:(NSInteger)index;
 
 @end

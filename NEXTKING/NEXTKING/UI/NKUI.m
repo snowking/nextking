@@ -24,6 +24,9 @@
 @synthesize nkBackgroundView;
 @synthesize currentController;
 
+@synthesize needStoreViewControllers;
+@synthesize allViewControllers;
+
 -(void)dealloc{
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NKWillLogoutNotificationKey object:nil];
@@ -141,7 +144,7 @@ static NKUI * _NKUI = nil;
         
         
         if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
-            [self showViewControllerWithClass:homeClass];
+            [self showViewControllerWithClass:homeClass andIndex:0];
             [self showNaviTab];
         }
         else {
@@ -163,23 +166,49 @@ static NKUI * _NKUI = nil;
 // Show ViewController
 -(UIViewController*)showViewControllerWithClass:(Class)ControllerToShow{
     
+    return [self showViewControllerWithClass:ControllerToShow andIndex:-1];
+    
+}
+
+-(UIViewController*)showViewControllerWithClass:(Class)ControllerToShow andIndex:(NSInteger)index{
+    
     if ([NSStringFromClass([currentController class]) isEqualToString:NSStringFromClass(ControllerToShow)]) {
         return currentController;
     }
     
-    // [currentController dismissModalViewControllerAnimated:NO];
+    [currentController dismissModalViewControllerAnimated:NO];
     
-    UIViewController *newController = [[ControllerToShow alloc] init];
+    UIViewController *newController = nil;
+    
+    if (self.needStoreViewControllers&&index>=0) {
+        
+        if (!self.allViewControllers) {
+            self.allViewControllers = [NSMutableArray arrayWithCapacity:[[self.navigator.tabSource objectAtIndex:0] count]];
+            for (int i=0; i<[[self.navigator.tabSource objectAtIndex:0] count]; i++) {
+                [self.allViewControllers addObject:[NSNull null]];
+            }
+        }
+        
+        if ([self.allViewControllers objectAtIndex:index] == [NSNull null]) {
+            newController = [[[ControllerToShow alloc] init] autorelease];
+            [self.allViewControllers replaceObjectAtIndex:index withObject:newController];
+        }
+        
+        newController = [self.allViewControllers objectAtIndex:index];
+        
+    }
+    else{
+        newController = [[[ControllerToShow alloc] init] autorelease]; 
+    }
+    
     [currentController.view removeFromSuperview];
-    
     [nkBackgroundView addSubview:newController.view];
     
-    self.currentController = nil;
     self.currentController = newController;
-    
-    [newController release];
+
     
     return newController;
+    
     
 }
 
