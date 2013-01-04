@@ -85,7 +85,7 @@ static NKUI * _NKUI = nil;
     
     self.navigator = [NKNavigator sharedNavigator];
     [self.view addSubview:navigator];
-    [self showDefaultViewController];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,6 +114,8 @@ static NKUI * _NKUI = nil;
 -(void)addTabs:(NSArray*)tab{
     [self view];
     [self.navigator addTabs:tab];
+    [self showDefaultViewController];
+    
 }
 
 
@@ -157,7 +159,7 @@ static NKUI * _NKUI = nil;
     }
     
     else{
-        [self showViewControllerWithClass:homeClass];
+        [self showViewControllerWithClass:homeClass andIndex:0];
         [self showNaviTab];
     }
     
