@@ -11,6 +11,10 @@
 
 #define HideTime 0.2
 
+
+
+#define ProgressWith(word) progressView = [NKProgressView progressViewForView:self.contentView];progressView.labelText = word;
+
 #define Progress(word) progressView = [NKProgressView progressView];progressView.labelText = word;
 
 #define ProgressLoading progressView = [NKProgressView progressViewForView:self.contentView];\
