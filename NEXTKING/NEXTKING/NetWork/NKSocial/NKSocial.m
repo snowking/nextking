@@ -177,5 +177,50 @@ static NKSocial *_sharedSocial = nil;
 
 
 
+-(NKWeiboRequest*)sinaRequestWithURL:(NSString *)url
+                      httpMethod:(NSString *)httpMethod
+                          params:(NSDictionary *)params
+                 requestDelegate:(NKRequestDelegate*)rd{
+    
+    
+    
+    
+    if (params == nil)
+    {
+        params = [NSMutableDictionary dictionary];
+    }
+    
+    if ([sinaWeibo isAuthValid])
+    {
+        [params setValue:sinaWeibo.accessToken forKey:@"access_token"];
+        NSString *fullURL = [kSinaWeiboSDKAPIDomain stringByAppendingString:url];
+        
+        NKWeiboRequest *_request = [NKWeiboRequest requestWithURL:fullURL httpMethod:httpMethod params:params requestDelegate:rd];
+        _request.sinaweibo = self.sinaWeibo;
+        [sinaWeibo.requests addObject:_request];
+        [_request connect];
+        return _request;
+    }
+    else
+    {
+        //notify token expired in next runloop
+        [sinaWeibo performSelectorOnMainThread:@selector(notifyTokenExpired:)
+                               withObject:nil
+                            waitUntilDone:NO];
+        
+        return nil;
+    }
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
 
 @end

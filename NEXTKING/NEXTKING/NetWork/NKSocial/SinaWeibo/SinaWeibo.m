@@ -31,6 +31,8 @@
 @synthesize appSecret;
 @synthesize appRedirectURI;
 
+@synthesize requests;
+
 #pragma mark - Memory management
 
 /**
@@ -75,7 +77,7 @@
         }
         self.ssoCallbackScheme = _ssoCallbackScheme;
         
-        requests = [[NSMutableSet alloc] init];
+        self.requests = [NSMutableSet set];
     }
     
     return self;
@@ -89,6 +91,8 @@
     {
         _request.sinaweibo = nil;
     }
+    
+    [requests release];
     
     [request disconnect];
     [request release], request = nil;

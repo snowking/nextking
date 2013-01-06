@@ -36,6 +36,8 @@
 @property (nonatomic, copy) NSString *ssoCallbackScheme;
 @property (nonatomic, assign) id<SinaWeiboDelegate> delegate;
 
+@property (nonatomic, retain) NSMutableSet *requests;
+
 - (id)initWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
       appRedirectURI:(NSString *)appRedirectURI
          andDelegate:(id<SinaWeiboDelegate>)delegate;

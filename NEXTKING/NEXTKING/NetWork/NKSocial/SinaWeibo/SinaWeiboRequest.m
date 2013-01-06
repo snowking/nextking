@@ -294,12 +294,12 @@
     return [NSString stringWithFormat:@"%@%@%@", baseURL, queryPrefix, query];
 }
 
-+ (SinaWeiboRequest *)requestWithURL:(NSString *)url 
++ (id)requestWithURL:(NSString *)url
                           httpMethod:(NSString *)httpMethod 
                               params:(NSDictionary *)params
                             delegate:(id<SinaWeiboRequestDelegate>)delegate
 {
-    SinaWeiboRequest *request = [[[SinaWeiboRequest alloc] init] autorelease];
+    SinaWeiboRequest *request = [[[self alloc] init] autorelease];
     
     request.url = url;
     request.httpMethod = httpMethod;
@@ -309,7 +309,7 @@
     return request;
 }
 
-+ (SinaWeiboRequest *)requestWithAccessToken:(NSString *)accessToken
++ (id)requestWithAccessToken:(NSString *)accessToken
                                          url:(NSString *)url
                                   httpMethod:(NSString *)httpMethod 
                                       params:(NSDictionary *)params
@@ -318,7 +318,7 @@
     // add the access token field
     NSMutableDictionary *mutableParams = [NSMutableDictionary dictionaryWithDictionary:params];
     [mutableParams setObject:accessToken forKey:@"access_token"];
-    return [SinaWeiboRequest requestWithURL:url
+    return [self requestWithURL:url
                                  httpMethod:httpMethod
                                      params:mutableParams
                                    delegate:delegate];

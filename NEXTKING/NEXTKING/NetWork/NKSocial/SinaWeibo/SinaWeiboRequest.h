@@ -52,12 +52,12 @@
 @property (nonatomic, retain) NSDictionary *params;
 @property (nonatomic, assign) id<SinaWeiboRequestDelegate> delegate;
 
-+ (SinaWeiboRequest *)requestWithURL:(NSString *)url 
++ (id)requestWithURL:(NSString *)url
                           httpMethod:(NSString *)httpMethod 
                               params:(NSDictionary *)params
                             delegate:(id<SinaWeiboRequestDelegate>)delegate;
 
-+ (SinaWeiboRequest *)requestWithAccessToken:(NSString *)accessToken
++ (id)requestWithAccessToken:(NSString *)accessToken
                                          url:(NSString *)url
                                   httpMethod:(NSString *)httpMethod 
                                       params:(NSDictionary *)params

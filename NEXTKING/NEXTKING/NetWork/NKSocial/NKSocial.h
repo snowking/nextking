@@ -11,7 +11,9 @@
 
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
+#import "SinaWeiboConstants.h"
 #import "NKRequest.h"
+#import "NKWeiboRequest.h"
 
 
 
@@ -40,6 +42,11 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
 -(void)loginWithSinaWeiboWithRequestDelegate:(NKRequestDelegate*)rd;
 
 
+
+-(NKWeiboRequest*)sinaRequestWithURL:(NSString *)url
+                      httpMethod:(NSString *)httpMethod
+                          params:(NSDictionary *)params
+                 requestDelegate:(NKRequestDelegate*)rd;
 
 
 @end
