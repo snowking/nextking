@@ -32,6 +32,7 @@ extern NSString *const NKRequestErrorNotification;
     
 
     NSNumber            *errorCode;
+    NSString            *errorDescription;
     NSArray             *results;
     NSDictionary        *originDic;
     NSNumber            *totalCount;
@@ -44,6 +45,7 @@ extern NSString *const NKRequestErrorNotification;
 @property (nonatomic, retain) NSString           *resultKey;
 
 @property (nonatomic, retain) NSNumber           *errorCode;
+@property (nonatomic, retain) NSString           *errorDescription;
 @property (nonatomic, retain) NSArray            *results;
 @property (nonatomic, retain) NSDictionary       *originDic;
 @property (nonatomic, retain) NSNumber           *totalCount;

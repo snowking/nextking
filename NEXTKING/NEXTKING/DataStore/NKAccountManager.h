@@ -28,6 +28,7 @@
 -(void)logOut;
 
 -(void)saveAccountsFile;
+-(void)loginFinish:(NKRequest*)request;
 
 
 

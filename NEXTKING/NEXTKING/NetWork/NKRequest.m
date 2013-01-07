@@ -27,6 +27,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
 @synthesize resultType;
 @synthesize resultKey;
 @synthesize errorCode;
+@synthesize errorDescription;
 @synthesize results;
 @synthesize originDic;
 
@@ -39,6 +40,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     [resultKey release];
     
     [errorCode release];
+    [errorDescription release];
     [results release];
     [originDic release];
     
@@ -218,17 +220,16 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     }
 }
 
--(NSNumber*)errorCode{
+-(NSString*)errorDescription{
     
     NKConfig *config = [NKConfig sharedConfig];
     
     if ([config.errorTarget respondsToSelector:config.errorMethod]) {
         return [config.errorTarget performSelector:config.errorMethod withObject:errorCode];
     }
-    
-    return errorCode;
-    
+    return errorDescription;
 }
+
 
 // A new ticket to Redo the task
 -(id)copyWithZone:(NSZone *)zone{
