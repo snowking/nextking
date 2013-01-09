@@ -64,17 +64,17 @@
             
             for (UIImage *image in images) {
                 
-                imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, 320, self.frame.size.height)];
+                imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, 320, image.size.height)];
                 imageView.contentMode = UIViewContentModeCenter;
                 [slideScrollView addSubview:imageView];
                 [imageView release];
                 imageView.image = image;
                 x+=320;
             }
-            UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(x-320, 0, 320, self.frame.size.height)];
-            [doneButton addTarget:self action:@selector(hide:) forControlEvents:UIControlEventTouchUpInside];
-            [slideScrollView addSubview:doneButton];
-            [doneButton release];
+//            UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(x-320, 0, 320, self.frame.size.height)];
+//            [doneButton addTarget:self action:@selector(hide:) forControlEvents:UIControlEventTouchUpInside];
+//            [slideScrollView addSubview:doneButton];
+//            [doneButton release];
         }
             break;
         case NKSlidesViewStyleBigImage:{

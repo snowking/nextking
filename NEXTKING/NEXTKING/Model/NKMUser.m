@@ -279,7 +279,8 @@ static NKMUser *_me = nil;
 
 +(id)userFromDic:(NSDictionary*)dic isCache:(BOOL)cache{
     if (!dic) {
-        return nil;
+        
+        return [[[self alloc] init] autorelease];
     }
     
     NSString *theUID = [NSString stringWithFormat:@"%@", [dic objectOrNilForKey:@"id"]];
