@@ -11,6 +11,8 @@
 @interface NKDateUtil : NSObject
 
 
++ (NSString *)personActiveTimeSinceNowWithDate:(NSDate *)date;
+
 + (NSString *)intervalSinceNowWithDate:(NSDate *)date;
 + (NSString *)intervalSinceNowWithLongLong:(long long)milliseconds;
 + (NSString *)showBirth:(NSString *)formerStr;

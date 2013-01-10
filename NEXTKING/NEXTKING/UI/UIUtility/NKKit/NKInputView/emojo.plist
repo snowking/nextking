@@ -112,13 +112,13 @@
 	</dict>
 	<dict>
 		<key>key</key>
-		<string>(愤怒)</string>
+		<string>(怒)</string>
 		<key>picture</key>
 		<string>emojo_nu.png</string>
 	</dict>
 	<dict>
 		<key>key</key>
-		<string>(黑线)</string>
+		<string>(吐)</string>
 		<key>picture</key>
 		<string>emojo_tu.png</string>
 	</dict>

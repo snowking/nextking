@@ -25,6 +25,39 @@
 //4. 如果大于一小时，则显示: “今天 时:分”
 //5. 如果大于一分钟，则显示: “X分钟前”
 //6. 若以上均不满足，也就是小于一分钟，则显示“刚刚”
+
++ (NSString *)personActiveTimeSinceNowWithDate:(NSDate *)date{
+    
+    
+    NSTimeInterval interval = [date timeIntervalSinceNow];
+    
+    NSTimeInterval spacingTime = 0 - interval;
+    
+    NSString *timeString = @"";
+    
+    if (spacingTime < 60) {
+        timeString = [NSString stringWithFormat:@"刚刚"];
+    }
+    else if (spacingTime >= 60 && spacingTime < 3600) {
+        timeString = [NSString stringWithFormat:@"%f", spacingTime/60];
+        timeString = [NSString stringWithFormat:@"%d分钟前", [timeString intValue]];
+    }
+    else if (spacingTime >= 3600 && spacingTime < 3600*24) {
+        timeString = [NSString stringWithFormat:@"%f", spacingTime/3600];
+        timeString = [NSString stringWithFormat:@"%d小时前", [timeString intValue]];
+    }
+    else if (spacingTime >= 3600*24 && spacingTime < 3600*24*30) {
+        timeString = [NSString stringWithFormat:@"%f", spacingTime/3600/24];
+        timeString = [NSString stringWithFormat:@"%d天前", [timeString intValue]];
+    }
+    else {
+        timeString = @"30天前";       //timeString = [NSString stringWithFormat:@"%@", publishDateString];
+    }
+    
+    return timeString;
+
+}
+
 + (NSString *)intervalSinceNowWithDate:(NSDate *)date
 {
     NSTimeInterval dateTime = [date timeIntervalSince1970] * 1;
