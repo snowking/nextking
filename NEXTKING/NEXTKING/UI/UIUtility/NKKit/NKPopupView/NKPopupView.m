@@ -174,6 +174,13 @@
             
         }
             break;
+        case NKPopupViewStyleShare:{
+            
+            [showTableView removeFromSuperview];
+            showTableView = nil;
+            
+        }
+            break;
         default:
             break;
     }
