@@ -231,7 +231,7 @@
     for (UIButton *segment in self.segments) {
         
         NKSegment *nkseg = [self.segmentImages objectAtIndex:segment.tag];
-        
+        [[segment subviews] makeObjectsPerformSelector:@selector(setHighlighted:) withObject:NO];
         [segment setBackgroundImage:nkseg.normalBackground forState:UIControlStateNormal];
         [segment setTitleColor:nkseg.normalTextColor forState:UIControlStateNormal];
         
@@ -253,6 +253,8 @@
     }
     
     UIButton *nkseg = [self.segments objectAtIndex:selectedIndex];
+    
+    [[nkseg subviews] makeObjectsPerformSelector:@selector(setHighlighted:) withObject:(id)YES];
     
     NKSegment *theSeg = [self.segmentImages objectAtIndex:selectedIndex];
 

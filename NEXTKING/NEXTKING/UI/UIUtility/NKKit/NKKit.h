@@ -26,3 +26,4 @@
 #import "NKSlidesView.h"
 #import "NKSystemInfo.h"
 #import "NKStatusBar.h"
+#import "NKBadgeView.h"
