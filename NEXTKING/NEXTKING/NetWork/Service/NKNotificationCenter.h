@@ -13,6 +13,7 @@
 dshared(NKNotificationCenter);
 
 
+-(void)getNotificationsCount;
 
 - (void)postDeviceToken:(NSData*)deviceToken;
 

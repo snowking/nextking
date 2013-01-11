@@ -24,7 +24,7 @@ static Klass *shared##Klass = nil;\
 + (Klass *)shared##Klass {\
 @synchronized(self) {\
 if(shared##Klass == nil) {\
-shared##Klass = [[super alloc] init];\
+shared##Klass = [[self alloc] init];\
 }\
 }\
 return shared##Klass;\

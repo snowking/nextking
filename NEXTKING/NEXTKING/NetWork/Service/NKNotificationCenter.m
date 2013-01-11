@@ -57,7 +57,6 @@ $singleService(NKNotificationCenter, @"notification");
 
 -(void)loginFinish{
     
-    
     [self getNotificationsCount];
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
 }
@@ -72,11 +71,11 @@ $singleService(NKNotificationCenter, @"notification");
 
 -(void)appBecomeActive{
     
-//    if ([ me]) {
-//        
-//        [self getNotificationsCount];
-//        
-//    }
+    //if ([ me]) {
+        
+        [self getNotificationsCount];
+        
+    //}
     
 }
 -(void)appResignActive{
