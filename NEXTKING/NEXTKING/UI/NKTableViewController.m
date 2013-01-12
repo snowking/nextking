@@ -150,6 +150,28 @@
             [self addCardBottom];
         }
             break;
+        case NKTableViewStyleLineDetailFeeds:{
+            showTableView.frame = CGRectMake(0, 78, 320, NKMainHeight-78);
+            
+            [bottomBack removeFromSuperview];
+            bottomBack = nil;
+            [bottomShadow removeFromSuperview];
+            bottomShadow = nil;
+            
+            [self addCardBottom];
+        }
+            break;
+        case NKTableViewStyleLineDetailFuns:{
+            showTableView.frame = CGRectMake(0, 78, 320, NKMainHeight-78);
+            
+            [bottomBack removeFromSuperview];
+            bottomBack = nil;
+            [bottomShadow removeFromSuperview];
+            bottomShadow = nil;
+            
+            [self addWhiteBackground];
+        }
+            break;
         case NKTableViewStyleFullScreenWithAccountSetting:{
             showTableView.frame = CGRectMake(0, 44, 320, NKMainHeight-44);
             

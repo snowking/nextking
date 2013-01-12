@@ -40,6 +40,7 @@ typedef enum {
     EGORefreshTableHeaderStyleDefaultStyle,
     EGORefreshTableHeaderStyleTexturedBackgroud,
     EGORefreshTableHeaderStyleCard,
+    EGORefreshTableHeaderStyleZUOLineDetail,
     EGORefreshTableHeaderStyleZUO,
     EGORefreshTableHeaderStyleZUOLeft,
     EGORefreshTableHeaderStyleOther
