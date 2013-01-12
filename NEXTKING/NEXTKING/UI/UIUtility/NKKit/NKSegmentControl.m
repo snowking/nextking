@@ -272,7 +272,6 @@
         }];
 
     }
-        
     
     if (should && [delegate respondsToSelector:@selector(segmentControl:didChangeIndex:)]) {
         [delegate segmentControl:self didChangeIndex:selectedIndex];
