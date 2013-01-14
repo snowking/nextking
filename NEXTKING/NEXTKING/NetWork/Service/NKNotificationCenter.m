@@ -9,6 +9,8 @@
 #import "NKNotificationCenter.h"
 #import "NKConfig.h"
 
+NSString *const NKRemoteNotificationKey = @"NKRemoteNotificationKey";
+
 @implementation NKNotificationCenter
 
 

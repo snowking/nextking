@@ -55,6 +55,7 @@
     self.mode = MBProgressHUDModeCustomView;
     [self hide:YES afterDelay:0.8];
     return nil;
+    
 }
 
 -(id)netWorkError{
@@ -68,8 +69,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+        [self addGestureRecognizer:tap];
+        [tap release];
+        
     }
     return self;
+}
+
+-(void)forceHide{
+    
+    self.hidden = YES;
+}
+
+-(void)tapped:(UITapGestureRecognizer*)gesture{
+    
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self performSelector:@selector(forceHide) withObject:nil afterDelay:10.0];
+    }
 }
 
 /*

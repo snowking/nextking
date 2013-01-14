@@ -13,11 +13,11 @@
 
 
 
-#define ProgressWith(word) progressView = [NKProgressView progressViewForView:self.contentView];progressView.labelText = word;
+#define ProgressWith(word)    if(!progressView){progressView = [NKProgressView progressViewForView:self.contentView];}progressView.labelText = word;
 
-#define Progress(word) progressView = [NKProgressView progressView];progressView.labelText = word;
+#define Progress(word) if(!progressView){progressView = [NKProgressView progressView];}progressView.labelText = word;
 
-#define ProgressLoading progressView = [NKProgressView progressViewForView:self.contentView];\
+#define ProgressLoading if(!progressView){progressView = [NKProgressView progressViewForView:self.contentView];}\
 progressView.labelText = @"正在载入"
 
 #define ProgressHide if (progressView){ [progressView hide:YES afterDelay:0.3]; progressView = nil;}

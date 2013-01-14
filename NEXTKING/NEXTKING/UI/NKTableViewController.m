@@ -26,6 +26,7 @@
 @synthesize pullBackView;
 
 @synthesize currentPage;
+@synthesize totalCount;
 
 -(void)dealloc{
     
@@ -34,6 +35,8 @@
     [showTableView release];
     [dataSource release];
     [pullBackView release];
+    
+    [totalCount release];
     
     [super dealloc];
 }
@@ -376,6 +379,7 @@
     [self doneLoadingTableViewData];
     
     currentPage = 1;
+    self.totalCount = request.totalCount;
     
     if ([request.results count]) {
         self.dataSource = [NSMutableArray arrayWithArray:request.results];

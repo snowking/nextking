@@ -51,6 +51,8 @@ typedef enum {
     
     int   currentPage;
     
+    NSNumber *totalCount;
+    
 }
 
 @property (nonatomic, retain) UITableView *showTableView;
@@ -66,6 +68,8 @@ typedef enum {
 
 @property (nonatomic, retain) UIImageView *pullBackView;
 @property (nonatomic, assign) int   currentPage;
+
+@property (nonatomic, retain) NSNumber *totalCount;
 
 
 -(void)getMoreData;

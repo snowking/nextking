@@ -8,6 +8,9 @@
 
 #import "NKServiceBase.h"
 
+
+extern NSString *const NKRemoteNotificationKey;
+
 @interface NKNotificationCenter : NKServiceBase
 
 dshared(NKNotificationCenter);
