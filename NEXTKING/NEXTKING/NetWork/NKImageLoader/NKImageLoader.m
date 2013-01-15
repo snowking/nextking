@@ -111,10 +111,11 @@ static NKImageLoader *_imageLoader = nil;
     
     NSArray *array = [self.imageLoadObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(url = %@) AND (keyPath = %@)", imageLoadObject.url, imageLoadObject.keyPath]];
     
-    if ([array count]) {
-        return nil;
+    for (NKImageLoadObject *loadObj in array) {
+        if (loadObj.object == imageLoadObject.object) {
+            return nil;
+        }
     }
-    
     
     [self.imageLoadObjects addObject:imageLoadObject];
     
