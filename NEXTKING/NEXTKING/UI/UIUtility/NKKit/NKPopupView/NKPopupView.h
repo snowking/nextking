@@ -17,7 +17,8 @@ typedef enum {
     NKPopupViewStyleFatFooter,
     NKPopupViewStyleUp,
     NKPopupViewStyleLineEdit,
-    NKPopupViewStyleShare
+    NKPopupViewStyleShare,
+    NKPopupViewStyleMoreAction
 } NKPopupViewStyle;
 
 

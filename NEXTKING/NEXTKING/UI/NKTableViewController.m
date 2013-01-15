@@ -258,7 +258,7 @@
     }
     
     
-    [self.refreshHeaderView changeStyle: showTableView.frame.size.width>=320?EGORefreshTableHeaderStyleZUO:EGORefreshTableHeaderStyleZUOLeft];
+    [self.refreshHeaderView changeStyle: showTableView.frame.size.width>=320?style==NKTableViewStyleAlbum?EGORefreshTableHeaderStyleZUOLineDetail: EGORefreshTableHeaderStyleZUO:EGORefreshTableHeaderStyleZUOLeft];
     
     
     upBack.frame = CGRectMake(0, showTableView.frame.origin.y, showTableView.bounds.size.width, upBack.bounds.size.height);

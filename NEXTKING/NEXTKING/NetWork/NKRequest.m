@@ -121,7 +121,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
         parsedResult = [[incomingrequest responseData] objectFromJSONDataWithParseOptions:JKParseOptionStrict error:&tlocalError];
     }
     
-    //NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
+    NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
     
     //NSLog(@"%@", incomingrequest.responseString);
     
@@ -179,6 +179,10 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
                 case NKResultTypeResultSets:{
                     
                     self.totalCount = [realSomething objectOrNilForKey:@"total_count"];
+                    // Special
+                    if (!self.totalCount) {
+                        self.totalCount = [realSomething objectOrNilForKey:@"current_time"];
+                    }
                     
                     NSArray *values = [realSomething objectOrNilForKey:[[NKConfig sharedConfig] parseValueKey]];
                     

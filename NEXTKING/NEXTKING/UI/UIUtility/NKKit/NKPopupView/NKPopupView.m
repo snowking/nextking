@@ -181,6 +181,22 @@
             
         }
             break;
+        case NKPopupViewStyleMoreAction:{
+            
+            maskView.image = [[UIImage imageNamed:@"pu_more_action_mask.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
+            maskView.frame = CGRectMake(158, 55, 159, 189);
+            //maskView.center = CGPointMake(240, <#CGFloat y#>);
+            showTableView.frame = CGRectMake(0, 0, 136, 162);
+            showTableView.center = CGPointMake(maskView.center.x, maskView.center.y-1);
+            showTableView.backgroundColor = [UIColor clearColor];
+            [self.contentView addSubview:showTableView];
+            
+            [[[self subviews] objectAtIndex:0] removeFromSuperview];
+            
+            [[showTableView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            
+        }
+            break;
         default:
             break;
     }
