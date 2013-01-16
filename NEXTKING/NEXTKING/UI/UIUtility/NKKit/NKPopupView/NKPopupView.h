@@ -47,6 +47,12 @@ typedef enum {
     
     UIImageView    *maskView;
     UITextField    *input;
+    
+    UIImageView *headback;
+    UIButton *rightActionButton;
+    
+    UILabel *titleLabel;
+    
 }
 
 @property (nonatomic, retain) UITableView    *showTableView;
@@ -56,6 +62,8 @@ typedef enum {
 
 @property (nonatomic, assign) UIImageView    *maskView;
 @property (nonatomic, assign) UITextField    *input;
+
+@property (nonatomic, assign) UILabel *titleLabel;
 
 +(id)popupViewWithStyle:(NKPopupViewStyle)style;
 

@@ -121,7 +121,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
         parsedResult = [[incomingrequest responseData] objectFromJSONDataWithParseOptions:JKParseOptionStrict error:&tlocalError];
     }
     
-    //NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
+    NSLog(@"ResponseBody:\n%@", [[[NSString alloc] initWithData:[incomingrequest responseData] encoding:NSUTF8StringEncoding] autorelease]);
     
     //NSLog(@"%@", incomingrequest.responseString);
     

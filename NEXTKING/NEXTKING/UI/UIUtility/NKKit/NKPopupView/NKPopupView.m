@@ -65,6 +65,8 @@
 @synthesize maskView;
 @synthesize input;
 
+@synthesize titleLabel;
+
 -(void)dealloc{
     
     [showTableView release];
@@ -140,7 +142,23 @@
             showTableView.frame = CGRectMake(0, 0, 236, 235);
             showTableView.center = CGPointMake(self.center.x, self.center.y-3);
             
-            [self addHeaderWithPlaceHolder:@"输入特征描述" andTitle:@"添加"];
+            //[self addHeaderWithPlaceHolder:@"输入特征描述" andTitle:@"添加"];
+            self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(maskView.frame.origin.x +18, maskView.frame.origin.y + 23, 180, 20)] autorelease];
+            titleLabel.backgroundColor = [UIColor clearColor];
+            titleLabel.textColor = [UIColor whiteColor];
+            titleLabel.font = [UIFont boldSystemFontOfSize:18];
+            [contentView addSubview:titleLabel];
+            
+            
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(maskView.frame.origin.x +184, maskView.frame.origin.y + 19, 65, 31)];
+            [self.contentView addSubview:button];
+            [button release];
+            [button setTitle:@"退出线路" forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"publackbutton_normal.png"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"publackbutton_click.png"] forState:UIControlStateHighlighted];
+            button.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(headButtonClick:) forControlEvents:UIControlEventTouchUpInside];
             
             
             UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(66, maskView.center.y+101, 238, 40)];
@@ -206,7 +224,7 @@
 }
 
 -(void)addHeaderWithPlaceHolder:(NSString*)placeHolder andTitle:(NSString*)title{
-    UIImageView *headback = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"puinputback.png"]];
+    headback = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"puinputback.png"]];
     [maskView addSubview:headback];
     [headback release];
     headback.center = CGPointMake(maskView.bounds.size.width/2, 34);
@@ -228,7 +246,7 @@
     button.titleLabel.font = [UIFont boldSystemFontOfSize:FontSize];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(headButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    rightActionButton = button;
     
     
 

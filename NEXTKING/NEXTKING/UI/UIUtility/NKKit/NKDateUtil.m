@@ -60,6 +60,10 @@
 
 + (NSString *)intervalSinceNowWithDate:(NSDate *)date
 {
+    if (!date) {
+        return nil;
+    }
+    
     NSTimeInterval dateTime = [date timeIntervalSince1970] * 1;
     long long milliseconds = (long long)dateTime*1000;
     return [self dateToString:milliseconds truncateTime:YES];
