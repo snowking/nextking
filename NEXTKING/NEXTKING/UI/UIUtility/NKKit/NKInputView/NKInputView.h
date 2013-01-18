@@ -18,7 +18,7 @@
     
     NSMutableArray *dataSource;
     
-    BOOL editting;
+    BOOL emojoing;
     
     HPGrowingTextView *textView;
     UIButton *sendButton;
@@ -35,12 +35,14 @@
 
 @property (nonatomic, retain) NSArray        *otherView;
 
-@property (nonatomic, assign) BOOL editting;
+@property (nonatomic, assign) BOOL emojoing;
 
 @property (nonatomic, assign) NKEmojoView *emojoView;
 
 @property (nonatomic, assign) id  target;
 @property (nonatomic, assign) SEL action;
+
+@property (nonatomic, assign) HPGrowingTextView *textView;
 
 +(id)inputViewWithTableView:(UITableView*)tableView dataSource:(NSMutableArray*)data otherView:(NSArray*)views;
 

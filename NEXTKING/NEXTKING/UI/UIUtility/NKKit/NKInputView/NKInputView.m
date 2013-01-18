@@ -19,12 +19,14 @@
 
 @synthesize otherView;
 
-@synthesize editting;
+@synthesize emojoing;
 
 @synthesize emojoView;
 
 @synthesize target;
 @synthesize action;
+
+@synthesize textView;
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -172,7 +174,7 @@
         return;
     }
     
-    editting = YES;
+    emojoing = NO;
     
     CGRect keyboardBounds;
     [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
@@ -215,7 +217,8 @@
 
 - (void)keyboardWillHide:(NSNotification *)note{
     
-    if (editting) {
+    if (emojoing) {
+        emojoing = NO;
         return;
     }
     
@@ -293,7 +296,7 @@
 
 -(void)hide{
     
-    editting = NO;
+    emojoing = NO;
     
     if ([textView.internalTextView isFirstResponder]) {
         [textView.internalTextView resignFirstResponder];
@@ -349,7 +352,7 @@
 
 -(void)emojoButtonClick:(id)sender{
     
-    editting = YES;
+    emojoing = YES;
     
     
     if (!self.emojoView) {
