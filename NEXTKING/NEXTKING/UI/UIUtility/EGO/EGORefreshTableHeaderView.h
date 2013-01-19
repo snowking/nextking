@@ -41,9 +41,11 @@ typedef enum {
     EGORefreshTableHeaderStyleTexturedBackgroud,
     EGORefreshTableHeaderStyleCard,
     EGORefreshTableHeaderStyleZUOLineDetail,
+    EGORefreshTableHeaderStyleZUOLineDetailWithShadow,
     EGORefreshTableHeaderStyleZUO,
     EGORefreshTableHeaderStyleZUOLeft,
     EGORefreshTableHeaderStyleOther
+    
 } EGORefreshTableHeaderStyle;
 
 @protocol EGORefreshTableHeaderDelegate;

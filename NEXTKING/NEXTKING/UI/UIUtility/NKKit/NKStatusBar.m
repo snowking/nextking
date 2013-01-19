@@ -24,7 +24,7 @@
         messageLabel.backgroundColor = [UIColor blackColor];
         messageLabel.textAlignment = UITextAlignmentCenter;
         messageLabel.textColor = [UIColor whiteColor];
-        messageLabel.font = [UIFont systemFontOfSize:11];
+        messageLabel.font = [UIFont boldSystemFontOfSize:11];
         [self addSubview:messageLabel];
         
     }

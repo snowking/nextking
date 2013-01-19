@@ -79,16 +79,21 @@
             break;
         case NKSlidesViewStyleBigImage:{
             
+            if (![images count]) {
+                [self hide:nil];
+                return;
+            }
+            
             
             UIImageView *imageView = [[UIImageView alloc] initWithImage:[images anyObject]];
             [self addSubview:imageView];
             [imageView release];
             
             CGRect imageViewFrame = imageView.frame;
-            imageViewFrame.origin.x -= (imageViewFrame.size.width-self.frame.size.width)/3;
-            imageViewFrame.origin.y -= (imageViewFrame.size.height-self.frame.size.height)/4;
+            imageViewFrame.origin.x -=  self.bounds.size.height>480?(imageViewFrame.size.width-self.frame.size.width) :(imageViewFrame.size.width-self.frame.size.width)/3;
+            imageViewFrame.origin.y -= self.bounds.size.height>480?(imageViewFrame.size.height-self.frame.size.height):(imageViewFrame.size.height-self.frame.size.height)/4;
             
-            [UIView animateWithDuration:2.0 delay:0.5 options:UIViewAnimationCurveLinear animations:^{
+            [UIView animateWithDuration:2.0 delay:0.1 options:UIViewAnimationCurveLinear animations:^{
                 imageView.frame = imageViewFrame;
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:0.5 animations:^{

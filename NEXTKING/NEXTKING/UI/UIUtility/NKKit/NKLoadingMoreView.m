@@ -116,7 +116,7 @@
         case NKLoadingMoreViewStyleDefault:
             
             
-            infoLabel.text = loading? @"载入中...":@"更多内容";
+            infoLabel.text = loading? @"载入中...":@"没有更多了";
             if (loading) {
                 [indicator startAnimating];
             }
