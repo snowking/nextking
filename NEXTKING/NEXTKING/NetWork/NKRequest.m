@@ -126,7 +126,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     //NSLog(@"%@", incomingrequest.responseString);
     
     //NSLog(@"%@", [incomingrequest responseCookies]);
-    NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
+    //NSLog(@"---------------parsedResult-------------------:%@", parsedResult);
     
     if (tlocalError) {
         self.errorCode = @900002;

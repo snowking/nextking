@@ -84,8 +84,11 @@
                 return;
             }
             
+            UIImage *image = [images anyObject];
+    
             
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[images anyObject]];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width*image.scale/2, image.scale*image.size.height/2)];
+            imageView.image = image;
             [self addSubview:imageView];
             [imageView release];
             
