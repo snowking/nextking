@@ -47,6 +47,16 @@
     
 }
 
+-(void)nkLongPressed:(UILongPressGestureRecognizer*)gesture{
+    
+    [self popToHome:nil];
+}
+
+-(void)popToHome:(id)sender{
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 -(UIButton*)addBackButton{
     
     UIButton *button = [self styleButton];
@@ -57,6 +67,12 @@
     [button setTitle:@"返回" forState:UIControlStateNormal];
     button.titleEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 0);
     [button addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(nkLongPressed:)];
+    [button addGestureRecognizer:longPress];
+    [longPress release];
+    
+    
     return button;
     
 }

@@ -67,10 +67,16 @@
 
 +(id)pictureViewerForView:(UIView*)view{
     
-    UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
-    CGRect frameInWindow = [view convertRect:view.bounds toView:topWindow];
     
     UIImageView *imageView = (UIImageView*)view;
+    
+    if (!imageView.image) {
+        return nil;
+    }
+    
+    UIWindow *topWindow = [[[UIApplication sharedApplication] windows] lastObject];
+    CGRect frameInWindow = [view convertRect:view.bounds toView:topWindow];
+
     CGSize imageSize = [[imageView image] size];
     
     if (imageSize.width/imageSize.height >= imageView.bounds.size.width/imageView.bounds.size.height) {
