@@ -109,7 +109,28 @@
     // Drawing code
 }
 */
+-(void)showNoMoreContent{
+    
+    switch (loadingMoreViewStyle) {
+        case NKLoadingMoreViewStyleDefault:
+            
+            
+            break;
+        case NKLoadingMoreViewStyleZUOAlbum:
+        case NKLoadingMoreViewStyleZUO:
+            
+            infoLabel.text = @"没有更多了";
+            actionButton.enabled = NO;
+            
+            break;
+            
+        default:
+            break;
+    }
+    
 
+    
+}
 -(void)showLoading:(BOOL)loading{
     
     switch (loadingMoreViewStyle) {

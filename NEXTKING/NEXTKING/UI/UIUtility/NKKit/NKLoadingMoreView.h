@@ -48,5 +48,6 @@ typedef enum {
 +(id)loadingMoreViewWithStyle:(NKLoadingMoreViewStyle)style;
 
 -(void)showLoading:(BOOL)loading;
+-(void)showNoMoreContent;
 
 @end
