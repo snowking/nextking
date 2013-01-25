@@ -33,6 +33,8 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
 
 @synthesize totalCount;
 
+@synthesize refreshTime;
+
 -(void)dealloc{
     
     
@@ -45,6 +47,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     [originDic release];
     
     [totalCount release];
+    [refreshTime release];
     
     [super dealloc];
 }
@@ -183,6 +186,8 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
                     if (!self.totalCount) {
                         self.totalCount = [realSomething objectOrNilForKey:@"current_time"];
                     }
+                    
+                    self.refreshTime = [realSomething objectOrNilForKey:@"refresh_time"];
                     
                     NSArray *values = [realSomething objectOrNilForKey:[[NKConfig sharedConfig] parseValueKey]];
                     

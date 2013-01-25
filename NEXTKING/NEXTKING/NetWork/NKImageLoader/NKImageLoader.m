@@ -18,7 +18,7 @@
     [request setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
     [request setDownloadDestinationPath:
      [[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:request]];
-    NSLog(@"DownLoad Image:%@", [request url]);
+    //NSLog(@"DownLoad Image:%@", [request url]);
     
     return request;
     

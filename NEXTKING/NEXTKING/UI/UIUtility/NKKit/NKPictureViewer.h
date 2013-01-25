@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NKKVOImageView.h"
 
-@interface NKPictureViewer : UIView{
+@interface NKPictureViewer : UIView <UIScrollViewDelegate>{
     
     NKKVOImageView *imageView;
     

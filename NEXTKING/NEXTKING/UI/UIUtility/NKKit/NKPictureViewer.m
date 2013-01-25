@@ -34,6 +34,10 @@
         [tap release];
         
         self.myScrollView = [[[UIScrollView alloc] initWithFrame:self.bounds] autorelease];
+        self.myScrollView.maximumZoomScale = 3.0;
+        self.myScrollView.minimumZoomScale = 0.5;
+        self.myScrollView.contentSize = self.bounds.size;
+        self.myScrollView.delegate = self;
         [self addSubview:myScrollView];
         
 
@@ -41,6 +45,19 @@
     return self;
 }
 #pragma mark Show
+
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    
+    return self.imageView;
+    
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
+    
+    imageView.center = CGPointMake(MAX(imageView.frame.size.width/2, self.frame.size.width/2) , MAX(imageView.frame.size.height/2, self.frame.size.height/2));
+    
+}
 
 
 #pragma mark Gesture
@@ -93,6 +110,7 @@
     }
 
     NKPictureViewer *viewer = [NKPictureViewer pictureViewerWithFrame:frameInWindow];
+    viewer.imageView.placeHolderImage = imageView.image;
     [topWindow addSubview:viewer];
     
     return viewer;
@@ -102,7 +120,8 @@
 
 +(id)pictureViewerWithFrame:(CGRect)frame{
     
-    NKPictureViewer *newViewer = [[NKPictureViewer alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CGRect boundFrame = [[UIScreen mainScreen] bounds];    
+    NKPictureViewer *newViewer = [[NKPictureViewer alloc] initWithFrame: boundFrame];
     
     newViewer.alpha = 0.0;
     
@@ -114,6 +133,7 @@
     
     newViewer.imageView = imageView;
     newViewer.startFrame = frame;
+    [newViewer.myScrollView addSubview:imageView];
     return [newViewer autorelease];
 
 }

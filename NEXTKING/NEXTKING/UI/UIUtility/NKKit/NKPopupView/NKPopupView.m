@@ -154,10 +154,11 @@
             [self.contentView addSubview:button];
             [button release];
             [button setTitle:@"退出线路" forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             [button setBackgroundImage:[UIImage imageNamed:@"publackbutton_normal.png"] forState:UIControlStateNormal];
             [button setBackgroundImage:[UIImage imageNamed:@"publackbutton_click.png"] forState:UIControlStateHighlighted];
             button.titleLabel.font = [UIFont boldSystemFontOfSize:12];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            //[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(headButtonClick:) forControlEvents:UIControlEventTouchUpInside];
             
             

@@ -392,6 +392,7 @@
     }
     else {
         self.dataSource = [NSMutableArray array];
+        [loadingMoreView showNoMoreContent];
     }
     
     [self checkPlaceholder];
