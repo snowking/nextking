@@ -118,7 +118,7 @@ static NKSocial *_sharedSocial = nil;
 
 - (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
 {
-    NSLog(@"sinaweiboDidLogIn userID = %@ accesstoken = %@ expirationDate = %@ refresh_token = %@", sinaweibo.userID, sinaweibo.accessToken, sinaweibo.expirationDate,sinaweibo.refreshToken);
+    //NSLog(@"sinaweiboDidLogIn userID = %@ accesstoken = %@ expirationDate = %@ refresh_token = %@", sinaweibo.userID, sinaweibo.accessToken, sinaweibo.expirationDate,sinaweibo.refreshToken);
     
     [self resetButtons];
     [self storeAuthData];
@@ -134,20 +134,20 @@ static NKSocial *_sharedSocial = nil;
 
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
 {
-    NSLog(@"sinaweiboDidLogOut");
+    //NSLog(@"sinaweiboDidLogOut");
     [self removeAuthData];
     [self resetButtons];
 }
 
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {
-    NSLog(@"sinaweiboLogInDidCancel");
+    //NSLog(@"sinaweiboLogInDidCancel");
     [loginRD delegateFailedWithRequest:nil];
 }
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo logInDidFailWithError:(NSError *)error
 {
-    NSLog(@"sinaweibo logInDidFailWithError %@", error);
+    //NSLog(@"sinaweibo logInDidFailWithError %@", error);
     
     NKRequest *request = [[[NKRequest alloc] init] autorelease];
     request.error = error;
@@ -156,7 +156,7 @@ static NKSocial *_sharedSocial = nil;
 
 - (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error
 {
-    NSLog(@"sinaweiboAccessTokenInvalidOrExpired %@", error);
+    //NSLog(@"sinaweiboAccessTokenInvalidOrExpired %@", error);
     [self removeAuthData];
     [self resetButtons];
 }
@@ -165,12 +165,12 @@ static NKSocial *_sharedSocial = nil;
 
 - (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
     
-    NSLog(@"%@", error);
+    //NSLog(@"%@", error);
 }
 
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
     
-    NSLog(@"%@", result);
+    //NSLog(@"%@", result);
     
     [self resetButtons];
 }

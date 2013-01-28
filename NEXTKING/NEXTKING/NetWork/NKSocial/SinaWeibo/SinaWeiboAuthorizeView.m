@@ -423,7 +423,7 @@ static CGFloat kBorderWidth = 10;
 - (BOOL)webView:(UIWebView *)aWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *url = request.URL.absoluteString;
-    NSLog(@"url = %@", url);
+    //NSLog(@"url = %@", url);
     
     NSString *siteRedirectURI = [NSString stringWithFormat:@"%@%@", kSinaWeiboSDKOAuth2APIDomain, appRedirectURI];
     

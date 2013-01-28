@@ -439,7 +439,7 @@
 {
     if (_request == request)
     {
-        NSLog(@"access token result = %@", result);
+        //NSLog(@"access token result = %@", result);
         
         [self logInDidFinishWithAuthInfo:result];
         [request release], request = nil;

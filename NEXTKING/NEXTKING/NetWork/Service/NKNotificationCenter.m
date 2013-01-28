@@ -95,7 +95,7 @@ $singleService(NKNotificationCenter, @"notification");
 	deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
 	deviceTokenStr = [deviceTokenStr substringWithRange:NSMakeRange(1, [deviceTokenStr length]-2)];
     
-    NSLog(@"%@", deviceTokenStr);
+    //NSLog(@"%@", deviceTokenStr);
     
     //[[LWInternalService sharedLWInternalService] bindAPNWithKey:deviceTokenStr andTicketDelegate:nil];
     id target = [[NKConfig sharedConfig] apnTarget];

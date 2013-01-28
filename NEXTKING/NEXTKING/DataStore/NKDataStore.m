@@ -42,7 +42,7 @@ static NKDataStore *_sharedDataStore = nil;
 
 -(NSString*)accountsPath{
     
-    NSLog(@"%@", [[self rootPath] stringByAppendingPathComponent:@"NKAccountsPath.NK"]);
+//   / NSLog(@"%@", [[self rootPath] stringByAppendingPathComponent:@"NKAccountsPath.NK"]);
     
     return [[self rootPath] stringByAppendingPathComponent:@"NKAccountsPath.NK"];
 }

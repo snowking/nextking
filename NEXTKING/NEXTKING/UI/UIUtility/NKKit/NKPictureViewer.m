@@ -65,6 +65,11 @@
 
 -(void)tapped:(UITapGestureRecognizer*)gesture{
     
+    gesture.enabled = NO;
+    
+    [self addSubview:imageView];
+    imageView.frame = [self convertRect:imageView.frame fromView:myScrollView];
+    
     if (gesture.state == UIGestureRecognizerStateEnded) {
         [UIView animateWithDuration:0.3 animations:^{
             

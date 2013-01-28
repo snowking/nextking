@@ -108,8 +108,6 @@ static NKAccountManager *_sharedAccountsManager = nil;
     
     NKMUser *me = [NKMUser meFromUser:[request.results lastObject]];
     
-    NSLog(@"%@", me);
-    
     self.currentAccount.mid = me.mid;
     [self saveAccountsFile];
     [[NKDataStore sharedDataStore] cacheObject:me forCacheKey:NKCachePathProfile];
