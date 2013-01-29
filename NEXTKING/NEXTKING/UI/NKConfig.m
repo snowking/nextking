@@ -7,6 +7,7 @@
 //
 
 #import "NKConfig.h"
+#import "NKAccountManager.h"
 
 @implementation NKConfig
 
@@ -29,6 +30,8 @@
 
 @synthesize apnTarget;
 @synthesize apnMethod;
+
+@synthesize accountManagerClass;
 
 -(void)dealloc{
     
@@ -70,6 +73,8 @@ static NKConfig *_config = nil;
         self.parseStatusKey = @"status";
         self.parseValueKey = @"values";
         self.successReturnValue = 1;
+        
+        self.accountManagerClass = [NKAccountManager class];
         
     }
     

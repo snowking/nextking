@@ -7,7 +7,6 @@
 //
 
 #import "NKUI.h"
-#import "NKAccountManager.h"
 
 
 @interface NKUI ()
@@ -135,17 +134,17 @@ static NKUI * _NKUI = nil;
             
         }
         else {
-            if (![[NKAccountManager sharedAccountsManager] canAutoLogin]) {
+            if (![[[[NKConfig sharedConfig] accountManagerClass] sharedAccountsManager] canAutoLogin]) {
                 //[self showLoginView];
             }
             else {
-                [[NKAccountManager sharedAccountsManager] autoLogin];
+                [[[[NKConfig sharedConfig] accountManagerClass] sharedAccountsManager] autoLogin];
             }
         }
         
         
         
-        if ([[NKAccountManager sharedAccountsManager] canAutoLogin]) {
+        if ([[[[NKConfig sharedConfig] accountManagerClass] sharedAccountsManager] canAutoLogin]) {
             [self showViewControllerWithClass:homeClass andIndex:0];
             [self showNaviTab];
         }

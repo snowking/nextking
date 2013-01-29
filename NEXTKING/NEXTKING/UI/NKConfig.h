@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NKAccountManager.h"
 
 @interface NKConfig : NSObject{
     
@@ -32,6 +33,8 @@
     SEL apnMethod;
     
     
+    Class accountManagerClass;
+    
 }
 
 @property (nonatomic, assign) CGFloat navigatorHeight;
@@ -53,6 +56,8 @@
 
 @property (nonatomic, assign) id  apnTarget;
 @property (nonatomic, assign) SEL apnMethod;
+
+@property (nonatomic, assign) Class accountManagerClass;
 
 +(id)sharedConfig;
 

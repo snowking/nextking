@@ -7,7 +7,7 @@
 //
 
 #import "NKDataStore.h"
-#import "NKAccountManager.h"
+#import "NKConfig.h"
 
 NSString *const NKCachePathProfile = @"NKCachePathProfile.NK";
 
@@ -63,7 +63,7 @@ static NKDataStore *_sharedDataStore = nil;
 }
 -(NSString*)cachedPathOf:(NSString*)cacheKey{
     
-    return [self cachedPathOf:cacheKey forAccount:[[NKAccountManager sharedAccountsManager] currentAccount]];
+    return [self cachedPathOf:cacheKey forAccount:[[[[NKConfig sharedConfig] accountManagerClass] sharedAccountsManager] currentAccount]];
 }
 
 
