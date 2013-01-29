@@ -35,7 +35,8 @@
     [[NKConfig sharedConfig] setDomainURL:@"http://zhenghua.sinaapp.com/index.php"];
     //[[NKConfig sharedConfig] setDomainURL:@"http://roy.mobile.dev.xq.lab/ios/v1"];
     NKUI *ui = [NKUI sharedNKUI];
-    ui.needLogin = NO;
+    ui.needLogin = YES;
+    ui.needStoreViewControllers = YES;
     ui.homeClass = [WMHomeViewController class];
     ui.welcomeCalss = [WMWelcomeViewController class];
     
@@ -47,31 +48,22 @@
                  [NSArray arrayWithObjects:[WMHomeViewController class], [WMMenWikiViewController class], [WMSettingViewController class], nil],
                  nil]];
     
-    UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:ui] autorelease];
-    
-    navi.view.backgroundColor = [UIColor clearColor];
-    //navi.supportedInterfaceOrientations =
-    UIImageView *back = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, NKMainHeight)];
-    back.image = [[UIImage imageNamed:@"appBackground.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
-    [navi.view insertSubview:back atIndex:0];
-    [back release];
-    [navi setNavigationBarHidden:YES];
+    NKNavigationController *navi = [[[NKNavigationController alloc] initWithRootViewController:ui] autorelease];
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
     
     
-    sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:nil];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
-    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
-    {
-        sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
-        sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
-        sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
-    }
+    [self startSocial];
 
     return YES;
 }
+
+-(void)startSocial{
+    
+    [[NKSocial social] initSinaWeiboWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:nil];
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

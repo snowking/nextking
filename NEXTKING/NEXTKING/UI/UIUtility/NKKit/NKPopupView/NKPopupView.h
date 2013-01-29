@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
+#import "UIImage+NKImage.h"
 
 typedef enum {
     NKPopupViewStyleThin = 0,

@@ -40,6 +40,8 @@
         self.myScrollView.delegate = self;
         [self addSubview:myScrollView];
         
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+        
 
     }
     return self;
@@ -66,6 +68,7 @@
 -(void)tapped:(UITapGestureRecognizer*)gesture{
     
     gesture.enabled = NO;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     
     [self addSubview:imageView];
     imageView.frame = [self convertRect:imageView.frame fromView:myScrollView];

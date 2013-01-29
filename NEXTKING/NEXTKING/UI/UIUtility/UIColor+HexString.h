@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIImage+NKImage.h"
 
 @interface UIColor (HexString)
 

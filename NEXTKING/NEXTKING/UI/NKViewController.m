@@ -100,8 +100,8 @@
 
 -(UIButton*)styleButton{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *normal = [[UIImage imageNamed:@"topButton_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
-    UIImage *highlight = [[UIImage imageNamed:@"topButton_click.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+    UIImage *normal = [[UIImage imageNamed:@"topButton_normal.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+    UIImage *highlight = [[UIImage imageNamed:@"topButton_click.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
     button.frame = CGRectMake(0, 0, normal.size.width, normal.size.height);
     [button setBackgroundImage:normal forState:UIControlStateNormal];
     [button setBackgroundImage:highlight forState:UIControlStateHighlighted];

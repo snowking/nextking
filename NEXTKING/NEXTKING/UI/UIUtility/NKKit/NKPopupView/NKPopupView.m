@@ -28,9 +28,9 @@
     if (self) {
         
         
-        self.backgroundView = [[[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"pucellback_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20)]] autorelease];
+        self.backgroundView = [[[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"pucellback_normal.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20)]] autorelease];
         
-        self.selectedBackgroundView = [[[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"pucellback_highlight.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20)]] autorelease];
+        self.selectedBackgroundView = [[[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"pucellback_highlight.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20)]] autorelease];
         
         self.textLabel.backgroundColor = [UIColor clearColor];
         self.textLabel.textColor = [UIColor darkGrayColor];
@@ -91,7 +91,7 @@
     
     switch (style) {
         case NKPopupViewStyleThin:{
-            maskView.image = [[UIImage imageNamed:@"pumaskthin.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
+            maskView.image = [[UIImage imageNamed:@"pumaskthin.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
             maskView.frame = CGRectMake(0, 0, 266, 354);
             maskView.center = self.center;
             showTableView.frame = CGRectMake(0, 0, 236, 324);
@@ -100,7 +100,7 @@
         }
             break;
         case NKPopupViewStyleUp:{
-            maskView.image = [[UIImage imageNamed:@"pumaskthin.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
+            maskView.image = [[UIImage imageNamed:@"pumaskthin.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
             maskView.frame = CGRectMake(0, 0, 266, 153+30);
             maskView.center = CGPointMake(self.center.x, 155);
             showTableView.frame = CGRectMake(0, 0, 236, 153);
@@ -110,7 +110,7 @@
             break;
         case NKPopupViewStyleFatBoth:{
             
-            maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
+            maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
             maskView.frame = CGRectMake(0, 0, 266, 354);
             maskView.center = self.center;
             showTableView.frame = CGRectMake(0, 0, 236, 235);
@@ -136,7 +136,7 @@
             
         case NKPopupViewStyleLineEdit:{
             
-            maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
+            maskView.image = [[UIImage imageNamed:@"pumaskfatboth.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
             maskView.frame = CGRectMake(0, 0, 266, 354);
             maskView.center = self.center;
             showTableView.frame = CGRectMake(0, 0, 236, 235);
@@ -182,7 +182,7 @@
             break;
         case NKPopupViewStyleFatHeader:{
             
-            maskView.image = [[UIImage imageNamed:@"pumaskfatheader.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 50, 50)];
+            maskView.image = [[UIImage imageNamed:@"pumaskfatheader.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(100, 50, 50, 50)];
             maskView.frame = CGRectMake(0, 0, 266, 354);
             maskView.center = self.center;
             showTableView.frame = CGRectMake(0, 0, 236, 279);
@@ -202,7 +202,7 @@
             break;
         case NKPopupViewStyleMoreAction:{
             
-            maskView.image = [[UIImage imageNamed:@"pu_more_action_mask.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
+            maskView.image = [[UIImage imageNamed:@"pu_more_action_mask.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
             maskView.frame = CGRectMake(158, 60, 159, 199);
             //maskView.center = CGPointMake(240, <#CGFloat y#>);
             showTableView.frame = CGRectMake(0, 0, 136, 172);

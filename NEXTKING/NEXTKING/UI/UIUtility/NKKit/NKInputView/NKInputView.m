@@ -83,7 +83,7 @@
         // textView.animateHeightChange = NO; //turns off animation
         
         UIImage *rawEntryBackground = [UIImage imageNamed:@"replyinputbg.png"];
-        UIImage *entryBackground = [rawEntryBackground resizableImageWithCapInsets:UIEdgeInsetsMake(10, 30, 10, 30)];
+        UIImage *entryBackground = [rawEntryBackground resizeImageWithCapInsets:UIEdgeInsetsMake(10, 30, 10, 30)];
         UIImageView *entryImageView = [[[UIImageView alloc] initWithImage:entryBackground] autorelease];
         entryImageView.frame = CGRectMake(46, 10, 209, 34);
         entryImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -95,9 +95,9 @@
         [self addSubview:entryImageView];
         [self addSubview:textView];
         
-        UIImage *sendBtnBackground = [[UIImage imageNamed:@"replysend_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 15, 16, 15)];
-        UIImage *selectedSendBtnBackground = [[UIImage imageNamed:@"replysend_click.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(8, 15, 8, 15)];
-        UIImage *disableSendBtnBackground = [[UIImage imageNamed:@"replysend_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(16, 15, 16, 15)];
+        UIImage *sendBtnBackground = [[UIImage imageNamed:@"replysend_normal.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(16, 15, 16, 15)];
+        UIImage *selectedSendBtnBackground = [[UIImage imageNamed:@"replysend_click.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(8, 15, 8, 15)];
+        UIImage *disableSendBtnBackground = [[UIImage imageNamed:@"replysend_normal.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(16, 15, 16, 15)];
         
         UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         doneBtn.frame = CGRectMake(260, 10, 52, 34);
@@ -318,8 +318,8 @@
 
 -(UIButton*)styleButton{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *normal = [[UIImage imageNamed:@"topButton_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
-    UIImage *highlight = [[UIImage imageNamed:@"topButton_click.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+    UIImage *normal = [[UIImage imageNamed:@"topButton_normal.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+    UIImage *highlight = [[UIImage imageNamed:@"topButton_click.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
     button.frame = CGRectMake(0, 0, normal.size.width, normal.size.height);
     [button setBackgroundImage:normal forState:UIControlStateNormal];
     [button setBackgroundImage:highlight forState:UIControlStateHighlighted];

@@ -74,7 +74,10 @@
             UIColor *textColor = TEXT_COLOR;
             
             
-            UIImageView *background = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"tvCard.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(40, 50, 41, 50)]];
+            //UIImageView *background = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"tvCard.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(40, 50, 41, 50)]];
+            UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tvCard.png"]];
+            UIEdgeInsets edgeInset = UIEdgeInsetsMake(40, 50, 41, 50);
+            background.contentStretch = CGRectMake(edgeInset.left / background.image.size.width, edgeInset.top / background.image.size.height, (background.image.size.width - edgeInset.left-edgeInset.right)/background.image.size.width, (background.image.size.height - edgeInset.top-edgeInset.bottom)/background.image.size.height);
             //background.contentStretch = CGRectMake(0.5, 0.32, 0.1, 0.05);
             background.frame = CGRectMake(0, -100, self.bounds.size.width, self.bounds.size.height+100);
             //background.contentMode = UIViewContentModeScaleAspectFill;

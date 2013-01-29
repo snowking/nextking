@@ -49,7 +49,7 @@
     
 
     UIImageView *back = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, NKMainHeight)];
-    back.image = [[UIImage imageNamed:@"appBackground.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
+    back.image = [[UIImage imageNamed:@"appBackground.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
     [self.view insertSubview:back atIndex:0];
     [back release];
     [self setNavigationBarHidden:YES];
