@@ -28,6 +28,8 @@
 
 @synthesize textView;
 
+@synthesize emojoButton;
+
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
@@ -63,12 +65,21 @@
         [self addSubview:topLine];
         [topLine release];
         
-        UIButton *emojoButton = [self addEmojoButtonWithTitle:[NSArray arrayWithObjects:[UIImage imageNamed:@"emojo_normal.png"], [UIImage imageNamed:@"emojo_normal.png"], nil]];
+        self.emojoButton = [self addEmojoButtonWithTitle:[NSArray arrayWithObjects:[UIImage imageNamed:@"emojo_normal.png"], [UIImage imageNamed:@"emojo_normal.png"], nil]];
         emojoButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        
+        
+        keyboardButton = [self styleButton];
+        [keyboardButton addTarget:self action:@selector(showKeyboard) forControlEvents:UIControlEventTouchUpInside];
+        [keyboardButton setImage:[UIImage imageNamed:@"nk_keboard_normal.png"] forState:UIControlStateNormal];
+        keyboardButton.adjustsImageWhenHighlighted = NO;
+        keyboardButton.frame = emojoButton.frame;
+        keyboardButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        keyboardButton.hidden = YES;
+        
         
         textView = [[[HPGrowingTextView alloc] initWithFrame:CGRectMake(46, 10.5, 209, 20)] autorelease];
         textView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
-        
         
         textView.minNumberOfLines = 1;
         //textView.maxNumberOfLines = 4;
@@ -119,16 +130,18 @@
         doneBtn.enabled = NO;
         
         
-        UIButton *keyboardButton = [self styleButton];
-        [keyboardButton addTarget:self action:@selector(showKeyboard) forControlEvents:UIControlEventTouchUpInside];
-        [keyboardButton setImage:[UIImage imageNamed:@"replykeyboard.png"] forState:UIControlStateNormal];
-        keyboardButton.frame = CGRectMake(2, 218, 60, 45);
-        keyboardButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        UIButton *deleteButton = [self styleButton];
+        [deleteButton addTarget:self action:@selector(deleteButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [deleteButton setImage:[UIImage imageNamed:@"nk_delete_avatar.png"] forState:UIControlStateNormal];
+        deleteButton.frame = CGRectMake(258, 218, 60, 45);
+        deleteButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        
+        //CGRectMake(258, 218, 60, 45);
         
         UIButton *hideButton = [self styleButton];
         [hideButton addTarget:self action:@selector(hideButtonClick) forControlEvents:UIControlEventTouchUpInside];
         [hideButton setImage:[UIImage imageNamed:@"replyhide.png"] forState:UIControlStateNormal];
-        hideButton.frame = CGRectMake(258, 218, 60, 45);
+        hideButton.frame = CGRectMake(2, 218, 60, 45);
         hideButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
         
         
@@ -136,6 +149,32 @@
     }
     return self;
 }
+
+-(void)deleteButtonClick:(id)sender{
+    
+    
+    NSString *theText = textView.text;
+    
+    if ([theText length]) {
+
+        if ([[theText substringFromIndex:[theText length]-1] isEqualToString:@")"]) {
+            NSRange kuohaoRange = [theText rangeOfString:@"(" options:NSBackwardsSearch];
+            if (kuohaoRange.length && [theText length] - kuohaoRange.location<=5) {
+                theText = [theText substringToIndex:kuohaoRange.location];
+            }
+            else{
+                theText = [theText substringToIndex:[theText length]-1];
+            }
+        }
+        else{
+            theText = [theText substringToIndex:[theText length]-1];
+        }
+        
+    }
+    textView.text = theText;
+    
+}
+
 
 -(void)showKeyboard{
     
@@ -175,6 +214,8 @@
     }
     
     emojoing = NO;
+    emojoButton.hidden = emojoing;
+    keyboardButton.hidden = !emojoing;
     
     CGRect keyboardBounds;
     [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
@@ -297,6 +338,8 @@
 -(void)hide{
     
     emojoing = NO;
+    keyboardButton.hidden = !emojoing;
+    emojoButton.hidden = emojoing;
     
     if ([textView.internalTextView isFirstResponder]) {
         [textView.internalTextView resignFirstResponder];
@@ -353,6 +396,8 @@
 -(void)emojoButtonClick:(id)sender{
     
     emojoing = YES;
+    keyboardButton.hidden = !emojoing;
+    emojoButton.hidden = emojoing;
     
     
     if (!self.emojoView) {

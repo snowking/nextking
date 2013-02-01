@@ -27,6 +27,9 @@
     
     id  target;
     SEL action;
+    
+    UIButton *keyboardButton;
+    UIButton *emojoButton;
 }
 
 
@@ -43,6 +46,8 @@
 @property (nonatomic, assign) SEL action;
 
 @property (nonatomic, assign) HPGrowingTextView *textView;
+
+@property (nonatomic, assign) UIButton *emojoButton;
 
 +(id)inputViewWithTableView:(UITableView*)tableView dataSource:(NSMutableArray*)data otherView:(NSArray*)views;
 

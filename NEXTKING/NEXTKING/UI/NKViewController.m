@@ -20,6 +20,8 @@
 
 @synthesize contentView;
 
+@synthesize nkRightButton;
+
 -(void)dealloc{
     
     
@@ -129,7 +131,7 @@
         button.frame = CGRectMake(320-55, 0, 55, 43);
     }
     
-    
+    self.nkRightButton = button;
     return button;
     
 }

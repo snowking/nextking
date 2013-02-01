@@ -22,6 +22,8 @@
     UIView  *contentView;
     
     NKProgressView *progressView;
+    
+    UIButton *nkRightButton;
 }
 
 @property (nonatomic, assign) UIView  *placeHolderView;
@@ -29,6 +31,8 @@
 @property (nonatomic, assign) UILabel *titleLabel;
 
 @property (nonatomic, assign) UIView  *contentView;
+
+@property (nonatomic, assign) UIButton *nkRightButton;
 
 
 -(IBAction)goBack:(id)sender;
