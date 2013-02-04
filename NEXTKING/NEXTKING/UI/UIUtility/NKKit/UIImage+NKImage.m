@@ -23,3 +23,34 @@
 }
 
 @end
+
+
+
+
+
+@implementation UIViewController (NKPresent)
+
+- (void)presentNKViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion{
+    
+    if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
+        [self presentViewController:viewControllerToPresent animated:flag completion:completion];
+    }
+    else {
+        [self presentModalViewController:viewControllerToPresent animated:flag];
+    }
+    
+}
+
+- (void)dismissNKViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion{
+    
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self dismissViewControllerAnimated:flag completion:completion];
+    }
+    else{
+        
+        [self dismissModalViewControllerAnimated:flag];
+    }
+
+}
+
+@end

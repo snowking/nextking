@@ -13,3 +13,14 @@
 - (UIImage *)resizeImageWithCapInsets:(UIEdgeInsets)capInsets;
 
 @end
+
+
+
+@interface UIViewController (NKPresent)
+
+- (void)presentNKViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion;
+
+- (void)dismissNKViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion;
+
+
+@end

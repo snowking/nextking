@@ -222,6 +222,7 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
         else {
             
             self.errorCode = tServerError;
+            self.errorDescription = [parsedResult objectOrNilForKey:@"error_description"];
             [self reportErrorWithObject:self.errorCode];
             
         }
@@ -233,10 +234,17 @@ NSString *const NKRequestErrorNotification = @"NKRequestErrorNotification";
     
     NKConfig *config = [NKConfig sharedConfig];
     
+    NSString *stringToReturn = errorDescription;
+    
     if ([config.errorTarget respondsToSelector:config.errorMethod]) {
-        return [config.errorTarget performSelector:config.errorMethod withObject:errorCode];
+        stringToReturn = [config.errorTarget performSelector:config.errorMethod withObject:errorCode];
+        
+        if ((!stringToReturn || [stringToReturn isKindOfClass:[NSNumber class]]) && errorDescription ) {
+            stringToReturn = errorDescription;
+        }
+        
     }
-    return errorDescription;
+    return stringToReturn;
 }
 
 
