@@ -45,7 +45,7 @@
 -(void)addRequest:(NKRequest*)request{
     [[NKSDK sharedSDK] addRequest:request];
     
-    //NSLog(@"%@, %@", request.url, request.postBody);
+    NSLog(@"%@, %@", request.url, request.postBody);
     // Start
     [request.requestDelegate delegateStartWithRequest:request];
 }
