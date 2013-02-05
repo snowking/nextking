@@ -203,16 +203,12 @@
         case NKPopupViewStyleMoreAction:{
             
             maskView.image = [[UIImage imageNamed:@"pu_more_action_mask.png"] resizeImageWithCapInsets:UIEdgeInsetsMake(50, 50, 50, 50)];
-            maskView.frame = CGRectMake(158, 60, 159, 199);
-            //maskView.center = CGPointMake(240, <#CGFloat y#>);
-            showTableView.frame = CGRectMake(0, 0, 136, 172);
-            showTableView.center = CGPointMake(maskView.center.x, maskView.center.y-1);
             showTableView.backgroundColor = [UIColor clearColor];
             [self.contentView addSubview:showTableView];
             
             [[[self subviews] objectAtIndex:0] removeFromSuperview];
             
-            [[showTableView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            
             
         }
             break;
