@@ -35,7 +35,7 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
 
 +(id)social;
 
--(SinaWeibo*)initSinaWeiboWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
+-(SinaWeibo*)startSinaWeiboWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
               appRedirectURI:(NSString *)appRedirectURI
                  andDelegate:(id<SinaWeiboDelegate>)delegate;
 
