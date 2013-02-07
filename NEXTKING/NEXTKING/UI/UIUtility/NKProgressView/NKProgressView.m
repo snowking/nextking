@@ -35,13 +35,23 @@
     
 }
 -(id)successWithString:(NSString*)string{
-    
     self.labelText = string;
     self.minSize = CGSizeMake(125, 0);
     self.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emojo_weixiao.png"]] autorelease];
     // Set custom view mode
     self.mode = MBProgressHUDModeCustomView;
     [self hide:YES afterDelay:0.8];
+    return nil;
+    
+}
+
+-(id)successWithDetailString:(NSString*)string{
+    self.detailsLabelText = string;
+    self.minSize = CGSizeMake(125, 0);
+    self.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"emojo_weixiao.png"]] autorelease];
+    // Set custom view mode
+    self.mode = MBProgressHUDModeCustomView;
+    [self hide:YES afterDelay:1.8];
     return nil;
     
 }

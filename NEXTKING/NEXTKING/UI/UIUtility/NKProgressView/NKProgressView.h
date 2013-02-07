@@ -24,6 +24,8 @@ progressView.labelText = @"正在载入"
 
 #define ProgressSuccess(word) if (progressView) {[progressView successWithString:word];progressView = nil;}
 
+#define ProgressDetailSuccess(word) if (progressView) {[progressView successWithDetailString:word];progressView = nil;}
+
 #define ProgressFailedWith(word)  if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView failedWithString:word];progressView = nil; }
 #define ProgressFailed  if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView failedWithString:@"连接失败，请重试"];progressView = nil; }
 #define ProgressNetWorkError if(!progressView){progressView = [NKProgressView progressView];}if (progressView){ progressView = [progressView netWorkError];progressView = nil;}
@@ -46,5 +48,7 @@ progressView.labelText = @"正在载入"
 -(id)failedWithString:(NSString*)string;
 
 -(id)successWithString:(NSString*)string;
+
+-(id)successWithDetailString:(NSString*)string;
 
 @end
