@@ -188,7 +188,7 @@
             showTableView.frame = CGRectMake(0, 0, 236, 279);
             showTableView.center = CGPointMake(self.center.x, self.center.y+20);
             
-            [self addHeaderWithPlaceHolder:@"输入相册名或搜索" andTitle:@"创建"];
+            [self addHeaderWithPlaceHolder:@"创建新的线路公共相册" andTitle:@"创建"];
             
             
         }
