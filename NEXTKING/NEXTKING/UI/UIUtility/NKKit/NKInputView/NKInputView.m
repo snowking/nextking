@@ -402,9 +402,12 @@
     
     if (!self.emojoView) {
         self.emojoView = [NKEmojoView emojoViewWithReciever:textView];
-        emojoView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+        emojoView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
         [self addSubview:emojoView];
     }
+    
+    emojoView.frame = CGRectMake(emojoView.frame.origin.x, emojoButton.frame.origin.y+45, emojoView.frame.size.width, emojoView.frame.size.height);
+    
     
     CGRect frame = self.frame;
     frame.origin.y = ScreenHeight - self.frame.size.height;
