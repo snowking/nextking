@@ -60,7 +60,7 @@
 
 -(void)startSocial{
     
-    [[NKSocial social] initSinaWeiboWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:nil];
+    [[NKSocial social] startSinaWeiboWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:nil];
     
 }
 
