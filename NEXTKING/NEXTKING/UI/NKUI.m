@@ -50,6 +50,8 @@ static NKUI * _NKUI = nil;
     
     [super viewWillAppear:animated];
     
+    [self.currentController viewWillAppear:animated];
+    
     
 }
 
