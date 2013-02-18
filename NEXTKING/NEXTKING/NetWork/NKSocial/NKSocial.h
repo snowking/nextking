@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <TencentOpenAPI/TencentOAuth.h>
 
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
@@ -18,9 +18,11 @@
 
 
 extern NSString *const NKSocialServiceTypeSinaWeibo;
+extern NSString *const NKSocialServiceTypeTqq;
 
-
-@interface NKSocial : NSObject <SinaWeiboDelegate, SinaWeiboRequestDelegate> {
+@interface NKSocial : NSObject <SinaWeiboDelegate,
+                                SinaWeiboRequestDelegate,
+                                TencentSessionDelegate> {
     
     SinaWeibo *sinaWeibo;
     
@@ -32,6 +34,9 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
 
 @property (nonatomic, assign) NKRequestDelegate *loginRD;
 
+@property (nonatomic, retain) NSString *socialType;
+
+@property (nonatomic, retain) TencentOAuth *tqq;
 
 +(id)social;
 
@@ -39,8 +44,12 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
               appRedirectURI:(NSString *)appRedirectURI
                  andDelegate:(id<SinaWeiboDelegate>)delegate;
 
--(void)loginWithSinaWeiboWithRequestDelegate:(NKRequestDelegate*)rd;
+-(TencentOAuth*)startTqqWithAppKey:(NSString *)appKey
+                    appRedirectURI:(NSString *)appRedirectURI
+                       andDelegate:(id<TencentSessionDelegate>)delegate;
 
+-(void)loginWithSinaWeiboWithRequestDelegate:(NKRequestDelegate*)rd;
+-(void)loginWithTqqWithRequestDelegate:(NKRequestDelegate*)rd;
 
 
 -(NKWeiboRequest*)sinaRequestWithURL:(NSString *)url
@@ -48,5 +57,9 @@ extern NSString *const NKSocialServiceTypeSinaWeibo;
                           params:(NSDictionary *)params
                  requestDelegate:(NKRequestDelegate*)rd;
 
+
+- (BOOL)handleAppDelegateOpenURL:(NSURL *)url;
+
+- (void)getTqqUserInfoWithDelegate:(NKRequestDelegate *)rd;
 
 @end
