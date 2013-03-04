@@ -173,6 +173,7 @@
 		A387DDDE16E4874600FD1F9F /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = A387DD4816E4874600FD1F9F /* UIImage+Alpha.m */; };
 		A387DDDF16E4874600FD1F9F /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = A387DD4A16E4874600FD1F9F /* UIImage+Resize.m */; };
 		A387DDE016E4874600FD1F9F /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = A387DD4C16E4874600FD1F9F /* UIImage+RoundedCorner.m */; };
+		A387DDE216E49F3E00FD1F9F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A387DDE116E49F3E00FD1F9F /* Icon@2x.png */; };
 		A38900F416B64A7A00108DBD /* appBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A38900F116B64A7A00108DBD /* appBackground@2x.png */; };
 		A38900F516B64A7A00108DBD /* bluebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A38900F216B64A7A00108DBD /* bluebook@2x.png */; };
 		A38900F616B64A7A00108DBD /* redbook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A38900F316B64A7A00108DBD /* redbook@2x.png */; };
@@ -469,6 +470,7 @@
 		A387DD4A16E4874600FD1F9F /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		A387DD4B16E4874600FD1F9F /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		A387DD4C16E4874600FD1F9F /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		A387DDE116E49F3E00FD1F9F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		A38900F116B64A7A00108DBD /* appBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appBackground@2x.png"; sourceTree = "<group>"; };
 		A38900F216B64A7A00108DBD /* bluebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluebook@2x.png"; sourceTree = "<group>"; };
 		A38900F316B64A7A00108DBD /* redbook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redbook@2x.png"; sourceTree = "<group>"; };
@@ -984,6 +986,7 @@
 		A39A4FD31637D08800A45E74 = {
 			isa = PBXGroup;
 			children = (
+				A387DDE116E49F3E00FD1F9F /* Icon@2x.png */,
 				A39A510F1637D10F00A45E74 /* MobileCoreServices.framework */,
 				A39A510D1637D10A00A45E74 /* CFNetwork.framework */,
 				A39A510B1637D10800A45E74 /* SystemConfiguration.framework */,
@@ -1313,6 +1316,7 @@
 				A387DDCC16E4874600FD1F9F /* pumultiselect_un_click@2x.png in Resources */,
 				A387DDCD16E4874600FD1F9F /* puright_click@2x.png in Resources */,
 				A387DDCE16E4874600FD1F9F /* puright_normal@2x.png in Resources */,
+				A387DDE216E49F3E00FD1F9F /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
