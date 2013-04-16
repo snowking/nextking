@@ -60,7 +60,7 @@
         
         
     }
-    else if ([user.relation isEqualToString:NKRelationFollow]){
+    else if ([user.relation isEqualToString:NKRelationFollowing]){
         // show Follow
         [self showFollowView];
         
